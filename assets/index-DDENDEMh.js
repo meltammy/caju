@@ -201,4 +201,4 @@ Error generating stack: `+i.message+`
     color: #fff;
     font-size: 24px;
   }
-`;function og(){return R.jsxs(R.Fragment,{children:[R.jsx(rg,{children:R.jsx("h1",{children:"Caju Front Teste [deploy test]"})}),R.jsx(ng,{})]})}Zd(document.getElementById("root")).render(R.jsx(og,{}));
+`;function og(){return R.jsxs(R.Fragment,{children:[R.jsx(rg,{children:R.jsx("h1",{children:"Caju Front Teste [deploy test 2]"})}),R.jsx(ng,{})]})}Zd(document.getElementById("root")).render(R.jsx(og,{}));
