@@ -182,7 +182,7 @@ Error generating stack: `+i.message+`
   ${Xa}{
     align-self: flex-end;
   }
-`,b1=()=>{const e=dp(),t=()=>{e.push(Rn.dashboard)};return R.jsx(J1,{children:R.jsxs(q1,{children:[R.jsx(Wp,{onClick:()=>t(),"aria-label":"back",children:R.jsx(A1,{size:24})}),R.jsx(yr,{placeholder:"Nome",label:"Nome"}),R.jsx(yr,{placeholder:"Email",label:"Email",type:"email"}),R.jsx(yr,{placeholder:"CPF",label:"CPF"}),R.jsx(yr,{label:"Data de admissão",type:"date"}),R.jsx(Xa,{onClick:()=>{},children:"Cadastrar"})]})})},eg=()=>R.jsx("div",{style:{marginTop:64},children:R.jsx(m0,{children:R.jsxs(h0,{children:[R.jsx(So,{exact:!0,path:Rn.dashboard,component:Z1}),R.jsx(So,{exact:!0,path:Rn.newUser,component:b1}),R.jsx(So,{exact:!0,path:Rn.history,component:()=>R.jsx("div",{children:"History"})}),R.jsx(So,{exact:!0,path:"*",children:R.jsx(s0,{to:Rn.dashboard})})]})})}),tg=he.header`
+`,b1=()=>{const e=dp(),t=()=>{e.push(Rn.dashboard)};return R.jsx(J1,{children:R.jsxs(q1,{children:[R.jsx(Wp,{onClick:()=>t(),"aria-label":"back",children:R.jsx(A1,{size:24})}),R.jsx(yr,{placeholder:"Nome",label:"Nome"}),R.jsx(yr,{placeholder:"Email",label:"Email",type:"email"}),R.jsx(yr,{placeholder:"CPF",label:"CPF"}),R.jsx(yr,{label:"Data de admissão",type:"date"}),R.jsx(Xa,{onClick:()=>{},children:"Cadastrar"})]})})},eg=()=>R.jsx("div",{style:{marginTop:64},children:R.jsx(m0,{basename:"/caju/",children:R.jsxs(h0,{children:[R.jsx(So,{exact:!0,path:Rn.dashboard,component:Z1}),R.jsx(So,{exact:!0,path:Rn.newUser,component:b1}),R.jsx(So,{exact:!0,path:Rn.history,component:()=>R.jsx("div",{children:"History"})}),R.jsx(So,{exact:!0,path:"*",children:R.jsx(s0,{to:Rn.dashboard})})]})})}),tg=he.header`
   background: rgb(255, 117, 0);
   background: linear-gradient(
     258deg,
