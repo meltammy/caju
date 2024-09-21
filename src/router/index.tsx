@@ -6,8 +6,8 @@ import NewUserPage from "~/pages/NewUser";
 const Router = () => {
   return (
     <div style={{ marginTop: 64 }}>
-      <HashRouter>
-        <Switch>
+      <HashRouter basename="/caju/">
+        <Switch >
           <Route exact path={routes.dashboard} component={DashboardPage} />
           <Route exact path={routes.newUser} component={NewUserPage} />
           <Route
