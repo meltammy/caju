@@ -1,4 +1,8 @@
 module.exports = {
+  env: {
+    node: true,
+    es6: true,
+  },
   extends: [
     'eslint:recommended',
     'plugin:react/recommended',
@@ -6,13 +10,17 @@ module.exports = {
     'plugin:jsx-a11y/recommended',
     'plugin:@typescript-eslint/recommended',
     'eslint-config-prettier',
-    "plugin:react-hooks/recommended"
+    'plugin:react-hooks/recommended',
   ],
   settings: {
     react: {
       version: 'detect',
     },
     'import/resolver': {
+      alias: {
+        map: [['~', './src']],
+        extensions: ['.js', '.jsx', '.ts', '.tsx', '.json'],
+      },
       node: {
         paths: ['src'],
         extensions: ['.js', '.jsx', '.ts', '.tsx'],
@@ -27,6 +35,6 @@ module.exports = {
     "react/display-name": "off",
     "@typescript-eslint/ban-types": "off",
     "import/named": "off",
-    "react-hooks/exhaustive-deps": "warn"
+    "react-hooks/exhaustive-deps": "warn",
   },
 };

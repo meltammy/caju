@@ -39,4 +39,4 @@ jobs:
           node-version: "20"
           cache: "yarn"
       - run: yarn install --immutable
-      - run: yarn run test
+      - run: yarn run jest
