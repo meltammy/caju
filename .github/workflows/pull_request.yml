@@ -1,0 +1,42 @@
+name: Pull Request
+on:
+  pull_request:
+    branches:
+      - '**'
+    types:
+      - opened
+      - reopened
+jobs:
+  Type-check:
+    runs-on: ubuntu-latest
+    container: node:20
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: "20"
+          cache: "yarn"
+      - run: yarn install --immutable
+      - run: yarn run tsc
+  Lint:
+    runs-on: ubuntu-latest
+    container: node:20
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: "20"
+          cache: "yarn"
+      - run: yarn install --immutable
+      - run: yarn run lint
+  Test:
+    runs-on: ubuntu-latest
+    container: node:20
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: "20"
+          cache: "yarn"
+      - run: yarn install --immutable
+      - run: yarn run test
