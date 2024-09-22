@@ -7,7 +7,7 @@ const Router = () => {
   return (
     <div style={{ marginTop: 64 }}>
       <HashRouter basename="/caju/">
-        <Switch >
+        <Switch>
           <Route exact path={routes.dashboard} component={DashboardPage} />
           <Route exact path={routes.newUser} component={NewUserPage} />
           <Route

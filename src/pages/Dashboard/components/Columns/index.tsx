@@ -1,16 +1,15 @@
-
 import * as S from "./styles";
 import RegistrationCard from "../RegistrationCard";
 import { useGetRegistrations } from "~/pages/Dashboard/hooks/useGetRegistrations";
 
 const allColumns = [
-  { status: 'REVIEW', title: "Pronto para revisar" },
-  { status: 'APPROVED', title: "Aprovado" },
-  { status: 'REPROVED', title: "Reprovado" },
+  { status: "REVIEW", title: "Pronto para revisar" },
+  { status: "APPROVED", title: "Aprovado" },
+  { status: "REPROVED", title: "Reprovado" },
 ];
 
 const Collumns = () => {
-  const { data } = useGetRegistrations()
+  const { data } = useGetRegistrations();
 
   return (
     <S.Container>

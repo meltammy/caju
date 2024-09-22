@@ -5,4 +5,6 @@ export interface SearchRegistrationContextType {
   setSearchValue: (value: string) => void;
 }
 
-export const SearchRegistrationContext = createContext<SearchRegistrationContextType | undefined>(undefined);
+export const SearchRegistrationContext = createContext<
+  SearchRegistrationContextType | undefined
+>(undefined);
