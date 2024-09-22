@@ -1,4 +1,4 @@
-import Collumns from "./components/Columns";
+import { RegistrationStatusColumns } from "./components/RegistrationStatusColumns";
 import * as S from "./styles";
 import { SearchBar } from "./components/Searchbar";
 import { SearchRegistrationProvider } from "./components/SearchRegistrationContext/SearchRegistrationProvider";
@@ -8,7 +8,7 @@ const DashboardPage = () => {
     <SearchRegistrationProvider>
       <S.Container>
         <SearchBar />
-        <Collumns />
+        <RegistrationStatusColumns />
       </S.Container>
     </SearchRegistrationProvider>
   );
