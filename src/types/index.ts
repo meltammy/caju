@@ -1,4 +1,4 @@
-export enum Status {
+export enum RegistrationStatus {
   Reproved = "REPROVED",
   Approved = "APPROVED",
   Review = "REVIEW",
@@ -10,5 +10,5 @@ export type Registration = {
   email: string;
   employeeName: string;
   id: string;
-  status: Status;
+  status: RegistrationStatus;
 };

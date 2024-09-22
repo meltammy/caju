@@ -1,28 +1,22 @@
 import styled from "styled-components";
+import { RegistrationStatus } from "~/types";
+
 const registrationStatusStyles: {
   [key in string]: { background: string; title: string };
 } = {
-  REVIEW: {
+  [RegistrationStatus.Review]: {
     background: "#FDF8E9",
     title: "#EFC24D",
   },
-  APPROVED: {
+  [RegistrationStatus.Approved]: {
     background: "#EEEEFD",
     title: "#4242DF",
   },
-  REPROVED: {
+  [RegistrationStatus.Reproved]: {
     background: "#FBEDF6",
     title: "#CE2893",
   },
 };
-
-export const Container = styled.div`
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 24px;
-  justify-content: center;
-  margin-top: 24px;
-`;
 
 export const Column = styled.div<{ status: any }>`
   height: auto;
