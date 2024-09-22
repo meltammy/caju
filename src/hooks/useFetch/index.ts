@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 
 type Method = 'GET' | 'POST' | 'PUT' | 'PATCH' | 'DELETE';
 
@@ -16,7 +16,7 @@ export const useFetch = <Data>({ url = URL, method = 'GET', path='', body }: Use
   const [error, setError] = useState<string | null>(null);
   const [isLoading, setIsLoading] = useState<boolean>(true);
 
-  const fetchData = async () => {
+  const fetchData = useCallback(async () => {
     setIsLoading(true);
     setError(null);
 
@@ -42,12 +42,11 @@ export const useFetch = <Data>({ url = URL, method = 'GET', path='', body }: Use
     } finally {
       setIsLoading(false);
     }
-  };
+  }, [body, method, path, url]);
   
   useEffect(() => {
     fetchData();
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [fetchData]);
 
   return { data, error, isLoading, refetch: fetchData };
 };
