@@ -1,16 +1,17 @@
 import Collumns from "./components/Columns";
 import * as S from "./styles";
 import { SearchBar } from "./components/Searchbar";
-import { useGetRegistrations } from "~/hooks/useFetch/useGetRegistrations";
+import { SearchRegistrationProvider } from "./components/SearchRegistrationContext/SearchRegistrationProvider";
 
 const DashboardPage = () => {
-  const {data} = useGetRegistrations()
-
   return (
-    <S.Container>
-      <SearchBar />
-      <Collumns registrations={data} />
-    </S.Container>
+    <SearchRegistrationProvider>
+      <S.Container>
+        <SearchBar />
+        <Collumns />
+      </S.Container>
+    </SearchRegistrationProvider>
   );
 };
+
 export default DashboardPage;

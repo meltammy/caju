@@ -1,7 +1,7 @@
 
 import * as S from "./styles";
 import RegistrationCard from "../RegistrationCard";
-import { Registration } from "~/types";
+import { useGetRegistrations } from "~/pages/Dashboard/hooks/useGetRegistrations";
 
 const allColumns = [
   { status: 'REVIEW', title: "Pronto para revisar" },
@@ -9,11 +9,9 @@ const allColumns = [
   { status: 'REPROVED', title: "Reprovado" },
 ];
 
-type Props = {
-  registrations: Registration[] | null;
-};
+const Collumns = () => {
+  const { data } = useGetRegistrations()
 
-const Collumns = (props: Props) => {
   return (
     <S.Container>
       {allColumns.map((collum) => {
@@ -24,7 +22,7 @@ const Collumns = (props: Props) => {
                 {collum.title}
               </S.TitleColumn>
               <S.CollumContent>
-                {props?.registrations?.map((registration) => {
+                {data?.map((registration) => {
                   return (
                     <RegistrationCard
                       data={registration}
