@@ -100,7 +100,9 @@ Error generating stack: `+i.message+`
   p {
     margin: 0;
   }
-  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  box-shadow:
+    0 1px 3px rgba(0, 0, 0, 0.12),
+    0 1px 2px rgba(0, 0, 0, 0.24);
 `,Al=ve.div`
   display: flex;
   align-items: center;
@@ -154,7 +156,7 @@ Error generating stack: `+i.message+`
   font-size: 16px;
   line-height: 18px;
   font-weight: normal;
-  border-radius:8px;
+  border-radius: 8px;
   :focus {
     outline: none;
     border: 1px solid #007c89;
@@ -173,13 +175,13 @@ Error generating stack: `+i.message+`
   display: flex;
   flex-direction: column;
   gap: 16px;
- 
+
   ${Gp} {
     margin-bottom: 8px;
     align-items: flex-start;
   }
 
-  ${Za}{
+  ${Za} {
     align-self: flex-end;
   }
 `,pg=()=>{const e=hp(),t=()=>{e.push(Ln.dashboard)};return $.jsx(fg,{children:$.jsxs(dg,{children:[$.jsx(Kp,{onClick:()=>t(),"aria-label":"back",children:$.jsx(B1,{size:24})}),$.jsx(wr,{placeholder:"Nome",label:"Nome"}),$.jsx(wr,{placeholder:"Email",label:"Email",type:"email"}),$.jsx(wr,{placeholder:"CPF",label:"CPF"}),$.jsx(wr,{label:"Data de admissão",type:"date"}),$.jsx(Za,{onClick:()=>{},children:"Cadastrar"})]})})},hg=()=>$.jsx("div",{style:{marginTop:64},children:$.jsx(x0,{basename:"/caju/",children:$.jsxs(w0,{children:[$.jsx(xo,{exact:!0,path:Ln.dashboard,component:cg}),$.jsx(xo,{exact:!0,path:Ln.newUser,component:pg}),$.jsx(xo,{exact:!0,path:Ln.history,component:()=>$.jsx("div",{children:"History"})}),$.jsx(xo,{exact:!0,path:"*",children:$.jsx(h0,{to:Ln.dashboard})})]})})}),vg=ve.header`
@@ -195,7 +197,7 @@ Error generating stack: `+i.message+`
   top: 0;
   display: flex;
   align-items: center;
-  padding:0px 24px;
+  padding: 0px 24px;
 
   h1 {
     color: #fff;
