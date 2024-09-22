@@ -3,10 +3,10 @@ import { useFetch } from "~/hooks/useFetch";
 import { useSearchRegistrationContext } from "~/pages/Dashboard/components/SearchRegistrationContext/useSearchRegistrationContext";
 
 export function useGetRegistrations() {
-  const { searchValue } = useSearchRegistrationContext()
+  const { searchValue } = useSearchRegistrationContext();
 
   return useFetch<Registration[]>({
-    method: 'GET',
-    path: `/registrations?cpf_like=${searchValue}`
-  })
+    method: "GET",
+    path: `/registrations?cpf_like=${searchValue}`,
+  });
 }
