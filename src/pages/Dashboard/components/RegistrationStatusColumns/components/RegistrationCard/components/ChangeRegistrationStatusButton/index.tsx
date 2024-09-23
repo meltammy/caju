@@ -1,6 +1,6 @@
 import { RegistrationStatus } from "~/types";
 import { ButtonStatus } from "./styles";
-import { useChangeRegistrationStatusContext } from "../../../ChangeRegistrationStatusContext/useChangeRegistrationStatusContext";
+import { useConfirmationModalContext } from "../../../ConfirmationModalContext/useConfirmationModalContext";
 
 const labelMapper = {
   [RegistrationStatus.Approved]: "Aprovar",
@@ -14,11 +14,10 @@ type Props = {
 };
 
 export function ChangeRegistrationStatusButton({ status, id }: Props) {
-  const { setChangeRegistrationStatusProps } =
-    useChangeRegistrationStatusContext();
+  const { setConfirmationModalProps } = useConfirmationModalContext();
 
   function onClick() {
-    setChangeRegistrationStatusProps({ status, id });
+    setConfirmationModalProps({ changeStatusProps: { status, id } });
   }
 
   return (

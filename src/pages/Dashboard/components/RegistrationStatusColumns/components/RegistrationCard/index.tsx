@@ -7,6 +7,8 @@ import {
   HiOutlineTrash,
 } from "react-icons/hi";
 import { ChangeRegistrationStatusButton } from "./components/ChangeRegistrationStatusButton";
+import { DeleteRegistrationButton } from "./components/DeleteRegistrationButton";
+import { useConfirmationModalContext } from "../ConfirmationModalContext/useConfirmationModalContext";
 
 type Props = Omit<Registration, "cpf">;
 
@@ -44,7 +46,7 @@ const RegistrationCard = ({
         {availableStatusesByCurrentStatus[currentStatus].map((status) => (
           <ChangeRegistrationStatusButton status={status} id={id} key={id} />
         ))}
-        <HiOutlineTrash />
+        <DeleteRegistrationButton id={id} />
       </S.Actions>
     </S.Card>
   );
