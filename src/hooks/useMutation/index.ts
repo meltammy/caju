@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-type Method = "PUT" | "POST" | "PATCH";
+type Method = "PUT" | "POST" | "PATCH" | "DELETE";
 
 interface Props {
   method: Method;
