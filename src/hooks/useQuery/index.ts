@@ -33,7 +33,7 @@ export const useQuery = <Data>({ path = "" }: Props) => {
     } finally {
       setIsLoading(false);
     }
-  }, [path, URL]);
+  }, [path]);
 
   useEffect(() => {
     fetchData();
