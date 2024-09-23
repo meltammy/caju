@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import Spinner from "../Spinner";
 
 export const ModalOverlay = styled.div<{ isOpen: boolean }>`
   display: ${(props) => (props.isOpen ? "flex" : "none")};
@@ -29,8 +30,19 @@ export const Description = styled.p`
   margin: 10px 0 20px;
 `;
 
+export const ButtonContainer = styled.div`
+  display: grid;
+  gap: 10px;
+  grid-template-columns: 1fr 1fr;
+`;
+
+export const StyledSpinner = styled(Spinner)`
+  width: 5px;
+  height: 5px;
+  border-width: 3px;
+`;
+
 export const Button = styled.button<{ isConfirmation?: boolean }>`
-  margin-right: 10px;
   padding: 10px 15px;
   border: none;
   border-radius: 5px;
@@ -38,8 +50,15 @@ export const Button = styled.button<{ isConfirmation?: boolean }>`
   background: ${({ theme, isConfirmation }) =>
     isConfirmation ? theme.colors.primary : theme.colors.grey};
   color: white;
+  height: 35px;
 
   &:hover {
     opacity: 0.8;
+  }
+
+  &:disabled {
+    background: ${({ theme }) => theme.colors.grey};
+    opacity: 1;
+    cursor: progress;
   }
 `;
