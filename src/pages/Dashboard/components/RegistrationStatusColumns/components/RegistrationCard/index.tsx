@@ -1,4 +1,4 @@
-import { ButtonSmall } from "~/components/Buttons";
+import { Registration, RegistrationStatus } from "~/types";
 import * as S from "./styles";
 import {
   HiOutlineMail,
@@ -6,31 +6,34 @@ import {
   HiOutlineCalendar,
   HiOutlineTrash,
 } from "react-icons/hi";
+import { ChangeRegistrationStatusButton } from "./components/ChangeRegistrationStatusButton";
 
-type Props = {
-  data: any;
-};
+type Props = Omit<Registration, "cpf" | "status">;
 
-const RegistrationCard = (props: Props) => {
+const RegistrationCard = ({
+  admissionDate,
+  email,
+  employeeName,
+  id,
+}: Props) => {
   return (
     <S.Card>
       <S.IconAndText>
         <HiOutlineUser />
-        <h3>{props.data.employeeName}</h3>
+        <h3>{employeeName}</h3>
       </S.IconAndText>
       <S.IconAndText>
         <HiOutlineMail />
-        <p>{props.data.email}</p>
+        <p>{email}</p>
       </S.IconAndText>
       <S.IconAndText>
         <HiOutlineCalendar />
-        <span>{props.data.admissionDate}</span>
+        <span>{admissionDate}</span>
       </S.IconAndText>
       <S.Actions>
-        <ButtonSmall bgcolor="rgb(255, 145, 154)">Reprovar</ButtonSmall>
-        <ButtonSmall bgcolor="rgb(155, 229, 155)">Aprovar</ButtonSmall>
-        <ButtonSmall bgcolor="#ff8858">Revisar novamente</ButtonSmall>
-
+        {Object.values(RegistrationStatus).map((status) => (
+          <ChangeRegistrationStatusButton status={status} id={id} key={id} />
+        ))}
         <HiOutlineTrash />
       </S.Actions>
     </S.Card>
