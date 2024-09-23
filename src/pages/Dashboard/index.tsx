@@ -1,16 +1,16 @@
 import { RegistrationStatusColumns } from "./components/RegistrationStatusColumns";
 import * as S from "./styles";
 import { SearchBar } from "./components/Searchbar";
-import { SearchRegistrationProvider } from "./components/SearchRegistrationContext/SearchRegistrationProvider";
+import { RegistrationsProvider } from "./components/RegistrationsContext/RegistrationsProvider";
 
 const DashboardPage = () => {
   return (
-    <SearchRegistrationProvider>
+    <RegistrationsProvider>
       <S.Container>
         <SearchBar />
         <RegistrationStatusColumns />
       </S.Container>
-    </SearchRegistrationProvider>
+    </RegistrationsProvider>
   );
 };
 
