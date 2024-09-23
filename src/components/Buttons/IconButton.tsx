@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const _IconButtonStyled = styled.button`
   cursor: pointer;
-  border: 2px solid #64a98c;
+  border: 2px solid ${({ theme }) => theme.colors.green};
   width: fit-content;
   padding: 4px;
   border-radius: 24px;
@@ -11,7 +11,7 @@ export const _IconButtonStyled = styled.button`
   justify-content: center;
   background-color: transparent;
   svg {
-    color: #64a98c;
+    color: ${({ theme }) => theme.colors.green};
   }
 `;
 

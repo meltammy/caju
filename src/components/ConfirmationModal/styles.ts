@@ -29,13 +29,14 @@ export const Description = styled.p`
   margin: 10px 0 20px;
 `;
 
-export const Button = styled.button<{ primary?: boolean }>`
+export const Button = styled.button<{ isConfirmation?: boolean }>`
   margin-right: 10px;
   padding: 10px 15px;
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  background: ${(props) => (props.primary ? "#007bff" : "#ccc")};
+  background: ${({ theme, isConfirmation }) =>
+    isConfirmation ? theme.colors.primary : theme.colors.grey};
   color: white;
 
   &:hover {

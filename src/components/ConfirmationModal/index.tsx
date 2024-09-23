@@ -31,7 +31,7 @@ const ConfirmationModal: FC<ConfirmationModalProps> = ({
         <Description dangerouslySetInnerHTML={{ __html: description }} />
         <div>
           <Button onClick={onClose}>Cancel</Button>
-          <Button primary onClick={onConfirm}>
+          <Button isConfirmation onClick={onConfirm}>
             {confirmationButtonLabel}
           </Button>
         </div>
