@@ -1,0 +1,35 @@
+import { RegistrationStatus } from "~/types";
+
+// theme.ts
+export const theme = {
+  colors: {
+    primary: "#e80537",
+    secondary: "#ff7500",
+    green: "#64a98c",
+    lightGrey: "#d1d1d1",
+    grey: "#ccc",
+    black: "#000",
+    white: "#fff",
+    petroleumBlue: "#007c89",
+    success: "#4caf50",
+    error: "#f44336",
+    info: "#2196F3",
+  },
+  registrationStatus: {
+    [RegistrationStatus.Review]: {
+      background: "#FDF8E9",
+      color: "#EFC24D",
+      buttonBackground: "#ff7500",
+    },
+    [RegistrationStatus.Approved]: {
+      background: "#EEEEFD",
+      color: "#4242DF",
+      buttonBackground: "#9be59b",
+    },
+    [RegistrationStatus.Reproved]: {
+      background: "#FBEDF6",
+      color: "#CE2893",
+      buttonBackground: "#ff919a",
+    },
+  },
+};
