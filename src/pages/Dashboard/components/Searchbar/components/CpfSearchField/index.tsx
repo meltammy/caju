@@ -1,10 +1,10 @@
 import { CpfField } from "~/components/Forms/CpfInput";
 import { useDebouncedInput } from "~/hooks/useDebouncedInput";
 import { useEffect } from "react";
-import { useSearchRegistrationContext } from "~/pages/Dashboard/components/SearchRegistrationContext/useSearchRegistrationContext";
+import { useRegistrationsContext } from "~/pages/Dashboard/components/RegistrationsContext/useRegistrationsContext";
 
 export const CpfSearchField = () => {
-  const { setSearchValue } = useSearchRegistrationContext();
+  const { setSearchValue } = useRegistrationsContext();
 
   const { bind, debouncedValue } = useDebouncedInput("");
 

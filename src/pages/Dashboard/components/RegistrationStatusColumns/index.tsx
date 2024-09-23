@@ -1,10 +1,10 @@
 import * as S from "./styles";
-import { useGetRegistrations } from "~/pages/Dashboard/hooks/useGetRegistrations";
 import { Registration, RegistrationStatus } from "~/types";
 import { StatusColumn } from "./components/StatusColumn";
 import { ConfirmationModalProvider } from "./components/ConfirmationModalContext/ConfirmationModalProvider";
 import { ConfirmChangeStatusModal } from "./components/ConfirmChangeStatusModal";
 import { ConfirmDeleteModal } from "./components/ConfirmDeleteModal";
+import { useRegistrationsContext } from "../RegistrationsContext/useRegistrationsContext";
 
 const allColumns = [
   { status: RegistrationStatus.Review, title: "Pronto para revisar" },
@@ -20,7 +20,7 @@ function filterRegistrationsByStatus(
 }
 
 export const RegistrationStatusColumns = () => {
-  const { data, isLoading } = useGetRegistrations();
+  const { data, isLoading } = useRegistrationsContext();
 
   if (isLoading)
     return (

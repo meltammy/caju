@@ -1,12 +1,13 @@
-import { HiRefresh } from "react-icons/hi";
 import { useHistory } from "react-router-dom";
 import Button from "~/components/Buttons";
-import { IconButton } from "~/components/Buttons/IconButton";
 import routes from "~/router/routes";
 import * as S from "./styles";
 import { CpfSearchField } from "./components/CpfSearchField";
+import { RefetchButton } from "~/components/RefetchButton";
+import { useRegistrationsContext } from "../RegistrationsContext/useRegistrationsContext";
 
 export const SearchBar = () => {
+  const { refetch } = useRegistrationsContext();
   const history = useHistory();
 
   const goToNewAdmissionPage = () => {
@@ -17,9 +18,7 @@ export const SearchBar = () => {
     <S.Container>
       <CpfSearchField />
       <S.Actions>
-        <IconButton aria-label="refetch">
-          <HiRefresh />
-        </IconButton>
+        <RefetchButton refetch={refetch} />
         <Button onClick={() => goToNewAdmissionPage()}>Nova Admissão</Button>
       </S.Actions>
     </S.Container>
