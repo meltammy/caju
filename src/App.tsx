@@ -1,5 +1,6 @@
 import Router from "~/router";
 import { Header } from "./components/Header";
+import { ToastProvider } from "./components/Toast";
 
 function App() {
   return (
@@ -7,7 +8,9 @@ function App() {
       <Header>
         <h1>Caju Front Teste [deploy test 2]</h1>
       </Header>
-      <Router />
+      <ToastProvider>
+        <Router />
+      </ToastProvider>
     </>
   );
 }

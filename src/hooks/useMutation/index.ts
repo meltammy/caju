@@ -4,6 +4,8 @@ type Method = "PUT" | "POST" | "PATCH" | "DELETE";
 
 interface Props {
   method: Method;
+  onError: () => void;
+  onSuccess: () => void;
 }
 
 interface FetchDataProps {
@@ -13,7 +15,7 @@ interface FetchDataProps {
 
 const URL = import.meta.env.VITE_API_URL;
 
-export const useMutation = <Data>({ method }: Props) => {
+export const useMutation = <Data>({ method, onError, onSuccess }: Props) => {
   const [data, setData] = useState<Data | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [isLoading, setIsLoading] = useState<boolean>(true);
@@ -39,7 +41,10 @@ export const useMutation = <Data>({ method }: Props) => {
 
       const result = await response.json();
       setData(result);
+
+      onSuccess();
     } catch (err: any) {
+      onError();
       setError(err.message);
     } finally {
       setIsLoading(false);
