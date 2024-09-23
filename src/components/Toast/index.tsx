@@ -1,5 +1,5 @@
 import { createContext, FC, ReactNode, useContext, useState } from "react";
-import styled from "styled-components";
+import { ToastContainerStyled, ToastStyled } from "./styles";
 
 interface Toast {
   id: number;
@@ -20,29 +20,6 @@ export const useToast = () => {
   }
   return context;
 };
-
-const ToastContainerStyled = styled.div`
-  position: fixed;
-  top: 20px;
-  right: 20px;
-  z-index: 1000;
-`;
-
-const ToastStyled = styled.div<{ type: string }>`
-  background-color: ${(props) =>
-    props.type === "success"
-      ? "#4caf50"
-      : props.type === "error"
-      ? "#f44336"
-      : props.type === "info"
-      ? "#2196F3"
-      : "#333"};
-  color: white;
-  padding: 10px;
-  margin: 10px 0;
-  border-radius: 5px;
-  transition: opacity 0.5s;
-`;
 
 export const ToastProvider: FC<{ children: ReactNode }> = ({ children }) => {
   const [toasts, setToasts] = useState<Toast[]>([]);
@@ -78,18 +55,7 @@ const ToastContainer: FC<{
       {toasts.map((toast) => (
         <ToastStyled key={toast.id} type={toast.type}>
           {toast.message}
-          <button
-            onClick={() => onRemove(toast.id)}
-            style={{
-              marginLeft: "10px",
-              background: "transparent",
-              border: "none",
-              color: "white",
-              cursor: "pointer",
-            }}
-          >
-            X
-          </button>
+          <button onClick={() => onRemove(toast.id)}>X</button>
         </ToastStyled>
       ))}
     </ToastContainerStyled>

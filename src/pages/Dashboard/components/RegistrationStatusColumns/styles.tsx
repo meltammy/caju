@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import Spinner from "~/components/Spinner";
 
 export const Container = styled.div`
   display: grid;
@@ -6,4 +7,9 @@ export const Container = styled.div`
   grid-gap: 24px;
   justify-content: center;
   margin-top: 24px;
+  min-height: 68vh;
+`;
+
+export const StyledSpinner = styled(Spinner)`
+  grid-column: 2;
 `;

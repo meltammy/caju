@@ -11,7 +11,7 @@ export const Container = styled.div`
 `;
 
 export const Card = styled.div`
-  border: 2px solid #f0f0f0;
+  border: 2px solid ${({ theme }) => theme.colors.lightGrey};
   width: 500px;
   padding: 48px;
   display: flex;

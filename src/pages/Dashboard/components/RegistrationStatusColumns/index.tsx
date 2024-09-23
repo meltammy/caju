@@ -20,7 +20,14 @@ function filterRegistrationsByStatus(
 }
 
 export const RegistrationStatusColumns = () => {
-  const { data } = useGetRegistrations();
+  const { data, isLoading } = useGetRegistrations();
+
+  if (isLoading)
+    return (
+      <S.Container>
+        <S.StyledSpinner />
+      </S.Container>
+    );
 
   return (
     <S.Container>
