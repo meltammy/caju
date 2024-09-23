@@ -4,11 +4,9 @@ import {
   HiOutlineMail,
   HiOutlineUser,
   HiOutlineCalendar,
-  HiOutlineTrash,
 } from "react-icons/hi";
 import { ChangeRegistrationStatusButton } from "./components/ChangeRegistrationStatusButton";
 import { DeleteRegistrationButton } from "./components/DeleteRegistrationButton";
-import { useConfirmationModalContext } from "../ConfirmationModalContext/useConfirmationModalContext";
 
 type Props = Omit<Registration, "cpf">;
 
