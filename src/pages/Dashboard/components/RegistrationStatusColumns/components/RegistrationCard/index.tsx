@@ -8,13 +8,23 @@ import {
 } from "react-icons/hi";
 import { ChangeRegistrationStatusButton } from "./components/ChangeRegistrationStatusButton";
 
-type Props = Omit<Registration, "cpf" | "status">;
+type Props = Omit<Registration, "cpf">;
+
+const availableStatusesByCurrentStatus = {
+  [RegistrationStatus.Approved]: [RegistrationStatus.Review],
+  [RegistrationStatus.Reproved]: [RegistrationStatus.Review],
+  [RegistrationStatus.Review]: [
+    RegistrationStatus.Approved,
+    RegistrationStatus.Reproved,
+  ],
+};
 
 const RegistrationCard = ({
   admissionDate,
   email,
   employeeName,
   id,
+  status: currentStatus,
 }: Props) => {
   return (
     <S.Card>
@@ -31,7 +41,7 @@ const RegistrationCard = ({
         <span>{admissionDate}</span>
       </S.IconAndText>
       <S.Actions>
-        {Object.values(RegistrationStatus).map((status) => (
+        {availableStatusesByCurrentStatus[currentStatus].map((status) => (
           <ChangeRegistrationStatusButton status={status} id={id} key={id} />
         ))}
         <HiOutlineTrash />
