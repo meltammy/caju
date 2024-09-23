@@ -18,7 +18,7 @@ const URL = import.meta.env.VITE_API_URL;
 export const useMutation = <Data>({ method, onError, onSuccess }: Props) => {
   const [data, setData] = useState<Data | null>(null);
   const [error, setError] = useState<string | null>(null);
-  const [isLoading, setIsLoading] = useState<boolean>(true);
+  const [isLoading, setIsLoading] = useState<boolean>(false);
 
   const fetchData = async ({ path = "", body }: FetchDataProps) => {
     setIsLoading(true);

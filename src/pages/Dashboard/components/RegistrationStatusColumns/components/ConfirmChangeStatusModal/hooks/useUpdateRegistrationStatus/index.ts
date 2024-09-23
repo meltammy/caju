@@ -24,7 +24,7 @@ export function useUpdateRegistrationStatus() {
         body: {
           status,
         },
-        ...rest,
       }),
+    ...rest,
   };
 }

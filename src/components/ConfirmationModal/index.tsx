@@ -5,6 +5,8 @@ import {
   ModalOverlay,
   Title,
   Button,
+  StyledSpinner,
+  ButtonContainer,
 } from "./styles";
 
 interface ConfirmationModalProps {
@@ -12,6 +14,7 @@ interface ConfirmationModalProps {
   description: string;
   confirmationButtonLabel: string;
   isOpen: boolean;
+  isLoading?: boolean;
   onClose: () => void;
   onConfirm: () => void;
 }
@@ -21,6 +24,7 @@ const ConfirmationModal: FC<ConfirmationModalProps> = ({
   description,
   confirmationButtonLabel,
   isOpen,
+  isLoading,
   onClose,
   onConfirm,
 }) => {
@@ -29,12 +33,14 @@ const ConfirmationModal: FC<ConfirmationModalProps> = ({
       <ModalContainer>
         <Title>{title}</Title>
         <Description dangerouslySetInnerHTML={{ __html: description }} />
-        <div>
-          <Button onClick={onClose}>Cancel</Button>
-          <Button isConfirmation onClick={onConfirm}>
-            {confirmationButtonLabel}
+        <ButtonContainer>
+          <Button onClick={onClose} disabled={isLoading}>
+            Cancel
           </Button>
-        </div>
+          <Button isConfirmation onClick={onConfirm} disabled={isLoading}>
+            {isLoading ? <StyledSpinner /> : confirmationButtonLabel}
+          </Button>
+        </ButtonContainer>
       </ModalContainer>
     </ModalOverlay>
   );

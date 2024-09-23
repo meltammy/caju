@@ -24,7 +24,7 @@ export function ConfirmChangeStatusModal() {
     setConfirmationModalProps: setChangeRegistrationStatusProps,
   } = useConfirmationModalContext();
 
-  const { mutate } = useUpdateRegistrationStatus();
+  const { mutate, isLoading } = useUpdateRegistrationStatus();
 
   function onConfirm() {
     if (!confirmationModalProps?.changeStatusProps) return;
@@ -50,6 +50,7 @@ export function ConfirmChangeStatusModal() {
       isOpen={!!confirmationModalProps?.changeStatusProps}
       onClose={onClose}
       confirmationButtonLabel={buttonLabel}
+      isLoading={isLoading}
     />
   );
 }

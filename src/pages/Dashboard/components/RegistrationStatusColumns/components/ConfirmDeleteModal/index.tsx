@@ -8,7 +8,7 @@ export function ConfirmDeleteModal() {
     setConfirmationModalProps: setChangeRegistrationStatusProps,
   } = useConfirmationModalContext();
 
-  const { mutate } = useDeletRegistration();
+  const { mutate, isLoading } = useDeletRegistration();
 
   function onConfirm() {
     if (!confirmationModalProps?.deleteRegistrationProps) return;
@@ -29,6 +29,7 @@ export function ConfirmDeleteModal() {
       isOpen={!!confirmationModalProps?.deleteRegistrationProps}
       onClose={onClose}
       confirmationButtonLabel="Deletar admissão"
+      isLoading={isLoading}
     />
   );
 }
