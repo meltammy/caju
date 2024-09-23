@@ -1,6 +1,6 @@
 import ConfirmationModal from "~/components/ConfirmationModal";
 import { useUpdateRegistrationStatus } from "../RegistrationCard/components/ChangeRegistrationStatusButton/hooks/useUpdateRegistrationStatus";
-import { useChangeRegistrationStatusContext } from "../ChangeRegistrationStatusContext/useChangeRegistrationStatusContext";
+import { useConfirmationModalContext } from "../ConfirmationModalContext/useConfirmationModalContext";
 import { RegistrationStatus } from "~/types";
 
 const content = {
@@ -19,15 +19,17 @@ const content = {
 };
 
 export function ConfirmChangeStatusModal() {
-  const { changeRegistrationStatusProps, setChangeRegistrationStatusProps } =
-    useChangeRegistrationStatusContext();
+  const {
+    confirmationModalProps,
+    setConfirmationModalProps: setChangeRegistrationStatusProps,
+  } = useConfirmationModalContext();
 
   const { mutate } = useUpdateRegistrationStatus();
 
   function onConfirm() {
-    if (!changeRegistrationStatusProps) return;
+    if (!confirmationModalProps?.changeStatusProps) return;
 
-    const { id, status } = changeRegistrationStatusProps;
+    const { id, status } = confirmationModalProps.changeStatusProps;
     mutate({ id, status }).finally(onClose);
   }
 
@@ -36,7 +38,8 @@ export function ConfirmChangeStatusModal() {
   }
 
   const status =
-    changeRegistrationStatusProps?.status || RegistrationStatus.Approved;
+    confirmationModalProps?.changeStatusProps?.status ||
+    RegistrationStatus.Approved;
   const { buttonLabel, descriptionLabel } = content[status];
 
   return (
@@ -44,7 +47,7 @@ export function ConfirmChangeStatusModal() {
       title="Você tem certeza?"
       description={`Ao confirmar, a admissão será <b>${descriptionLabel}</b>`}
       onConfirm={onConfirm}
-      isOpen={!!changeRegistrationStatusProps}
+      isOpen={!!confirmationModalProps?.changeStatusProps}
       onClose={onClose}
       confirmationButtonLabel={buttonLabel}
     />
