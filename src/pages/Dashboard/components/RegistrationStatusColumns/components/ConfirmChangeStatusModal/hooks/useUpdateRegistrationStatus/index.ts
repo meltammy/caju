@@ -1,3 +1,4 @@
+import { useToast } from "~/components/Toast";
 import { useMutation } from "~/hooks/useMutation";
 import { RegistrationStatus } from "~/types";
 
@@ -7,8 +8,13 @@ type Props = {
 };
 
 export function useUpdateRegistrationStatus() {
+  const { addToast } = useToast();
+
   const { mutate, ...rest } = useMutation({
     method: "PATCH",
+    onSuccess: () => addToast("Status alterado com sucesso!", "success"),
+    onError: () =>
+      addToast("Ocorreu um erro ao tentar alterar o status.", "error"),
   });
 
   return {
