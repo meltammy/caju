@@ -2,24 +2,23 @@ import { useState } from "react";
 
 type Method = "PUT" | "POST" | "PATCH";
 
-interface UseFetchProps {
-  path?: string;
+interface Props {
   method: Method;
+}
+
+interface FetchDataProps {
+  path?: string;
   body?: Record<string, unknown>;
 }
 
 const URL = import.meta.env.VITE_API_URL;
 
-export const useMutation = <Data>({
-  path = "",
-  method,
-  body,
-}: UseFetchProps) => {
+export const useMutation = <Data>({ method }: Props) => {
   const [data, setData] = useState<Data | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [isLoading, setIsLoading] = useState<boolean>(true);
 
-  const fetchData = async () => {
+  const fetchData = async ({ path = "", body }: FetchDataProps) => {
     setIsLoading(true);
     setError(null);
 

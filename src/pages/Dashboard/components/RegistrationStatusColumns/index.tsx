@@ -2,6 +2,8 @@ import * as S from "./styles";
 import { useGetRegistrations } from "~/pages/Dashboard/hooks/useGetRegistrations";
 import { Registration, RegistrationStatus } from "~/types";
 import { StatusColumn } from "./components/StatusColumn";
+import { ChangeRegistrationStatusProvider } from "./components/ChangeRegistrationStatusContext/ChangeRegistrationStatusProvider";
+import { ConfirmChangeStatusModal } from "./components/ConfirmChangeStatusModal";
 
 const allColumns = [
   { status: RegistrationStatus.Review, title: "Pronto para revisar" },
@@ -21,15 +23,18 @@ export const RegistrationStatusColumns = () => {
 
   return (
     <S.Container>
-      {allColumns.map((collumn) => {
-        return (
-          <StatusColumn
-            key={collumn.status}
-            {...collumn}
-            registrations={filterRegistrationsByStatus(collumn.status, data)}
-          />
-        );
-      })}
+      <ChangeRegistrationStatusProvider>
+        {allColumns.map((collumn) => {
+          return (
+            <StatusColumn
+              key={collumn.status}
+              {...collumn}
+              registrations={filterRegistrationsByStatus(collumn.status, data)}
+            />
+          );
+        })}
+        <ConfirmChangeStatusModal />
+      </ChangeRegistrationStatusProvider>
     </S.Container>
   );
 };

@@ -6,12 +6,19 @@ type Props = {
   status: RegistrationStatus;
 };
 
-export function useUpdateRegistrationStatus({ id, status }: Props) {
-  return useMutation({
+export function useUpdateRegistrationStatus() {
+  const { mutate, ...rest } = useMutation({
     method: "PATCH",
-    path: `/registrations/${id}`,
-    body: {
-      status,
-    },
   });
+
+  return {
+    mutate: ({ id, status }: Props) =>
+      mutate({
+        path: `/registrations/${id}`,
+        body: {
+          status,
+        },
+        ...rest,
+      }),
+  };
 }

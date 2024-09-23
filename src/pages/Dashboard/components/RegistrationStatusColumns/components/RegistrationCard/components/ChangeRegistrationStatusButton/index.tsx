@@ -1,6 +1,6 @@
 import { RegistrationStatus } from "~/types";
-import { useUpdateRegistrationStatus } from "./hooks/useUpdateRegistrationStatus";
 import { ButtonStatus } from "./styles";
+import { useChangeRegistrationStatusContext } from "../../../ChangeRegistrationStatusContext/useChangeRegistrationStatusContext";
 
 const labelMapper = {
   [RegistrationStatus.Approved]: "Aprovar",
@@ -14,10 +14,11 @@ type Props = {
 };
 
 export function ChangeRegistrationStatusButton({ status, id }: Props) {
-  const { mutate } = useUpdateRegistrationStatus({ id, status });
+  const { setChangeRegistrationStatusProps } =
+    useChangeRegistrationStatusContext();
 
   function onClick() {
-    mutate();
+    setChangeRegistrationStatusProps({ status, id });
   }
 
   return (
