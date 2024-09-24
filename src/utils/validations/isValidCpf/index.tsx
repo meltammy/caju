@@ -1,4 +1,4 @@
-// isValidCpf.ts
+import { removeNonNumericCharacters } from "~/utils/formatters/removeNonNumericCharacters";
 
 /**
  * Checks if the CPF has exactly 11 digits.
@@ -66,8 +66,7 @@ const getVerificationDigits = (
 export const isValidCpf = (cpf?: string | null): boolean => {
   if (!cpf) return false;
 
-  // Remove non-numeric characters
-  cpf = cpf.replace(/[^\d]/g, "");
+  cpf = removeNonNumericCharacters(cpf);
 
   if (!isLengthValid(cpf) || isRepeatedDigits(cpf)) {
     return false;

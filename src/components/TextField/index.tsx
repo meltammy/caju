@@ -21,6 +21,7 @@ export const Input = styled.input`
     box-shadow: inset 0 0 0 1px ${({ theme }) => theme.colors.petroleumBlue};
   }
 `;
+
 type Props = {
   label?: string;
   error?: string;

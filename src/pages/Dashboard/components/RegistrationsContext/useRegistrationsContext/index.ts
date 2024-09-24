@@ -6,7 +6,7 @@ export const useRegistrationsContext = (): RegistrationsContextType => {
 
   if (!context) {
     throw new Error(
-      "useRegistrationsContext must be used within a SearchRegistrationProvider"
+      "useRegistrationsContext must be used within a RegistrationsProvider"
     );
   }
 

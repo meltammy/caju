@@ -5,12 +5,12 @@ import { useGetRegistrations } from "~/pages/Dashboard/components/RegistrationsC
 export const RegistrationsProvider: FC<{ children: ReactNode }> = ({
   children,
 }) => {
-  const [searchValue, setSearchValue] = useState<string>("");
-  const fetchData = useGetRegistrations(searchValue);
+  const [searchCpf, setSearchCpf] = useState<string>("");
+  const fetchData = useGetRegistrations(searchCpf);
 
   return (
     <RegistrationsContext.Provider
-      value={{ ...fetchData, searchValue, setSearchValue }}
+      value={{ ...fetchData, searchCpf, setSearchCpf }}
     >
       {children}
     </RegistrationsContext.Provider>

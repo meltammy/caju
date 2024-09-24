@@ -4,13 +4,13 @@ import { useEffect } from "react";
 import { useRegistrationsContext } from "~/pages/Dashboard/components/RegistrationsContext/useRegistrationsContext";
 
 export const CpfSearchField = () => {
-  const { setSearchValue } = useRegistrationsContext();
+  const { setSearchCpf } = useRegistrationsContext();
 
   const { bind, debouncedValue } = useDebouncedInput("");
 
   useEffect(() => {
-    setSearchValue(debouncedValue);
-  }, [debouncedValue, setSearchValue]);
+    setSearchCpf(debouncedValue);
+  }, [debouncedValue, setSearchCpf]);
 
   return <CpfField {...bind} />;
 };
