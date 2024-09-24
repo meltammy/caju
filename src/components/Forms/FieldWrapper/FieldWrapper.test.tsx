@@ -18,7 +18,7 @@ const renderFieldWrapper = (
 };
 
 describe("FieldWrapper component", () => {
-  test("renders label and children", () => {
+  it("should render label and children", () => {
     const { getByLabelText } = renderFieldWrapper();
 
     expect(getByLabelText(/test label/i)).toBeInTheDocument();
@@ -29,7 +29,7 @@ describe("FieldWrapper component", () => {
     expect(input).toHaveAttribute("id", "test-field");
   });
 
-  test("renders error message when provided", () => {
+  it("should render error message when provided", () => {
     const { getByTestId } = renderFieldWrapper({
       error: "This field is required",
     });
@@ -40,14 +40,14 @@ describe("FieldWrapper component", () => {
     expect(errorMessage).toHaveTextContent("This field is required");
   });
 
-  test("does not render error message when not provided", () => {
+  it("should does not render error message when not provided", () => {
     const { queryByTestId } = renderFieldWrapper();
 
     const errorMessage = queryByTestId(helpId);
     expect(errorMessage).not.toBeInTheDocument();
   });
 
-  test("matches snapshot", () => {
+  it("should match snapshot", () => {
     const { asFragment } = renderFieldWrapper();
     expect(asFragment()).toMatchSnapshot();
   });

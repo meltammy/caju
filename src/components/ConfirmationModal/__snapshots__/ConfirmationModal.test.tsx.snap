@@ -114,3 +114,118 @@ exports[`ConfirmationModal component matches snapshot when open 1`] = `
   </div>
 </DocumentFragment>
 `;
+
+exports[`ConfirmationModal component should match snapshot when open 1`] = `
+<DocumentFragment>
+  .c5 {
+  outline: none;
+  display: flex;
+  align-items: center;
+  border: none;
+  border-radius: 36px;
+  padding: 8px 32px;
+  background-color: #64a98c;
+  cursor: pointer;
+  height: 56px;
+  color: #fff;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.c5:disabled {
+  background-color: #ccc;
+  opacity: 1;
+}
+
+.c0 {
+  display: flex;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  justify-content: center;
+  align-items: center;
+}
+
+.c1 {
+  background: white;
+  border-radius: 8px;
+  padding: 20px;
+  max-width: 400px;
+  width: 100%;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.c2 {
+  margin: 0;
+}
+
+.c3 {
+  margin: 10px 0 20px;
+}
+
+.c4 {
+  display: grid;
+  gap: 10px;
+  grid-template-columns: 1fr 1fr;
+}
+
+.c6 {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  background: #e80537;
+  color: white;
+  height: 35px;
+}
+
+.c6:hover {
+  opacity: 0.8;
+}
+
+.c6:disabled {
+  background: #ccc;
+  opacity: 1;
+  cursor: progress;
+}
+
+<div
+    class="c0"
+    data-testid="confirmation-modal"
+  >
+    <div
+      class="c1"
+    >
+      <h2
+        class="c2"
+      >
+        Confirm Action
+      </h2>
+      <p
+        class="c3"
+      >
+        Are you sure you want to proceed?
+      </p>
+      <div
+        class="c4"
+      >
+        <button
+          class="c5"
+        >
+          Cancelar
+        </button>
+        <button
+          class="c5 c6"
+          data-testid="async-button"
+        >
+          Yes
+        </button>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;

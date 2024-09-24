@@ -13,7 +13,7 @@ const renderRefetchButton = (refetch: () => void) => {
 };
 
 describe("RefetchButton component", () => {
-  test("renders correctly", () => {
+  it("should render correctly", () => {
     const { getByLabelText } = renderRefetchButton(() => {});
 
     const button = getByLabelText("refetch");
@@ -21,7 +21,7 @@ describe("RefetchButton component", () => {
     expect(button).toBeInTheDocument();
   });
 
-  test("calls refetch function when clicked", () => {
+  it("should calls refetch function when clicked", () => {
     const refetchMock = jest.fn();
     const { getByLabelText } = renderRefetchButton(refetchMock);
 
@@ -32,7 +32,7 @@ describe("RefetchButton component", () => {
     expect(refetchMock).toHaveBeenCalledTimes(1);
   });
 
-  test("matches snapshot", () => {
+  it("should match snapshot", () => {
     const { asFragment } = renderRefetchButton(() => {});
 
     expect(asFragment()).toMatchSnapshot();

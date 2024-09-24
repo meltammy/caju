@@ -15,7 +15,7 @@ const renderButton = (props?: ComponentProps<typeof AsyncButton>) => {
 };
 
 describe("AsyncButton component", () => {
-  test("renders children when not loading", () => {
+  it("should render children when not loading", () => {
     const { getByRole } = renderButton();
 
     const button = getByRole("button", { name: /click me/i });
@@ -24,7 +24,7 @@ describe("AsyncButton component", () => {
     expect(button).toHaveTextContent("Click Me");
   });
 
-  test("renders spinner when loading", () => {
+  it("should render spinner when loading", () => {
     const { getByRole, queryByText } = renderButton({ isLoading: true });
 
     const button = getByRole("button");
@@ -33,12 +33,12 @@ describe("AsyncButton component", () => {
     expect(queryByText("Click Me")).toBeNull();
   });
 
-  test("matches snapshot when not loading", () => {
+  it("should match snapshot when not loading", () => {
     const { asFragment } = renderButton();
     expect(asFragment()).toMatchSnapshot();
   });
 
-  test("matches snapshot when loading", () => {
+  it("should match snapshot when loading", () => {
     const { asFragment } = renderButton({ isLoading: true });
     expect(asFragment()).toMatchSnapshot();
   });

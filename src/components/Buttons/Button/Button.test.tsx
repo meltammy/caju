@@ -16,14 +16,14 @@ const renderButton = (props?: ComponentProps<typeof Button>) => {
 };
 
 describe("Button component", () => {
-  test("renders correctly with default styles", () => {
+  it("should render correctly with default styles", () => {
     const { getByRole } = renderButton();
 
     const button = getByRole("button", { name: /click me/i });
     expect(button).toHaveStyleRule("background-color", theme.colors.green);
   });
 
-  test("renders disabled button with grey background", () => {
+  it("should render disabled button with grey background", () => {
     const { getByRole } = renderButton({
       children: "disabled",
       disabled: true,
@@ -38,7 +38,7 @@ describe("Button component", () => {
     });
   });
 
-  test("matches snapshot", () => {
+  it("should match snapshot", () => {
     const { asFragment } = renderButton();
     expect(asFragment()).toMatchSnapshot();
   });

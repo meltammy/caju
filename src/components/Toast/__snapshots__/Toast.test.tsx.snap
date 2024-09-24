@@ -20,3 +20,24 @@ exports[`ToastProvider component matches snapshot 1`] = `
   </button>
 </DocumentFragment>
 `;
+
+exports[`ToastProvider component should match snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="sc-blHHSb iwaunG"
+  >
+    <div
+      class="sc-gtLWhw jtmJAR"
+      type="success"
+    >
+      Test message
+      <button>
+        X
+      </button>
+    </div>
+  </div>
+  <button>
+    Show Toast
+  </button>
+</DocumentFragment>
+`;

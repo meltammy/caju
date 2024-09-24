@@ -14,14 +14,14 @@ const renderSpinner = () => {
 };
 
 describe("Spinner component", () => {
-  test("renders correctly", () => {
+  it("should render correctly", () => {
     const { getByRole } = renderSpinner();
 
     const spinner = getByRole("status");
     expect(spinner).toBeInTheDocument();
   });
 
-  test("matches snapshot", () => {
+  it("should match snapshot", () => {
     const { asFragment } = renderSpinner();
     expect(asFragment()).toMatchSnapshot();
   });

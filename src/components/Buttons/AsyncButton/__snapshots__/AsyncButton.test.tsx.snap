@@ -78,3 +78,82 @@ exports[`AsyncButton component matches snapshot when not loading 1`] = `
   </button>
 </DocumentFragment>
 `;
+
+exports[`AsyncButton component should match snapshot when loading 1`] = `
+<DocumentFragment>
+  .c0 {
+  outline: none;
+  display: flex;
+  align-items: center;
+  border: none;
+  border-radius: 36px;
+  padding: 8px 32px;
+  background-color: #64a98c;
+  cursor: pointer;
+  height: 56px;
+  color: #fff;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.c0:disabled {
+  background-color: #ccc;
+  opacity: 1;
+}
+
+.c1 {
+  margin: auto;
+  border: 8px solid #00000038;
+  border-top: 8px solid #e80537;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: cilQsd 1s linear infinite;
+}
+
+<button
+    class="c0"
+    data-testid="async-button"
+    disabled=""
+  >
+    <div
+      aria-live="polite"
+      class="c1"
+      role="status"
+    />
+  </button>
+</DocumentFragment>
+`;
+
+exports[`AsyncButton component should match snapshot when not loading 1`] = `
+<DocumentFragment>
+  .c0 {
+  outline: none;
+  display: flex;
+  align-items: center;
+  border: none;
+  border-radius: 36px;
+  padding: 8px 32px;
+  background-color: #64a98c;
+  cursor: pointer;
+  height: 56px;
+  color: #fff;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.c0:disabled {
+  background-color: #ccc;
+  opacity: 1;
+}
+
+<button
+    class="c0"
+    data-testid="async-button"
+  >
+    Click Me
+  </button>
+</DocumentFragment>
+`;

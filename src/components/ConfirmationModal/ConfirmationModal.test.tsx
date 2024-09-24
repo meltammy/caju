@@ -32,14 +32,14 @@ const renderModal = (
 };
 
 describe("ConfirmationModal component", () => {
-  test("renders modal with title and description", () => {
+  it("should render modal with title and description", () => {
     const { getByText } = renderModal();
 
     expect(getByText(title)).toBeInTheDocument();
     expect(getByText(description)).toBeInTheDocument();
   });
 
-  test("calls onClose when cancel button is clicked", () => {
+  it("should calls onClose when cancel button is clicked", () => {
     const onClose = jest.fn();
     const { getByText } = renderModal({ onClose });
 
@@ -47,7 +47,7 @@ describe("ConfirmationModal component", () => {
     expect(onClose).toHaveBeenCalled();
   });
 
-  test("calls onConfirm when confirmation button is clicked", () => {
+  it("should calls onConfirm when confirmation button is clicked", () => {
     const onConfirm = jest.fn();
     const { getByText } = renderModal({ onConfirm });
 
@@ -55,7 +55,7 @@ describe("ConfirmationModal component", () => {
     expect(onConfirm).toHaveBeenCalled();
   });
 
-  test("disables buttons when loading", () => {
+  it("should disables buttons when loading", () => {
     const { getByRole, getByTestId } = renderModal({ isLoading: true });
 
     const cancelButton = getByRole("button", { name: /cancelar/i });
@@ -65,14 +65,14 @@ describe("ConfirmationModal component", () => {
     expect(confirmButton).toBeDisabled();
   });
 
-  test("is not visible when isOpen is false", () => {
+  it("should is not visible when isOpen is false", () => {
     const { getByTestId } = renderModal({ isOpen: false });
 
     const modal = getByTestId(confirmationModalTestId);
     expect(modal).toHaveStyleRule("display", "none");
   });
 
-  test("matches snapshot when open", () => {
+  it("should match snapshot when open", () => {
     const { asFragment } = renderModal();
     expect(asFragment()).toMatchSnapshot();
   });

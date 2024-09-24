@@ -13,12 +13,12 @@ const renderHeader = (children: React.ReactNode) => {
 };
 
 describe("Header component", () => {
-  test("contains the title", () => {
+  it("should contains the title", () => {
     const { getByText } = renderHeader(<h1>Test Header</h1>);
     expect(getByText("Test Header")).toBeInTheDocument();
   });
 
-  test("matches snapshot", () => {
+  it("should match snapshot", () => {
     const { asFragment } = renderHeader(<h1>Test Header</h1>);
     expect(asFragment()).toMatchSnapshot();
   });

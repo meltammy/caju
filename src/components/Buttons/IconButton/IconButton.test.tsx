@@ -14,7 +14,7 @@ const renderIconButton = (children: React.ReactNode) => {
 };
 
 describe("IconButton component", () => {
-  test("renders button with children", () => {
+  it("should render button with children", () => {
     const { getByRole } = renderIconButton("Click Me");
     const button = getByRole("button", { name: /click me/i });
 
@@ -22,7 +22,7 @@ describe("IconButton component", () => {
     expect(button).toHaveTextContent("Click Me");
   });
 
-  test("matches snapshot", () => {
+  it("should match snapshot", () => {
     const { asFragment } = renderIconButton("Click Me");
     expect(asFragment()).toMatchSnapshot();
   });

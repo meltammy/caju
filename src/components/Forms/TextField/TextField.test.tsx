@@ -36,7 +36,7 @@ const renderTextField = (
 };
 
 describe("TextField component", () => {
-  test("renders label and input", () => {
+  it("should render label and input", () => {
     const { getByLabelText } = renderTextField();
 
     expect(getByLabelText(/test label/i)).toBeInTheDocument();
@@ -46,21 +46,21 @@ describe("TextField component", () => {
     expect(input).toHaveAttribute("id", "test-field");
   });
 
-  test("renders error message when provided", () => {
+  it("should render error message when provided", () => {
     const { getByText } = renderTextField({ error: "This field is required" });
 
     const errorMessage = getByText(/this field is required/i);
     expect(errorMessage).toBeInTheDocument();
   });
 
-  test("does not render error message when not provided", () => {
+  it("should does not render error message when not provided", () => {
     const { queryByText } = renderTextField();
 
     const errorMessage = queryByText(/this field is required/i);
     expect(errorMessage).not.toBeInTheDocument();
   });
 
-  test("updates input value when typed", () => {
+  it("should updates input value when typed", () => {
     const { getByLabelText } = renderTextField();
     const input = getByLabelText(/test label/i);
     const value = "New Value";
@@ -69,7 +69,7 @@ describe("TextField component", () => {
     expect(input).toHaveValue(value);
   });
 
-  test("matches snapshot", () => {
+  it("should match snapshot", () => {
     const { asFragment } = renderTextField();
     expect(asFragment()).toMatchSnapshot();
   });
