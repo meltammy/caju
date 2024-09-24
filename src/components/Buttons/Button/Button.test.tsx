@@ -5,25 +5,29 @@ import { render } from "@testing-library/react";
 import { ThemeProvider } from "styled-components";
 import Button from ".";
 import { theme } from "~/../styles/theme";
+import { ComponentProps } from "react";
+
+const renderButton = (props?: ComponentProps<typeof Button>) => {
+  return render(
+    <ThemeProvider theme={theme}>
+      <Button {...props}>{props?.children || "Click Me"}</Button>
+    </ThemeProvider>
+  );
+};
 
 describe("Button component", () => {
   test("renders correctly with default styles", () => {
-    const { getByRole } = render(
-      <ThemeProvider theme={theme}>
-        <Button>Click Me</Button>
-      </ThemeProvider>
-    );
+    const { getByRole } = renderButton();
 
     const button = getByRole("button", { name: /click me/i });
     expect(button).toHaveStyleRule("background-color", theme.colors.green);
   });
 
   test("renders disabled button with grey background", () => {
-    const { getByRole } = render(
-      <ThemeProvider theme={theme}>
-        <Button disabled>Disabled</Button>
-      </ThemeProvider>
-    );
+    const { getByRole } = renderButton({
+      children: "disabled",
+      disabled: true,
+    });
 
     const button = getByRole("button", { name: /disabled/i });
 
@@ -35,11 +39,7 @@ describe("Button component", () => {
   });
 
   test("matches snapshot", () => {
-    const { asFragment } = render(
-      <ThemeProvider theme={theme}>
-        <Button>Click Me</Button>
-      </ThemeProvider>
-    );
+    const { asFragment } = renderButton();
     expect(asFragment()).toMatchSnapshot();
   });
 });
