@@ -5,7 +5,7 @@ import { isValidCpf } from "~/utils/validations/isValidCpf";
 import { isValidFullName } from "~/utils/validations/isValidFullName";
 
 const schema = yup.object({
-  name: yup
+  employeeName: yup
     .string()
     .required(errorMessages.required)
     .test("is-valid-fullname", errorMessages.invalidName, (value) =>

@@ -1,4 +1,3 @@
-import Button from "~/components/Buttons";
 import TextField from "~/components/Forms/TextField";
 import {
   NewRegistrationFormData,
@@ -6,8 +5,12 @@ import {
 } from "./validation";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { CpfField } from "~/components/Forms/CpfInput";
+import { useCreateRegistration } from "./hooks/useCreateRegistration";
+import { formatCreateRegistrationPayload } from "./utils/formatCreateRegistrationPayload";
+import { AsyncButton } from "~/components/Buttons/AsyncButton";
 
 export function NewRegistrationForm() {
+  const { mutate: createRegistration, isLoading } = useCreateRegistration();
   const {
     register,
     handleSubmit,
@@ -18,7 +21,8 @@ export function NewRegistrationForm() {
   });
 
   const submitForm: SubmitHandler<NewRegistrationFormData> = async (data) => {
-    console.log(data);
+    const formattedData = formatCreateRegistrationPayload(data);
+    createRegistration(formattedData);
   };
 
   return (
@@ -26,11 +30,11 @@ export function NewRegistrationForm() {
       <TextField
         placeholder="Nome"
         label="Nome"
-        name="name"
-        id="name"
+        name="employeeName"
+        id="employeeName"
         required
         register={register}
-        error={errors.name?.message}
+        error={errors.employeeName?.message}
       />
 
       <TextField
@@ -64,9 +68,9 @@ export function NewRegistrationForm() {
         error={errors.admissionDate?.message}
       />
 
-      <Button type="submit" disabled={!isValid}>
+      <AsyncButton type="submit" disabled={!isValid} isLoading={isLoading}>
         Cadastrar
-      </Button>
+      </AsyncButton>
     </form>
   );
 }
