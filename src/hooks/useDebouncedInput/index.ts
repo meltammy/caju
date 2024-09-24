@@ -1,7 +1,7 @@
 import { useState, ChangeEvent, useEffect } from "react";
 import { isString } from "~/utils/isString";
 
-type InputChangeEvent = ChangeEvent<HTMLInputElement>;
+export type InputChangeEvent = ChangeEvent<HTMLInputElement>;
 let timeoutId: NodeJS.Timeout;
 
 function getIntervalInMilliseconds<InputType>(value: InputType) {
