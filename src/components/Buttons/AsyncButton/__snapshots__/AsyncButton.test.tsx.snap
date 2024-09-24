@@ -33,19 +33,15 @@ exports[`AsyncButton component matches snapshot when loading 1`] = `
   animation: cilQsd 1s linear infinite;
 }
 
-.c2 {
-  width: 5px;
-  height: 5px;
-  border-width: 3px;
-}
-
 <button
     class="c0"
     data-testid="async-button"
     disabled=""
   >
     <div
-      class="c1 c2"
+      aria-live="polite"
+      class="c1"
+      role="status"
     />
   </button>
 </DocumentFragment>
