@@ -12,7 +12,7 @@ describe("isString", () => {
     [false, {}],
     [false, []],
     [false, Symbol("symbol")],
-  ])("returns %s  for value %s", (value, expected) => {
+  ])("returns %s  for value %s", (expected, value) => {
     expect(isString(value)).toBe(expected);
   });
 });
