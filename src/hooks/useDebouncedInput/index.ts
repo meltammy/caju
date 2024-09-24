@@ -28,7 +28,7 @@ export function useDebouncedInput<InputType>(initialValue: InputType) {
 
     timeoutId = setTimeout(
       () => setDebouncedValue(value),
-      getIntervalInMilliseconds(value),
+      getIntervalInMilliseconds(value)
     );
   }, [value]);
 
