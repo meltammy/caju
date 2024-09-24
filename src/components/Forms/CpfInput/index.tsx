@@ -1,10 +1,11 @@
-import { useState, ComponentProps } from "react";
-import TextField from "~/components/TextField";
+import { useState } from "react";
+import { FieldValues } from "react-hook-form";
+import TextField, { TextFieldProps } from "~/components/Forms/TextField";
 import { formatCpf } from "~/utils/formatters/formatCpf";
 
-type Props = ComponentProps<typeof TextField>;
-
-export function CpfField(props: Props) {
+export function CpfField<FormData extends FieldValues>(
+  props: TextFieldProps<FormData>
+) {
   const [cpfValue, setCpfValue] = useState("");
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
