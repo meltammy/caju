@@ -1,5 +1,5 @@
 import { useHistory } from "react-router-dom";
-import Button from "~/components/Buttons";
+import Button from "~/components/Buttons/Button";
 import routes from "~/router/routes";
 import * as S from "./styles";
 import { CpfSearchField } from "./components/CpfSearchField";
