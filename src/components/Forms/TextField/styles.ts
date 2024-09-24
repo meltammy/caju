@@ -1,4 +1,3 @@
-import { InputHTMLAttributes } from "react";
 import styled from "styled-components";
 
 export const Input = styled.input`
@@ -14,6 +13,7 @@ export const Input = styled.input`
   line-height: 18px;
   font-weight: normal;
   border-radius: 8px;
+  box-sizing: border-box;
 
   &:focus {
     outline: none;
@@ -21,20 +21,3 @@ export const Input = styled.input`
     box-shadow: inset 0 0 0 1px ${({ theme }) => theme.colors.petroleumBlue};
   }
 `;
-
-type Props = {
-  label?: string;
-  error?: string;
-} & InputHTMLAttributes<any>;
-
-const TextField = (props: Props) => {
-  return (
-    <div>
-      <label htmlFor={props.id}>{props.label}</label>
-      <Input {...props} />
-      <span style={{ fontSize: 12, color: "red" }}>{props.error}</span>
-    </div>
-  );
-};
-
-export default TextField;

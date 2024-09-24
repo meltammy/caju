@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import Spinner from "../Spinner";
+import { AsyncButton } from "../Buttons/AsyncButton";
 
 export const ModalOverlay = styled.div<{ isOpen: boolean }>`
   display: ${(props) => (props.isOpen ? "flex" : "none")};
@@ -36,13 +36,9 @@ export const ButtonContainer = styled.div`
   grid-template-columns: 1fr 1fr;
 `;
 
-export const StyledSpinner = styled(Spinner)`
-  width: 5px;
-  height: 5px;
-  border-width: 3px;
-`;
-
-export const Button = styled.button<{ isConfirmation?: boolean }>`
+export const StyledAsyncButton = styled(AsyncButton)<{
+  isConfirmation?: boolean;
+}>`
   padding: 10px 15px;
   border: none;
   border-radius: 5px;

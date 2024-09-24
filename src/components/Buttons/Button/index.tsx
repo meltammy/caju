@@ -14,6 +14,11 @@ const Button = styled.button`
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
   font-size: 16px;
   font-weight: 600;
+
+  &:disabled {
+    background: ${({ theme }) => theme.colors.grey};
+    opacity: 1;
+  }
 `;
 
 export default Button;

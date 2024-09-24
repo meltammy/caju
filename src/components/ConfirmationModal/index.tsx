@@ -4,10 +4,10 @@ import {
   ModalContainer,
   ModalOverlay,
   Title,
-  Button,
-  StyledSpinner,
   ButtonContainer,
+  StyledAsyncButton,
 } from "./styles";
+import Button from "../Buttons/Button";
 
 interface ConfirmationModalProps {
   title: string;
@@ -37,9 +37,14 @@ const ConfirmationModal: FC<ConfirmationModalProps> = ({
           <Button onClick={onClose} disabled={isLoading}>
             Cancel
           </Button>
-          <Button isConfirmation onClick={onConfirm} disabled={isLoading}>
-            {isLoading ? <StyledSpinner /> : confirmationButtonLabel}
-          </Button>
+
+          <StyledAsyncButton
+            isConfirmation
+            onClick={onConfirm}
+            isLoading={isLoading}
+          >
+            {confirmationButtonLabel}
+          </StyledAsyncButton>
         </ButtonContainer>
       </ModalContainer>
     </ModalOverlay>
