@@ -6,15 +6,17 @@ import { theme } from "~/../styles/theme";
 import { render } from "@testing-library/react";
 import { ComponentProps } from "react";
 
-const Component = (props: ComponentProps<typeof AsyncButton>) => (
-  <ThemeProvider theme={theme}>
-    <AsyncButton {...props}>Click Me</AsyncButton>
-  </ThemeProvider>
-);
+const renderButton = (props?: ComponentProps<typeof AsyncButton>) => {
+  return render(
+    <ThemeProvider theme={theme}>
+      <AsyncButton {...props}>Click Me</AsyncButton>
+    </ThemeProvider>
+  );
+};
 
 describe("AsyncButton component", () => {
   test("renders children when not loading", () => {
-    const { getByRole } = render(<Component />);
+    const { getByRole } = renderButton();
 
     const button = getByRole("button", { name: /click me/i });
     expect(button).toBeInTheDocument();
@@ -23,7 +25,7 @@ describe("AsyncButton component", () => {
   });
 
   test("renders spinner when loading", () => {
-    const { getByRole, queryByText } = render(<Component isLoading />);
+    const { getByRole, queryByText } = renderButton({ isLoading: true });
 
     const button = getByRole("button");
     expect(button).toBeInTheDocument();
@@ -32,12 +34,12 @@ describe("AsyncButton component", () => {
   });
 
   test("matches snapshot when not loading", () => {
-    const { asFragment } = render(<Component />);
+    const { asFragment } = renderButton();
     expect(asFragment()).toMatchSnapshot();
   });
 
   test("matches snapshot when loading", () => {
-    const { asFragment } = render(<Component isLoading />);
+    const { asFragment } = renderButton({ isLoading: true });
     expect(asFragment()).toMatchSnapshot();
   });
 });
