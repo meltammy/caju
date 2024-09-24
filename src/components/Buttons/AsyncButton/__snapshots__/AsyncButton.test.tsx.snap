@@ -41,6 +41,7 @@ exports[`AsyncButton component matches snapshot when loading 1`] = `
 
 <button
     class="c0"
+    data-testid="async-button"
     disabled=""
   >
     <div
@@ -75,6 +76,7 @@ exports[`AsyncButton component matches snapshot when not loading 1`] = `
 
 <button
     class="c0"
+    data-testid="async-button"
   >
     Click Me
   </button>
