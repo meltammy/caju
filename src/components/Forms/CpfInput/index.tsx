@@ -1,34 +1,39 @@
-import { useState } from "react";
+import { InputHTMLAttributes } from "react";
 import { FieldValues } from "react-hook-form";
-import TextField, { TextFieldProps } from "~/components/Forms/TextField";
-import { formatCpf } from "~/utils/formatters/formatCpf";
 
-export function CpfField<FormData extends FieldValues>(
-  props: TextFieldProps<FormData>
-) {
-  const [cpfValue, setCpfValue] = useState("");
+import { RegisterFormProps } from "../types";
+import { Input } from "./styles";
+import { FieldWrapper } from "../FieldWrapper";
 
-  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const inputValue = event.target.value;
-    const formattedValue = formatCpf(inputValue);
+type Props<FormData extends FieldValues> = {
+  label?: string;
+  error?: string;
+} & InputHTMLAttributes<any> &
+  RegisterFormProps<FormData>;
 
-    if (props.onChange) {
-      event.target.value = formattedValue;
-      props.onChange(event);
-    }
+export function CpfField<FormData extends FieldValues>({
+  register,
+  name,
+  error,
+  id = "cpf",
+  label,
+  ...props
+}: Props<FormData>) {
+  const registerProps = register ? register(name) : undefined;
 
-    setCpfValue(formattedValue);
-  };
-
+  const helpId = `${id}-help`;
   return (
-    <TextField
-      {...props}
-      type="text"
-      id="cpf"
-      maxLength={14}
-      placeholder="Digite um CPF válido"
-      value={cpfValue}
-      onChange={handleChange}
-    />
+    <FieldWrapper id={id} label={label} error={error} helpId={helpId}>
+      <Input
+        {...props}
+        {...registerProps}
+        mask="999.999.999-99"
+        placeholder="Digite um CPF válido"
+        id={id}
+        type="text"
+        aria-invalid={!!error}
+        aria-describedby={helpId}
+      />
+    </FieldWrapper>
   );
 }
