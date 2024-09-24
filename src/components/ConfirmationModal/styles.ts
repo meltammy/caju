@@ -1,8 +1,8 @@
 import styled from "styled-components";
 import { AsyncButton } from "../Buttons/AsyncButton";
 
-export const ModalOverlay = styled.div<{ isOpen: boolean }>`
-  display: ${(props) => (props.isOpen ? "flex" : "none")};
+export const ModalOverlay = styled.div<{ $isOpen: boolean }>`
+  display: ${(props) => (props.$isOpen ? "flex" : "none")};
   position: fixed;
   top: 0;
   left: 0;
@@ -37,14 +37,14 @@ export const ButtonContainer = styled.div`
 `;
 
 export const StyledAsyncButton = styled(AsyncButton)<{
-  isConfirmation?: boolean;
+  $isConfirmation?: boolean;
 }>`
   padding: 10px 15px;
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  background: ${({ theme, isConfirmation }) =>
-    isConfirmation ? theme.colors.primary : theme.colors.grey};
+  background: ${({ theme, $isConfirmation }) =>
+    $isConfirmation ? theme.colors.primary : theme.colors.grey};
   color: white;
   height: 35px;
 
