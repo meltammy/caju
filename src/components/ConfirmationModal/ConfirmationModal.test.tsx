@@ -1,7 +1,7 @@
 import "@testing-library/jest-dom";
 import "jest-styled-components";
 
-import { render, fireEvent } from "@testing-library/react";
+import { render, fireEvent, screen } from "@testing-library/react";
 import ConfirmationModal, { confirmationModalTestId } from ".";
 import { ThemeProvider } from "styled-components";
 import { theme } from "~/../styles/theme";
@@ -33,42 +33,42 @@ const renderModal = (
 
 describe("ConfirmationModal component", () => {
   it("should render modal with title and description", () => {
-    const { getByText } = renderModal();
+    renderModal();
 
-    expect(getByText(title)).toBeInTheDocument();
-    expect(getByText(description)).toBeInTheDocument();
+    expect(screen.getByText(title)).toBeInTheDocument();
+    expect(screen.getByText(description)).toBeInTheDocument();
   });
 
   it("should calls onClose when cancel button is clicked", () => {
     const onClose = jest.fn();
-    const { getByText } = renderModal({ onClose });
+    renderModal({ onClose });
 
-    fireEvent.click(getByText(cancelButtonLabel));
+    fireEvent.click(screen.getByText(cancelButtonLabel));
     expect(onClose).toHaveBeenCalled();
   });
 
   it("should calls onConfirm when confirmation button is clicked", () => {
     const onConfirm = jest.fn();
-    const { getByText } = renderModal({ onConfirm });
+    renderModal({ onConfirm });
 
-    fireEvent.click(getByText("Yes"));
+    fireEvent.click(screen.getByText("Yes"));
     expect(onConfirm).toHaveBeenCalled();
   });
 
   it("should disables buttons when loading", () => {
-    const { getByRole, getByTestId } = renderModal({ isLoading: true });
+    renderModal({ isLoading: true });
 
-    const cancelButton = getByRole("button", { name: /cancelar/i });
-    const confirmButton = getByTestId(asyncButtonTestId);
+    const cancelButton = screen.getByRole("button", { name: /cancelar/i });
+    const confirmButton = screen.getByTestId(asyncButtonTestId);
 
     expect(cancelButton).toBeDisabled();
     expect(confirmButton).toBeDisabled();
   });
 
   it("should is not visible when isOpen is false", () => {
-    const { getByTestId } = renderModal({ isOpen: false });
+    renderModal({ isOpen: false });
 
-    const modal = getByTestId(confirmationModalTestId);
+    const modal = screen.getByTestId(confirmationModalTestId);
     expect(modal).toHaveStyleRule("display", "none");
   });
 

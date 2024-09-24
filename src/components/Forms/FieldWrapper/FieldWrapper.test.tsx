@@ -1,4 +1,4 @@
-import { render } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 import "@testing-library/jest-dom";
 import { FieldWrapper } from ".";
 
@@ -19,31 +19,31 @@ const renderFieldWrapper = (
 
 describe("FieldWrapper component", () => {
   it("should render label and children", () => {
-    const { getByLabelText } = renderFieldWrapper();
+    renderFieldWrapper();
 
-    expect(getByLabelText(/test label/i)).toBeInTheDocument();
+    expect(screen.getByLabelText(/test label/i)).toBeInTheDocument();
 
-    const input = getByLabelText(/test label/i);
+    const input = screen.getByLabelText(/test label/i);
 
     expect(input).toBeInTheDocument();
     expect(input).toHaveAttribute("id", "test-field");
   });
 
   it("should render error message when provided", () => {
-    const { getByTestId } = renderFieldWrapper({
+    renderFieldWrapper({
       error: "This field is required",
     });
 
-    const errorMessage = getByTestId(helpId);
+    const errorMessage = screen.getByTestId(helpId);
 
     expect(errorMessage).toBeInTheDocument();
     expect(errorMessage).toHaveTextContent("This field is required");
   });
 
   it("should does not render error message when not provided", () => {
-    const { queryByTestId } = renderFieldWrapper();
+    renderFieldWrapper();
 
-    const errorMessage = queryByTestId(helpId);
+    const errorMessage = screen.queryByTestId(helpId);
     expect(errorMessage).not.toBeInTheDocument();
   });
 

@@ -1,6 +1,6 @@
 import "@testing-library/jest-dom";
 import "jest-styled-components";
-import { render } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 import { IconButton } from ".";
 import { ThemeProvider } from "styled-components";
 import { theme } from "~/../styles/theme";
@@ -15,8 +15,8 @@ const renderIconButton = (children: React.ReactNode) => {
 
 describe("IconButton component", () => {
   it("should render button with children", () => {
-    const { getByRole } = renderIconButton("Click Me");
-    const button = getByRole("button", { name: /click me/i });
+    renderIconButton("Click Me");
+    const button = screen.getByRole("button", { name: /click me/i });
 
     expect(button).toBeInTheDocument();
     expect(button).toHaveTextContent("Click Me");

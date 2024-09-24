@@ -1,6 +1,6 @@
 import "@testing-library/jest-dom";
 
-import { render } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 import { ThemeProvider } from "styled-components";
 import { theme } from "~/../styles/theme";
 import { Spinner } from ".";
@@ -15,9 +15,9 @@ const renderSpinner = () => {
 
 describe("Spinner component", () => {
   it("should render correctly", () => {
-    const { getByRole } = renderSpinner();
+    renderSpinner();
 
-    const spinner = getByRole("status");
+    const spinner = screen.getByRole("status");
     expect(spinner).toBeInTheDocument();
   });
 

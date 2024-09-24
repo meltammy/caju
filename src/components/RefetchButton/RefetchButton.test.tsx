@@ -1,5 +1,5 @@
 import "@testing-library/jest-dom";
-import { render, fireEvent } from "@testing-library/react";
+import { render, fireEvent, screen } from "@testing-library/react";
 import { RefetchButton } from ".";
 import { ThemeProvider } from "styled-components";
 import { theme } from "~/../styles/theme";
@@ -14,18 +14,18 @@ const renderRefetchButton = (refetch: () => void) => {
 
 describe("RefetchButton component", () => {
   it("should render correctly", () => {
-    const { getByLabelText } = renderRefetchButton(() => {});
+    renderRefetchButton(() => {});
 
-    const button = getByLabelText("refetch");
+    const button = screen.getByLabelText("refetch");
 
     expect(button).toBeInTheDocument();
   });
 
   it("should calls refetch function when clicked", () => {
     const refetchMock = jest.fn();
-    const { getByLabelText } = renderRefetchButton(refetchMock);
+    renderRefetchButton(refetchMock);
 
-    const button = getByLabelText("refetch");
+    const button = screen.getByLabelText("refetch");
 
     fireEvent.click(button);
 
