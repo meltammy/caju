@@ -28,6 +28,7 @@ describe("Button component", () => {
     const button = getByRole("button", { name: /disabled/i });
 
     expect(button).toBeInTheDocument();
+    expect(button).toBeDisabled();
     expect(button).toHaveStyleRule("background-color", theme.colors.grey, {
       modifier: ":disabled",
     });
