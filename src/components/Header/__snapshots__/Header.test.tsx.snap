@@ -1,17 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Header component matches snapshot 1`] = `
-<DocumentFragment>
-  <header
-    class="sc-blHHSb kgRrnF"
-  >
-    <h1>
-      Test Header
-    </h1>
-  </header>
-</DocumentFragment>
-`;
-
 exports[`Header component should match snapshot 1`] = `
 <DocumentFragment>
   <header

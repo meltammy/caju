@@ -1,25 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`TextField component matches snapshot 1`] = `
-<DocumentFragment>
-  <div>
-    <label
-      aria-labelledby="test-field"
-      for="test-field"
-    >
-      Test Label
-    </label>
-    <input
-      aria-describedby="test-field-help"
-      aria-invalid="false"
-      class="sc-blHHSb kPiDlm"
-      id="test-field"
-      name="testField"
-    />
-  </div>
-</DocumentFragment>
-`;
-
 exports[`TextField component should match snapshot 1`] = `
 <DocumentFragment>
   <div>

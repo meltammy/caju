@@ -1,22 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`FieldWrapper component matches snapshot 1`] = `
-<DocumentFragment>
-  <div>
-    <label
-      aria-labelledby="test-field"
-      for="test-field"
-    >
-      Test Label
-    </label>
-    <input
-      id="test-field"
-      type="text"
-    />
-  </div>
-</DocumentFragment>
-`;
-
 exports[`FieldWrapper component should match snapshot 1`] = `
 <DocumentFragment>
   <div>
