@@ -30,6 +30,7 @@ function TextField<FormData extends FieldValues>({
         {...registerProps}
         aria-invalid={!!error}
         aria-describedby={helpId}
+        id={id}
       />
     </FieldWrapper>
   );

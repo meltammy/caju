@@ -4,7 +4,7 @@ import {
   newRegistrationFormResolver,
 } from "./validation";
 import { SubmitHandler, useForm } from "react-hook-form";
-import { CpfField } from "~/components/Forms/CpfInput";
+import { CpfField } from "~/components/Forms/CpfField";
 import { useCreateRegistration } from "./hooks/useCreateRegistration";
 import { formatCreateRegistrationPayload } from "./utils/formatCreateRegistrationPayload";
 import { AsyncButton } from "~/components/Buttons/AsyncButton";

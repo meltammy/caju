@@ -17,11 +17,20 @@ export function FieldWrapper({
 }: TextFieldProps) {
   return (
     <div>
-      <label htmlFor={id}>{label}</label>
+      <label htmlFor={id} aria-labelledby={id}>
+        {label}
+      </label>
       {children}
-      <span role="alert" id={helpId} style={{ fontSize: 12, color: "red" }}>
-        {error}
-      </span>
+      {error && (
+        <span
+          role="alert"
+          id={helpId}
+          style={{ fontSize: 12, color: "red" }}
+          data-testid={helpId}
+        >
+          {error}
+        </span>
+      )}
     </div>
   );
 }

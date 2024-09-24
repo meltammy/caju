@@ -19,6 +19,7 @@ interface ConfirmationModalProps {
   onConfirm: () => void;
 }
 
+export const confirmationModalTestId = "confirmation-modal";
 const ConfirmationModal: FC<ConfirmationModalProps> = ({
   title,
   description,
@@ -29,17 +30,17 @@ const ConfirmationModal: FC<ConfirmationModalProps> = ({
   onConfirm,
 }) => {
   return (
-    <ModalOverlay isOpen={isOpen}>
+    <ModalOverlay $isOpen={isOpen} data-testid={confirmationModalTestId}>
       <ModalContainer>
         <Title>{title}</Title>
         <Description dangerouslySetInnerHTML={{ __html: description }} />
         <ButtonContainer>
           <Button onClick={onClose} disabled={isLoading}>
-            Cancel
+            Cancelar
           </Button>
 
           <StyledAsyncButton
-            isConfirmation
+            $isConfirmation={true}
             onClick={onConfirm}
             isLoading={isLoading}
           >

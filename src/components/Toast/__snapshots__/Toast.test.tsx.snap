@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ToastProvider component matches snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="sc-blHHSb iwaunG"
+  >
+    <div
+      class="sc-gtLWhw jtmJAR"
+      type="success"
+    >
+      Test message
+      <button>
+        X
+      </button>
+    </div>
+  </div>
+  <button>
+    Show Toast
+  </button>
+</DocumentFragment>
+`;

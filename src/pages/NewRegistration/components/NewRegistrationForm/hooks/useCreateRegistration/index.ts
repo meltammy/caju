@@ -1,5 +1,5 @@
 import { useHistory } from "react-router-dom";
-import { useToast } from "~/components/Toast";
+import { useToast } from "~/components/Toast/ToastContext";
 import { useMutation } from "~/hooks/useMutation";
 import routes from "~/router/routes";
 import { Registration, RegistrationStatus } from "~/types";

@@ -1,4 +1,4 @@
-import { useToast } from "~/components/Toast";
+import { useToast } from "~/components/Toast/ToastContext";
 import { useMutation } from "~/hooks/useMutation";
 import { RegistrationStatus } from "~/types";
 
