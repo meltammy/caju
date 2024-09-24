@@ -16,7 +16,7 @@ const Button = styled.button`
   font-weight: 600;
 
   &:disabled {
-    background: ${({ theme }) => theme.colors.grey};
+    background-color: ${({ theme }) => theme.colors.grey};
     opacity: 1;
   }
 `;
