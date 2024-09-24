@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`IconButton component matches snapshot 1`] = `
+<DocumentFragment>
+  .c0 {
+  cursor: pointer;
+  border: 2px solid #64a98c;
+  width: fit-content;
+  padding: 4px;
+  border-radius: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+}
+
+.c0 svg {
+  color: #64a98c;
+}
+
+<button
+    class="c0"
+  >
+    Click Me
+  </button>
+</DocumentFragment>
+`;
