@@ -12,7 +12,7 @@ export const StatusColumn = ({ registrations, status, title }: Props) => {
   return (
     <S.Column status={status} key={title}>
       <S.TitleColumn status={status}>{title}</S.TitleColumn>
-      <S.CollumContent>
+      <S.CollumContent id={`column-content-${status}`}>
         {registrations.map((registration) => {
           return <RegistrationCard key={registration.id} {...registration} />;
         })}

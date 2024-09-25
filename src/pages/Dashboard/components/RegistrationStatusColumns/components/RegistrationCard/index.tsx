@@ -27,7 +27,7 @@ const RegistrationCard = ({
   status: currentStatus,
 }: Props) => {
   return (
-    <S.Card>
+    <S.Card id={id} data-card-type-id={`card-${currentStatus}`}>
       <S.IconAndText>
         <HiOutlineUser />
         <h3>{employeeName}</h3>

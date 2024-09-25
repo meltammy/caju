@@ -8,7 +8,7 @@ type Props = {
 
 export function ToastItem({ toast, onRemove }: Props) {
   return (
-    <ToastStyled type={toast.type}>
+    <ToastStyled type={toast.type} id={`${toast.id}-toast`}>
       {toast.message}
       <button onClick={() => onRemove(toast.id)}>X</button>
     </ToastStyled>
