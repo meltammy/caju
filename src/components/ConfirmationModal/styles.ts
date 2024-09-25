@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { AsyncButton } from "../Buttons/AsyncButton";
 
 export const ModalOverlay = styled.div<{ $isOpen: boolean }>`
   display: ${(props) => (props.$isOpen ? "flex" : "none")};
@@ -17,9 +16,15 @@ export const ModalContainer = styled.div`
   background: white;
   border-radius: 8px;
   padding: 20px;
-  max-width: 400px;
-  width: 100%;
+  min-width: 500px;
+  max-width: 95vw;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  z-index: 999;
+
+  @media screen and (max-width: 1200px) {
+    min-width: 50vw;
+    margin: 1rem;
+  }
 `;
 
 export const Title = styled.h2`
@@ -31,30 +36,15 @@ export const Description = styled.p`
 `;
 
 export const ButtonContainer = styled.div`
-  display: grid;
-  gap: 10px;
-  grid-template-columns: 1fr 1fr;
-`;
+  display: flex;
+  gap: 1rem;
 
-export const StyledAsyncButton = styled(AsyncButton)<{
-  $isConfirmation?: boolean;
-}>`
-  padding: 10px 15px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  background: ${({ theme, $isConfirmation }) =>
-    $isConfirmation ? theme.colors.primary : theme.colors.grey};
-  color: white;
-  height: 35px;
-
-  &:hover {
-    opacity: 0.8;
+  @media screen and (max-width: 1200px) {
+    flex-direction: column-reverse;
   }
 
-  &:disabled {
-    background: ${({ theme }) => theme.colors.grey};
-    opacity: 1;
-    cursor: progress;
+  button {
+    width: 100%;
+    place-content: center;
   }
 `;

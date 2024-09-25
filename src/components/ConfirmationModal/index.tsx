@@ -5,9 +5,9 @@ import {
   ModalOverlay,
   Title,
   ButtonContainer,
-  StyledAsyncButton,
 } from "./styles";
 import Button from "../Buttons/Button";
+import { AsyncButton } from "../Buttons/AsyncButton";
 
 interface ConfirmationModalProps {
   title: string;
@@ -17,36 +17,52 @@ interface ConfirmationModalProps {
   isLoading?: boolean;
   onClose: () => void;
   onConfirm: () => void;
+  confirmattionButtonColor?: string;
 }
 
+type Event = { stopPropagation: () => void };
+
 export const confirmationModalTestId = "confirmation-modal";
+
 const ConfirmationModal: FC<ConfirmationModalProps> = ({
   title,
   description,
   confirmationButtonLabel,
+  confirmattionButtonColor = "primary",
   isOpen,
   isLoading,
   onClose,
   onConfirm,
 }) => {
   return (
-    <ModalOverlay $isOpen={isOpen} data-testid={confirmationModalTestId}>
-      <ModalContainer>
+    <ModalOverlay
+      onClick={onClose}
+      $isOpen={isOpen}
+      data-testid={confirmationModalTestId}
+    >
+      <ModalContainer onClick={(event: Event) => event?.stopPropagation()}>
         <Title id="modal-title">{title}</Title>
         <Description dangerouslySetInnerHTML={{ __html: description }} />
         <ButtonContainer>
-          <Button onClick={onClose} disabled={isLoading} id="cancel-button">
+          <Button
+            $variant="outline"
+            color="grey"
+            onClick={onClose}
+            disabled={isLoading}
+            id="cancel-button"
+          >
             Cancelar
           </Button>
 
-          <StyledAsyncButton
-            $isConfirmation={true}
+          <AsyncButton
+            $variant="outline"
+            color={confirmattionButtonColor}
             onClick={onConfirm}
             isLoading={isLoading}
             id="confirm-button"
           >
             {confirmationButtonLabel}
-          </StyledAsyncButton>
+          </AsyncButton>
         </ButtonContainer>
       </ModalContainer>
     </ModalOverlay>

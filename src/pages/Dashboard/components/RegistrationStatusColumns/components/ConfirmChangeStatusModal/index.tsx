@@ -2,6 +2,7 @@ import ConfirmationModal from "~/components/ConfirmationModal";
 import { useUpdateRegistrationStatus } from "./hooks/useUpdateRegistrationStatus";
 import { useConfirmationModalContext } from "../ConfirmationModalContext/useConfirmationModalContext";
 import { RegistrationStatus } from "~/types";
+import { theme } from "~/../styles/theme";
 
 const content = {
   [RegistrationStatus.Approved]: {
@@ -51,6 +52,7 @@ export function ConfirmChangeStatusModal() {
       onClose={onClose}
       confirmationButtonLabel={buttonLabel}
       isLoading={isLoading}
+      confirmattionButtonColor={theme.registrationStatus[status].buttonColor}
     />
   );
 }

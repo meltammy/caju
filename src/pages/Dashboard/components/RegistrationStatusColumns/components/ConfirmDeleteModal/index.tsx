@@ -1,6 +1,7 @@
 import ConfirmationModal from "~/components/ConfirmationModal";
 import { useConfirmationModalContext } from "../ConfirmationModalContext/useConfirmationModalContext";
 import { useDeletRegistration } from "./hooks/useDeletRegistration";
+import { theme } from "~/../styles/theme";
 
 export function ConfirmDeleteModal() {
   const {
@@ -30,6 +31,7 @@ export function ConfirmDeleteModal() {
       onClose={onClose}
       confirmationButtonLabel="Deletar admissão"
       isLoading={isLoading}
+      confirmattionButtonColor={theme.colors.primary}
     />
   );
 }
