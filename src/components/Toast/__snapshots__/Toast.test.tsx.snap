@@ -7,6 +7,7 @@ exports[`ToastProvider component should match snapshot 1`] = `
   >
     <div
       class="sc-gtLWhw jtmJAR"
+      id="0-toast"
       type="success"
     >
       Test message

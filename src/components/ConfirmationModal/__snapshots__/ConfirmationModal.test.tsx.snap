@@ -87,6 +87,7 @@ exports[`ConfirmationModal component should match snapshot when open 1`] = `
     >
       <h2
         class="c2"
+        id="modal-title"
       >
         Confirm Action
       </h2>
@@ -100,12 +101,14 @@ exports[`ConfirmationModal component should match snapshot when open 1`] = `
       >
         <button
           class="c5"
+          id="cancel-button"
         >
           Cancelar
         </button>
         <button
           class="c5 c6"
           data-testid="async-button"
+          id="confirm-button"
         >
           Yes
         </button>
