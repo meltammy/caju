@@ -1,16 +1,27 @@
 import { CpfField } from "~/components/Forms/CpfField";
-import { useDebouncedInput } from "~/hooks/useDebouncedInput";
 import { useEffect } from "react";
 import { useRegistrationsContext } from "~/pages/Dashboard/components/RegistrationsContext/useRegistrationsContext";
+import { useForm } from "react-hook-form";
+import { SearchCpfFormData, searchCpfFormResolver } from "./validation";
 
 export const CpfSearchField = () => {
   const { setSearchCpf } = useRegistrationsContext();
+  const {
+    formState: { errors },
+    register,
+    watch,
+  } = useForm<SearchCpfFormData>({
+    resolver: searchCpfFormResolver,
+    mode: "all",
+  });
 
-  const { bind, debouncedValue } = useDebouncedInput("");
+  const value = watch("cpf");
 
   useEffect(() => {
-    setSearchCpf(debouncedValue);
-  }, [debouncedValue, setSearchCpf]);
+    value && setSearchCpf(value);
+  }, [value]);
 
-  return <CpfField {...bind} />;
+  return (
+    <CpfField register={register} name="cpf" error={errors.cpf?.message} />
+  );
 };
