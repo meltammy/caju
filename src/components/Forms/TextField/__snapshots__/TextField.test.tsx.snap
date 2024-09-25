@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`TextField component matches snapshot 1`] = `
+exports[`TextField component should match snapshot 1`] = `
 <DocumentFragment>
   <div>
     <label

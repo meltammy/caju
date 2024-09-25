@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`IconButton component matches snapshot 1`] = `
+exports[`IconButton component should match snapshot 1`] = `
 <DocumentFragment>
   .c0 {
   cursor: pointer;

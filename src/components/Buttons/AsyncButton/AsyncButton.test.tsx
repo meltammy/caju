@@ -3,7 +3,7 @@ import "@testing-library/jest-dom";
 import { AsyncButton } from ".";
 import { ThemeProvider } from "styled-components";
 import { theme } from "~/../styles/theme";
-import { render } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 import { ComponentProps } from "react";
 
 const renderButton = (props?: ComponentProps<typeof AsyncButton>) => {
@@ -15,30 +15,30 @@ const renderButton = (props?: ComponentProps<typeof AsyncButton>) => {
 };
 
 describe("AsyncButton component", () => {
-  test("renders children when not loading", () => {
-    const { getByRole } = renderButton();
+  it("should render children when not loading", () => {
+    renderButton();
 
-    const button = getByRole("button", { name: /click me/i });
+    const button = screen.getByRole("button", { name: /click me/i });
     expect(button).toBeInTheDocument();
     expect(button).not.toBeDisabled();
     expect(button).toHaveTextContent("Click Me");
   });
 
-  test("renders spinner when loading", () => {
-    const { getByRole, queryByText } = renderButton({ isLoading: true });
+  it("should render spinner when loading", () => {
+    renderButton({ isLoading: true });
 
-    const button = getByRole("button");
+    const button = screen.getByRole("button");
     expect(button).toBeInTheDocument();
     expect(button).toBeDisabled();
-    expect(queryByText("Click Me")).toBeNull();
+    expect(screen.queryByText("Click Me")).toBeNull();
   });
 
-  test("matches snapshot when not loading", () => {
+  it("should match snapshot when not loading", () => {
     const { asFragment } = renderButton();
     expect(asFragment()).toMatchSnapshot();
   });
 
-  test("matches snapshot when loading", () => {
+  it("should match snapshot when loading", () => {
     const { asFragment } = renderButton({ isLoading: true });
     expect(asFragment()).toMatchSnapshot();
   });

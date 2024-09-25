@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`FieldWrapper component matches snapshot 1`] = `
+exports[`FieldWrapper component should match snapshot 1`] = `
 <DocumentFragment>
   <div>
     <label

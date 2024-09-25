@@ -1,10 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`RefetchButton component matches snapshot 1`] = `
+exports[`RefetchButton component should match snapshot 1`] = `
 <DocumentFragment>
   <button
     aria-label="refetch"
     class="sc-blHHSb jrsPrp"
+    id="refresh-button"
   >
     <svg
       aria-hidden="true"

@@ -1,6 +1,6 @@
 import "@testing-library/jest-dom";
 
-import { render } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 import { ThemeProvider } from "styled-components";
 import { theme } from "~/../styles/theme";
 import { Spinner } from ".";
@@ -14,14 +14,14 @@ const renderSpinner = () => {
 };
 
 describe("Spinner component", () => {
-  test("renders correctly", () => {
-    const { getByRole } = renderSpinner();
+  it("should render correctly", () => {
+    renderSpinner();
 
-    const spinner = getByRole("status");
+    const spinner = screen.getByRole("status");
     expect(spinner).toBeInTheDocument();
   });
 
-  test("matches snapshot", () => {
+  it("should match snapshot", () => {
     const { asFragment } = renderSpinner();
     expect(asFragment()).toMatchSnapshot();
   });

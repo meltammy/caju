@@ -32,10 +32,10 @@ const ConfirmationModal: FC<ConfirmationModalProps> = ({
   return (
     <ModalOverlay $isOpen={isOpen} data-testid={confirmationModalTestId}>
       <ModalContainer>
-        <Title>{title}</Title>
+        <Title id="modal-title">{title}</Title>
         <Description dangerouslySetInnerHTML={{ __html: description }} />
         <ButtonContainer>
-          <Button onClick={onClose} disabled={isLoading}>
+          <Button onClick={onClose} disabled={isLoading} id="cancel-button">
             Cancelar
           </Button>
 
@@ -43,6 +43,7 @@ const ConfirmationModal: FC<ConfirmationModalProps> = ({
             $isConfirmation={true}
             onClick={onConfirm}
             isLoading={isLoading}
+            id="confirm-button"
           >
             {confirmationButtonLabel}
           </StyledAsyncButton>

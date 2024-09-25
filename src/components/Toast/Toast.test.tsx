@@ -27,7 +27,7 @@ const renderComponent = () => {
 };
 
 describe("ToastProvider component", () => {
-  test("renders toast messages", () => {
+  it("should render toast messages", () => {
     renderComponent();
 
     const button = screen.getByText("Show Toast");
@@ -37,7 +37,7 @@ describe("ToastProvider component", () => {
     expect(toastMessage).toBeInTheDocument();
   });
 
-  test("removes toast after timeout", async () => {
+  it("should removes toast after timeout", async () => {
     jest.useFakeTimers();
 
     renderComponent();
@@ -53,7 +53,7 @@ describe("ToastProvider component", () => {
     expect(screen.queryByText(message)).not.toBeInTheDocument();
   });
 
-  test("closes toast when button is clicked", () => {
+  it("should closes toast when button is clicked", () => {
     renderComponent();
 
     const button = screen.getByText("Show Toast");
@@ -65,7 +65,7 @@ describe("ToastProvider component", () => {
     expect(screen.queryByText(message)).not.toBeInTheDocument();
   });
 
-  test("matches snapshot", () => {
+  it("should match snapshot", () => {
     const { asFragment } = renderComponent();
 
     const button = screen.getByText("Show Toast");

@@ -1,7 +1,7 @@
 import "jest-styled-components";
 import "@testing-library/jest-dom";
 
-import { render } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 import { ThemeProvider } from "styled-components";
 import Button from ".";
 import { theme } from "~/../styles/theme";
@@ -16,20 +16,20 @@ const renderButton = (props?: ComponentProps<typeof Button>) => {
 };
 
 describe("Button component", () => {
-  test("renders correctly with default styles", () => {
-    const { getByRole } = renderButton();
+  it("should render correctly with default styles", () => {
+    renderButton();
 
-    const button = getByRole("button", { name: /click me/i });
+    const button = screen.getByRole("button", { name: /click me/i });
     expect(button).toHaveStyleRule("background-color", theme.colors.green);
   });
 
-  test("renders disabled button with grey background", () => {
-    const { getByRole } = renderButton({
+  it("should render disabled button with grey background", () => {
+    renderButton({
       children: "disabled",
       disabled: true,
     });
 
-    const button = getByRole("button", { name: /disabled/i });
+    const button = screen.getByRole("button", { name: /disabled/i });
 
     expect(button).toBeInTheDocument();
     expect(button).toBeDisabled();
@@ -38,7 +38,7 @@ describe("Button component", () => {
     });
   });
 
-  test("matches snapshot", () => {
+  it("should match snapshot", () => {
     const { asFragment } = renderButton();
     expect(asFragment()).toMatchSnapshot();
   });

@@ -3,8 +3,8 @@ import Button from "~/components/Buttons/Button";
 import routes from "~/router/routes";
 import * as S from "./styles";
 import { CpfSearchField } from "./components/CpfSearchField";
-import { RefetchButton } from "~/components/RefetchButton";
 import { useRegistrationsContext } from "../RegistrationsContext/useRegistrationsContext";
+import { RefetchButton } from "./components/RefetchButton";
 
 export const SearchBar = () => {
   const { refetch } = useRegistrationsContext();

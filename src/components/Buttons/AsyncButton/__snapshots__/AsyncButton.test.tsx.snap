@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`AsyncButton component matches snapshot when loading 1`] = `
+exports[`AsyncButton component should match snapshot when loading 1`] = `
 <DocumentFragment>
   .c0 {
   outline: none;
@@ -47,7 +47,7 @@ exports[`AsyncButton component matches snapshot when loading 1`] = `
 </DocumentFragment>
 `;
 
-exports[`AsyncButton component matches snapshot when not loading 1`] = `
+exports[`AsyncButton component should match snapshot when not loading 1`] = `
 <DocumentFragment>
   .c0 {
   outline: none;

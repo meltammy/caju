@@ -1,4 +1,4 @@
-import { render } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 import "@testing-library/jest-dom";
 import { FieldWrapper } from ".";
 
@@ -18,36 +18,36 @@ const renderFieldWrapper = (
 };
 
 describe("FieldWrapper component", () => {
-  test("renders label and children", () => {
-    const { getByLabelText } = renderFieldWrapper();
+  it("should render label and children", () => {
+    renderFieldWrapper();
 
-    expect(getByLabelText(/test label/i)).toBeInTheDocument();
+    expect(screen.getByLabelText(/test label/i)).toBeInTheDocument();
 
-    const input = getByLabelText(/test label/i);
+    const input = screen.getByLabelText(/test label/i);
 
     expect(input).toBeInTheDocument();
     expect(input).toHaveAttribute("id", "test-field");
   });
 
-  test("renders error message when provided", () => {
-    const { getByTestId } = renderFieldWrapper({
+  it("should render error message when provided", () => {
+    renderFieldWrapper({
       error: "This field is required",
     });
 
-    const errorMessage = getByTestId(helpId);
+    const errorMessage = screen.getByTestId(helpId);
 
     expect(errorMessage).toBeInTheDocument();
     expect(errorMessage).toHaveTextContent("This field is required");
   });
 
-  test("does not render error message when not provided", () => {
-    const { queryByTestId } = renderFieldWrapper();
+  it("should does not render error message when not provided", () => {
+    renderFieldWrapper();
 
-    const errorMessage = queryByTestId(helpId);
+    const errorMessage = screen.queryByTestId(helpId);
     expect(errorMessage).not.toBeInTheDocument();
   });
 
-  test("matches snapshot", () => {
+  it("should match snapshot", () => {
     const { asFragment } = renderFieldWrapper();
     expect(asFragment()).toMatchSnapshot();
   });
