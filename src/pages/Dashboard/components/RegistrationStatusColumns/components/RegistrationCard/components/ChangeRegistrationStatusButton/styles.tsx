@@ -12,7 +12,17 @@ export const ButtonStatus = styled.button<Props>`
   border-radius: 4px;
   border: none;
   padding: 4px 16px;
-  background-color: ${({ theme, status }) =>
-    theme.registrationStatus[status].buttonBackground};
-  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 600;
+  width: 100%;
+  border-radius: 0;
+  height: 3rem;
+  text-transform: uppercase;
+  color: ${({ theme, status }) => theme.registrationStatus[status].buttonColor};
+  background: transparent;
+  border-top: 1px ${({ theme }) => theme.colors.grey} solid;
+
+  &:first-of-type {
+    border-right: 1px ${({ theme }) => theme.colors.grey} solid;
+  }
 `;

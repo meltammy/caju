@@ -30,8 +30,8 @@ export const RegistrationStatusColumns = () => {
     );
 
   return (
-    <S.Container>
-      <ConfirmationModalProvider>
+    <ConfirmationModalProvider>
+      <S.Container>
         {allColumns.map((collumn) => {
           return (
             <StatusColumn
@@ -43,7 +43,7 @@ export const RegistrationStatusColumns = () => {
         })}
         <ConfirmChangeStatusModal />
         <ConfirmDeleteModal />
-      </ConfirmationModalProvider>
-    </S.Container>
+      </S.Container>
+    </ConfirmationModalProvider>
   );
 };

@@ -1,5 +1,6 @@
 import { HiOutlineTrash } from "react-icons/hi";
 import { useConfirmationModalContext } from "../../../ConfirmationModalContext/useConfirmationModalContext";
+import { StyledIconButton } from "./styles";
 
 type Props = {
   id: string;
@@ -12,5 +13,9 @@ export function DeleteRegistrationButton({ id }: Props) {
     setConfirmationModalProps({ deleteRegistrationProps: { id } });
   }
 
-  return <HiOutlineTrash onClick={onClick} />;
+  return (
+    <StyledIconButton onClick={onClick} color="primary">
+      <HiOutlineTrash />
+    </StyledIconButton>
+  );
 }

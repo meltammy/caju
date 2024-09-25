@@ -2,13 +2,12 @@ import { Registration, RegistrationStatus } from "~/types";
 import * as S from "./styles";
 import {
   HiOutlineMail,
-  HiOutlineUser,
   HiOutlineCalendar,
+  HiOutlineUserCircle,
+  HiIdentification,
 } from "react-icons/hi";
 import { ChangeRegistrationStatusButton } from "./components/ChangeRegistrationStatusButton";
 import { DeleteRegistrationButton } from "./components/DeleteRegistrationButton";
-
-type Props = Omit<Registration, "cpf">;
 
 const availableStatusesByCurrentStatus = {
   [RegistrationStatus.Approved]: [RegistrationStatus.Review],
@@ -24,13 +23,14 @@ const RegistrationCard = ({
   email,
   employeeName,
   id,
+  cpf,
   status: currentStatus,
-}: Props) => {
+}: Registration) => {
   return (
     <S.Card id={id} data-card-type-id={`card-${currentStatus}`}>
       <S.IconAndText>
-        <HiOutlineUser />
-        <h3>{employeeName}</h3>
+        <HiOutlineUserCircle />
+        <h2>{employeeName}</h2>
       </S.IconAndText>
       <S.IconAndText>
         <HiOutlineMail />
@@ -40,12 +40,23 @@ const RegistrationCard = ({
         <HiOutlineCalendar />
         <span>{admissionDate}</span>
       </S.IconAndText>
+      <S.IconAndText>
+        <HiIdentification />
+        <span>{cpf}</span>
+      </S.IconAndText>
       <S.Actions>
-        {availableStatusesByCurrentStatus[currentStatus].map((status) => (
-          <ChangeRegistrationStatusButton status={status} id={id} key={id} />
-        ))}
-        <DeleteRegistrationButton id={id} />
+        {availableStatusesByCurrentStatus[currentStatus].map((status) => {
+          const buttonId = `${id}-${status}`;
+          return (
+            <ChangeRegistrationStatusButton
+              status={status}
+              id={id}
+              key={buttonId}
+            />
+          );
+        })}
       </S.Actions>
+      <DeleteRegistrationButton id={id} />
     </S.Card>
   );
 };
