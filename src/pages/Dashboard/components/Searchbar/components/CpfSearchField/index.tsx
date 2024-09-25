@@ -19,7 +19,7 @@ export const CpfSearchField = () => {
 
   useEffect(() => {
     value && setSearchCpf(value);
-  }, [value]);
+  }, [value, setSearchCpf]);
 
   return (
     <CpfField register={register} name="cpf" error={errors.cpf?.message} />
