@@ -5,7 +5,7 @@
   "type": "module",
   "homepage": "https://meltammy.github.io/caju",
   "scripts": {
-    "dev": "concurrently \"yarn init:db\" \"yarn vite\"",
+    "dev": "vite",
     "init:db": "json-server --watch db.json",
     "build": "tsc && vite build",
     "test:dev": "jest --watch --verbose --no-cache",
