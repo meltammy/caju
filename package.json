@@ -5,17 +5,18 @@
   "type": "module",
   "homepage": "https://meltammy.github.io/caju",
   "scripts": {
-    "dev": "vite",
+    "dev": "concurrently \"yarn init:db\" \"yarn vite\"",
     "init:db": "json-server --watch db.json",
     "build": "tsc && vite build",
     "test:dev": "jest --watch --verbose --no-cache",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "type-check": "tsc --project ./tsconfig.json",
     "preview": "vite preview",
-    "predeploy": "npm run build",
+    "predeploy": "yarn run build",
     "deploy": "gh-pages -d dist",
     "prepare": "husky install",
-    "commit": "git-cz"
+    "commit": "git-cz",
+    "open:cypress": "concurrently \"yarn init:db\" \"yarn dev\" \"yarn cypress open\""
   },
   "dependencies": {
     "@hookform/resolvers": "^3.9.0",
@@ -46,6 +47,8 @@
     "@typescript-eslint/parser": "^7.2.0",
     "@vitejs/plugin-react": "^4.3.1",
     "commitizen": "^4.3.0",
+    "concurrently": "^9.0.1",
+    "cypress": "^13.14.2",
     "cz-conventional-changelog": "^3.3.0",
     "eslint": "^8.57.0",
     "eslint-config-prettier": "^9.1.0",
