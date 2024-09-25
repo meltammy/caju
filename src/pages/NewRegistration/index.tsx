@@ -14,6 +14,8 @@ const NewRegistration = () => {
 
   return (
     <S.Container>
+      <h1>Criar nova admissão</h1>
+
       <S.Card>
         <IconButton onClick={goToHome} aria-label="back">
           <HiOutlineArrowLeft size={24} />
