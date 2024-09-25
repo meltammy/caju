@@ -7,4 +7,9 @@ html, body{
   font-size: 1rem;
   font-family: "Poppins", sans-serif;
 }
+
+button {
+  cursor: pointer;
+  font-family: "Poppins", sans-serif;
+}
 `;
