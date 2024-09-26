@@ -8,8 +8,13 @@ const itemsProps = [
 export function NavLinks() {
   return (
     <>
-      {itemsProps.map((props) => (
-        <NavItems {...props} target="_blank" rel="noopener noreferrer" />
+      {itemsProps.map((props, index) => (
+        <NavItems
+          {...props}
+          key={index}
+          target="_blank"
+          rel="noopener noreferrer"
+        />
       ))}
     </>
   );

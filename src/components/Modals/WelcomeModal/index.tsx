@@ -12,9 +12,10 @@ const storageKey = "showWelcomeModal";
 
 export function WelcomeModal() {
   const [isOpen, setIsOpen] = useState(false);
-  const showWelcomeModal = sessionStorage.getItem(storageKey);
 
   useEffect(() => {
+    const showWelcomeModal = sessionStorage.getItem(storageKey);
+
     setIsOpen(showWelcomeModal !== "false");
   }, []);
 
