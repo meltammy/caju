@@ -14,8 +14,8 @@ function hasAtLeastOneSpace(str: string): boolean {
  * @returns {boolean} - Returns true if all words have at least 2 characters, otherwise false.
  */
 function areAllWordsAtLeastTwoCharacters(input: string): boolean {
-  const regex = /^\s*(\w{2,}\s+)*\w{2,}\s*$/;
-  return regex.test(input);
+  const words = input.trim().split(/\s+/);
+  return words.every((word) => word.length >= 2);
 }
 
 /**
@@ -24,8 +24,8 @@ function areAllWordsAtLeastTwoCharacters(input: string): boolean {
  * @returns {boolean} - Returns true if no word starts with a number, otherwise false.
  */
 function areAllWordsNotStartingWithNumber(input: string): boolean {
-  const regex = /^\s*(?!\d)(\w+\s+)*(?!\d)\w+\s*$/;
-  return regex.test(input);
+  const words = input.trim().split(/\s+/);
+  return words.every((word) => !/^\d/.test(word));
 }
 
 /**
