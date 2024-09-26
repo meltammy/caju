@@ -20,4 +20,8 @@ button, a {
   cursor: pointer;
   font-family: "Poppins", sans-serif;
 }
+
+* {
+  box-sizing: border-box;
+}
 `;

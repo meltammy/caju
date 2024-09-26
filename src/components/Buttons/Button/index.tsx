@@ -1,16 +1,19 @@
 import styled from "styled-components";
 
 const Button = styled.button<{ $variant: "outline" | "filled"; color: string }>`
-  outline: none;
-  display: flex;
-  align-items: center;
   border: none;
   border-radius: 1rem;
-  padding: 0.5rem 2rem;
+
+  width: 100%;
+  display: flex;
+  align-items: center;
   place-content: center;
-  cursor: pointer;
+
+  padding: 0.5rem 2rem;
   height: 3.5rem;
   box-shadow: rgba(149, 157, 165, 0.2) 0px 0.5rem 1.5rem;
+  cursor: pointer;
+
   font-size: 1rem;
   font-weight: 600;
   text-wrap: nowrap;
@@ -21,21 +24,22 @@ const Button = styled.button<{ $variant: "outline" | "filled"; color: string }>`
   }
 
   ${(props) => {
+    const color = props.color ?? props.theme.colors.green;
     switch (props.$variant) {
       case "outline":
         return `
-          border: 2px solid ${props.color};
-          color:  ${props.color};
+          border: 2px solid ${color};
+          color:  ${color};
           background: transparent;
         `;
       case "filled":
         return `
-          background-color:  ${props.color};
+          background-color:  ${color};
           color: ${props.theme.colors.white};
         `;
       default:
         return `
-          background-color: ${props.color ?? props.theme.colors.green};
+          background-color: ${color};
           color: ${props.theme.colors.white};
         `;
     }

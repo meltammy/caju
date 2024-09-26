@@ -6,16 +6,17 @@ type Props = {
 };
 
 export const ButtonStatus = styled.button<Props>`
-  font-size: 0.75rem;
-  outline: none;
+  width: 100%;
+  height: 3rem;
+  padding: 0.25rem 1rem;
+
   border-radius: 0.25rem;
   border: none;
-  padding: 0.25rem 1rem;
+  border-radius: 0;
+
+  font-size: 0.75rem;
   font-size: 1rem;
   font-weight: 600;
-  width: 100%;
-  border-radius: 0;
-  height: 3rem;
   text-transform: uppercase;
   color: ${({ theme, $status }) =>
     theme.registrationStatus[$status].buttonColor};

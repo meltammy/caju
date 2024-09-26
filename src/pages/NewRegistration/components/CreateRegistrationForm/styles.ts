@@ -6,7 +6,6 @@ export const Form = styled.form`
   gap: 1rem;
 
   button {
-    width: 100%;
     margin-top: 2rem;
   }
 
