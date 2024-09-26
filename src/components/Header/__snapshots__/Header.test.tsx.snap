@@ -3,7 +3,7 @@
 exports[`Header component should match snapshot 1`] = `
 <DocumentFragment>
   <header
-    class="sc-blHHSb gKHXIA"
+    class="sc-blHHSb dFjJJx"
   >
     <svg
       fill="none"

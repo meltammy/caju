@@ -3,10 +3,10 @@
 exports[`ToastProvider component should match snapshot 1`] = `
 <DocumentFragment>
   <div
-    class="sc-blHHSb iwaunG"
+    class="sc-blHHSb fWyMgk"
   >
     <div
-      class="sc-gtLWhw jtmJAR"
+      class="sc-gtLWhw cjOQVQ"
       id="0-toast"
       type="success"
     >
