@@ -1,13 +1,14 @@
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
-import { errorMessages } from "~/utils/validations/errorMessages";
 import { isValidCpf } from "~/utils/validations/isValidCpf";
 
 const schema = yup.object({
   cpf: yup
     .string()
-    .test("is-valid-cpf", errorMessages.invalidCpf, (value) =>
-      isValidCpf(value)
+    .test(
+      "is-valid-cpf",
+      "Insira um CPF válido para executar a busca",
+      (value) => isValidCpf(value)
     ),
 });
 
