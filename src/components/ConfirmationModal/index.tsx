@@ -1,11 +1,5 @@
 import { FC } from "react";
-import {
-  Description,
-  ModalContainer,
-  ModalOverlay,
-  Title,
-  ButtonContainer,
-} from "./styles";
+import * as S from "./styles";
 import Button from "../Buttons/Button";
 import { AsyncButton } from "../Buttons/AsyncButton";
 
@@ -35,15 +29,15 @@ const ConfirmationModal: FC<ConfirmationModalProps> = ({
   onConfirm,
 }) => {
   return (
-    <ModalOverlay
+    <S.ModalOverlay
       onClick={onClose}
       $isOpen={isOpen}
       data-testid={confirmationModalTestId}
     >
-      <ModalContainer onClick={(event: Event) => event?.stopPropagation()}>
-        <Title id="modal-title">{title}</Title>
-        <Description dangerouslySetInnerHTML={{ __html: description }} />
-        <ButtonContainer>
+      <S.ModalContainer onClick={(event: Event) => event?.stopPropagation()}>
+        <S.Title id="modal-title">{title}</S.Title>
+        <S.Description dangerouslySetInnerHTML={{ __html: description }} />
+        <S.ButtonContainer>
           <Button
             $variant="outline"
             color="grey"
@@ -63,9 +57,9 @@ const ConfirmationModal: FC<ConfirmationModalProps> = ({
           >
             {confirmationButtonLabel}
           </AsyncButton>
-        </ButtonContainer>
-      </ModalContainer>
-    </ModalOverlay>
+        </S.ButtonContainer>
+      </S.ModalContainer>
+    </S.ModalOverlay>
   );
 };
 

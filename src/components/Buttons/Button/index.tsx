@@ -13,6 +13,7 @@ const Button = styled.button<{ $variant: "outline" | "filled"; color: string }>`
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
   font-size: 16px;
   font-weight: 600;
+  text-wrap: nowrap;
 
   &:disabled {
     background-color: ${({ theme }) => theme.colors.grey};

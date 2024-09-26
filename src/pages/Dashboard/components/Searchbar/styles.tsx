@@ -4,11 +4,12 @@ export const Container = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 16px;
+  gap: 5rem;
   padding: 24px;
 
   @media screen and (max-width: 1200px) {
     flex-direction: column-reverse;
+    gap: 1rem;
 
     div {
       width: 100%;

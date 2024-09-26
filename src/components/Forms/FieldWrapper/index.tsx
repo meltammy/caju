@@ -1,4 +1,5 @@
 import { ReactNode } from "react";
+import * as S from "./styles";
 
 export type TextFieldProps = {
   label?: string;
@@ -16,21 +17,12 @@ export function FieldWrapper({
   id,
 }: TextFieldProps) {
   return (
-    <div>
-      <label htmlFor={id} aria-labelledby={id}>
+    <S.Container>
+      <S.Label htmlFor={id} aria-labelledby={id}>
         {label}
-      </label>
+      </S.Label>
       {children}
-      {error && (
-        <span
-          role="alert"
-          id={helpId}
-          style={{ fontSize: 12, color: "red" }}
-          data-testid={helpId}
-        >
-          {error}
-        </span>
-      )}
-    </div>
+      {error && <S.ErrorMessage id={helpId}>{error}</S.ErrorMessage>}
+    </S.Container>
   );
 }

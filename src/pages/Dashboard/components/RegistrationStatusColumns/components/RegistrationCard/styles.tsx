@@ -10,12 +10,12 @@ export const Card = styled.div`
   border-radius: 8px;
   background-color: ${({ theme }) => theme.colors.white};
   overflow: hidden;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
 
   h3,
   p {
     margin: 0;
   }
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
 `;
 
 export const IconAndText = styled.div`

@@ -5,7 +5,7 @@ export function Header() {
   return (
     <S.Container>
       <Logo />
-      <h1>Caju Front Teste</h1>
+      <S.Title>Caju Front Teste</S.Title>
     </S.Container>
   );
 }

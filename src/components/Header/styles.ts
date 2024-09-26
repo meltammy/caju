@@ -12,10 +12,10 @@ export const Container = styled.header`
   padding: 0px 1.5rem;
   gap: 2rem;
   z-index: 1;
+`;
 
-  h1 {
-    color: ${({ theme }) => theme.colors.primary};
-    font-size: 1.5rem;
-    font-weight: 600;
-  }
+export const Title = styled.h1`
+  color: ${({ theme }) => theme.colors.primary};
+  font-size: 1.5rem;
+  font-weight: 600;
 `;

@@ -1,5 +1,5 @@
 import { Toast } from "../../types";
-import { ToastStyled } from "./styles";
+import * as S from "./styles";
 
 type Props = {
   toast: Toast;
@@ -8,9 +8,9 @@ type Props = {
 
 export function ToastItem({ toast, onRemove }: Props) {
   return (
-    <ToastStyled type={toast.type} id={`${toast.id}-toast`}>
+    <S.ToastStyled type={toast.type} id={`${toast.id}-toast`}>
       {toast.message}
-      <button onClick={() => onRemove(toast.id)}>X</button>
-    </ToastStyled>
+      <S.Button onClick={() => onRemove(toast.id)}>X</S.Button>
+    </S.ToastStyled>
   );
 }

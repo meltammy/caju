@@ -11,12 +11,12 @@ export const ToastStyled = styled.div<{ type: ToastType }>`
   box-shadow: 0 2px 7px 2px #00000080;
   display: flex;
   justify-content: space-between;
+`;
 
-  button {
-    margin-left: 10px;
-    background: transparent;
-    border: none;
-    color: white;
-    cursor: pointer;
-  }
+export const Button = styled.button`
+  margin-left: 10px;
+  background: transparent;
+  border: none;
+  color: white;
+  cursor: pointer;
 `;
