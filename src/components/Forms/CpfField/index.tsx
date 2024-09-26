@@ -1,38 +1,61 @@
 import { InputHTMLAttributes } from "react";
-import { FieldValues } from "react-hook-form";
+import { Control, Controller, FieldValues, Path } from "react-hook-form";
 
-import { RegisterFormProps } from "../types";
 import { Input } from "./styles";
 import { FieldWrapper } from "../FieldWrapper";
 
 type Props<FormData extends FieldValues> = {
   label?: string;
   error?: string;
-} & InputHTMLAttributes<any> &
-  RegisterFormProps<FormData>;
+  control: Control<FormData>;
+  name: Path<FormData>;
+} & InputHTMLAttributes<any>;
+
+const mask = [
+  /[1-9]/,
+  /\d/,
+  /\d/,
+  ".",
+  /\d/,
+  /\d/,
+  /\d/,
+  ".",
+  /\d/,
+  /\d/,
+  /\d/,
+  "-",
+  /\d/,
+  /\d/,
+];
 
 export function CpfField<FormData extends FieldValues>({
-  register,
   name,
   error,
   id = "cpf",
   label,
+  control,
   ...props
 }: Props<FormData>) {
-  const registerProps = register ? register(name) : undefined;
-
   const helpId = `${id}-help`;
+
   return (
     <FieldWrapper id={id} label={label} error={error} helpId={helpId}>
-      <Input
-        {...props}
-        {...registerProps}
-        mask="999.999.999-99"
-        placeholder="Digite um CPF válido"
-        id={id}
-        type="text"
-        aria-invalid={!!error}
-        aria-describedby={helpId}
+      <Controller
+        name={name}
+        control={control}
+        render={({ field }) => (
+          <Input
+            {...props}
+            {...field}
+            guide={false}
+            mask={mask}
+            placeholder="Digite um CPF válido"
+            id={id}
+            type="text"
+            aria-invalid={!!error}
+            aria-describedby={helpId}
+          />
+        )}
       />
     </FieldWrapper>
   );

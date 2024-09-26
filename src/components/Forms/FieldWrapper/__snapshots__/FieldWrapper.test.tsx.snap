@@ -2,9 +2,12 @@
 
 exports[`FieldWrapper component should match snapshot 1`] = `
 <DocumentFragment>
-  <div>
+  <div
+    class="sc-gtLWhw ctrBtn"
+  >
     <label
       aria-labelledby="test-field"
+      class="sc-egkSDF bnQofX"
       for="test-field"
     >
       Test Label

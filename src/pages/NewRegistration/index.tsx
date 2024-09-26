@@ -1,29 +1,20 @@
 import * as S from "./styles";
-import { HiOutlineArrowLeft } from "react-icons/hi";
-import { IconButton } from "~/components/Buttons/IconButton";
-import { useHistory } from "react-router-dom";
-import routes from "~/router/routes";
-import { NewRegistrationForm } from "./components/NewRegistrationForm";
+import { CreateRegistrationForm } from "./components/CreateRegistrationForm";
+import { BackButton } from "./components/BackButton";
 
-const NewRegistration = () => {
-  const history = useHistory();
-
-  const goToHome = () => {
-    history.push(routes.dashboard);
-  };
-
+const CreateRegistration = () => {
   return (
     <S.Container>
-      <h1>Criar nova admissão</h1>
-
       <S.Card>
-        <IconButton onClick={goToHome} aria-label="back">
-          <HiOutlineArrowLeft size={24} />
-        </IconButton>
-        <NewRegistrationForm />
+        <S.CardHeader>
+          <BackButton />
+          <h2>Criar nova admissão</h2>
+        </S.CardHeader>
+
+        <CreateRegistrationForm />
       </S.Card>
     </S.Container>
   );
 };
 
-export default NewRegistration;
+export default CreateRegistration;

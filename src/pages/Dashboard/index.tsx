@@ -1,6 +1,6 @@
 import { RegistrationStatusColumns } from "./components/RegistrationStatusColumns";
 import * as S from "./styles";
-import { SearchBar } from "./components/Searchbar";
+import { SearchBar } from "./components/SearchBar";
 import { RegistrationsProvider } from "./components/RegistrationsContext/RegistrationsProvider";
 
 const DashboardPage = () => {

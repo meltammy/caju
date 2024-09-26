@@ -1,13 +1,7 @@
 import { FC } from "react";
-import {
-  Description,
-  ModalContainer,
-  ModalOverlay,
-  Title,
-  ButtonContainer,
-  StyledAsyncButton,
-} from "./styles";
+import * as S from "./styles";
 import Button from "../Buttons/Button";
+import { AsyncButton } from "../Buttons/AsyncButton";
 
 interface ConfirmationModalProps {
   title: string;
@@ -17,39 +11,55 @@ interface ConfirmationModalProps {
   isLoading?: boolean;
   onClose: () => void;
   onConfirm: () => void;
+  confirmationButtonColor?: string;
 }
 
+type Event = { stopPropagation: () => void };
+
 export const confirmationModalTestId = "confirmation-modal";
+
 const ConfirmationModal: FC<ConfirmationModalProps> = ({
   title,
   description,
   confirmationButtonLabel,
+  confirmationButtonColor: confirmationButtonColor = "primary",
   isOpen,
   isLoading,
   onClose,
   onConfirm,
 }) => {
   return (
-    <ModalOverlay $isOpen={isOpen} data-testid={confirmationModalTestId}>
-      <ModalContainer>
-        <Title id="modal-title">{title}</Title>
-        <Description dangerouslySetInnerHTML={{ __html: description }} />
-        <ButtonContainer>
-          <Button onClick={onClose} disabled={isLoading} id="cancel-button">
+    <S.ModalOverlay
+      onClick={onClose}
+      $isOpen={isOpen}
+      data-testid={confirmationModalTestId}
+    >
+      <S.ModalContainer onClick={(event: Event) => event?.stopPropagation()}>
+        <S.Title id="modal-title">{title}</S.Title>
+        <S.Description dangerouslySetInnerHTML={{ __html: description }} />
+        <S.ButtonContainer>
+          <Button
+            $variant="outline"
+            color="grey"
+            onClick={onClose}
+            disabled={isLoading}
+            id="cancel-button"
+          >
             Cancelar
           </Button>
 
-          <StyledAsyncButton
-            $isConfirmation={true}
+          <AsyncButton
+            $variant="outline"
+            color={confirmationButtonColor}
             onClick={onConfirm}
             isLoading={isLoading}
             id="confirm-button"
           >
             {confirmationButtonLabel}
-          </StyledAsyncButton>
-        </ButtonContainer>
-      </ModalContainer>
-    </ModalOverlay>
+          </AsyncButton>
+        </S.ButtonContainer>
+      </S.ModalContainer>
+    </S.ModalOverlay>
   );
 };
 

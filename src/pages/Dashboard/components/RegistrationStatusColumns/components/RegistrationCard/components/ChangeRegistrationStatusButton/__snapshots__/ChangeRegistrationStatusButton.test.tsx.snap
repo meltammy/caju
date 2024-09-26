@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ChangeRegistrationStatusButton matches snapshot 1`] = `
+<DocumentFragment>
+  .c0 {
+  font-size: 0.75rem;
+  outline: none;
+  border-radius: 0.25rem;
+  border: none;
+  padding: 0.25rem 1rem;
+  font-size: 1rem;
+  font-weight: 600;
+  width: 100%;
+  border-radius: 0;
+  height: 3rem;
+  text-transform: uppercase;
+  color: #0066ff;
+  background: transparent;
+  border-top: 1px #ccc solid;
+}
+
+.c0:first-of-type {
+  border-right: 1px #ccc solid;
+}
+
+<button
+    class="c0"
+    id="button-change-status-to-APPROVED"
+  >
+    Aprovar
+  </button>
+</DocumentFragment>
+`;

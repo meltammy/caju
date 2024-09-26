@@ -2,9 +2,12 @@
 
 exports[`TextField component should match snapshot 1`] = `
 <DocumentFragment>
-  <div>
+  <div
+    class="sc-egkSDF dXFjag"
+  >
     <label
       aria-labelledby="test-field"
+      class="sc-fAUdSK eyaFLV"
       for="test-field"
     >
       Test Label
@@ -12,7 +15,7 @@ exports[`TextField component should match snapshot 1`] = `
     <input
       aria-describedby="test-field-help"
       aria-invalid="false"
-      class="sc-blHHSb kPiDlm"
+      class="sc-blHHSb bNsITS"
       id="test-field"
       name="testField"
     />

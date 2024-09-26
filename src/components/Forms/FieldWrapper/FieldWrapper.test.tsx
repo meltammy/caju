@@ -1,6 +1,8 @@
 import { render, screen } from "@testing-library/react";
 import "@testing-library/jest-dom";
 import { FieldWrapper } from ".";
+import { ThemeProvider } from "styled-components";
+import { theme } from "~/../styles/theme";
 
 const helpId = "help-test";
 const renderFieldWrapper = (
@@ -10,11 +12,15 @@ const renderFieldWrapper = (
     id: "test-field",
     helpId,
     label: "Test Label",
-    children: <input type="text" id="test-field" />, // Adicione o id ao input
+    children: <input type="text" id="test-field" />,
     ...props,
   };
 
-  return render(<FieldWrapper {...defaultProps} />);
+  return render(
+    <ThemeProvider theme={theme}>
+      <FieldWrapper {...defaultProps} />
+    </ThemeProvider>
+  );
 };
 
 describe("FieldWrapper component", () => {

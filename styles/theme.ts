@@ -1,6 +1,5 @@
 import { RegistrationStatus } from "~/types";
 
-// theme.ts
 export const theme = {
   colors: {
     primary: "#e80537",
@@ -19,17 +18,17 @@ export const theme = {
     [RegistrationStatus.Review]: {
       background: "#FDF8E9",
       color: "#EFC24D",
-      buttonBackground: "#ff7500",
+      buttonColor: "#ff7500",
     },
     [RegistrationStatus.Approved]: {
       background: "#EEEEFD",
       color: "#4242DF",
-      buttonBackground: "#9be59b",
+      buttonColor: "#0066ff",
     },
     [RegistrationStatus.Reproved]: {
       background: "#FBEDF6",
       color: "#CE2893",
-      buttonBackground: "#ff919a",
+      buttonColor: "#ff4655",
     },
   },
 };

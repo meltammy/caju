@@ -1,9 +1,9 @@
 import * as S from "./styles";
 import { Registration, RegistrationStatus } from "~/types";
 import { StatusColumn } from "./components/StatusColumn";
-import { ConfirmationModalProvider } from "./components/ConfirmationModalContext/ConfirmationModalProvider";
-import { ConfirmChangeStatusModal } from "./components/ConfirmChangeStatusModal";
-import { ConfirmDeleteModal } from "./components/ConfirmDeleteModal";
+import { ConfirmationModalProvider } from "../ConfirmationModals/ConfirmationModalContext/ConfirmationModalProvider";
+import { ConfirmChangeStatusModal } from "../ConfirmationModals/ConfirmChangeStatusModal";
+import { ConfirmDeleteModal } from "../ConfirmationModals/ConfirmDeleteModal";
 import { useRegistrationsContext } from "../RegistrationsContext/useRegistrationsContext";
 
 const allColumns = [
@@ -30,20 +30,20 @@ export const RegistrationStatusColumns = () => {
     );
 
   return (
-    <S.Container>
-      <ConfirmationModalProvider>
-        {allColumns.map((collumn) => {
+    <ConfirmationModalProvider>
+      <S.Container>
+        {allColumns.map((column) => {
           return (
             <StatusColumn
-              key={collumn.status}
-              {...collumn}
-              registrations={filterRegistrationsByStatus(collumn.status, data)}
+              key={column.status}
+              {...column}
+              registrations={filterRegistrationsByStatus(column.status, data)}
             />
           );
         })}
         <ConfirmChangeStatusModal />
         <ConfirmDeleteModal />
-      </ConfirmationModalProvider>
-    </S.Container>
+      </S.Container>
+    </ConfirmationModalProvider>
   );
 };
