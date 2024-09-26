@@ -1,6 +1,6 @@
 import { HiOutlineTrash } from "react-icons/hi";
-import { useConfirmationModalContext } from "../../../ConfirmationModalContext/useConfirmationModalContext";
 import { StyledIconButton } from "./styles";
+import { useConfirmationModalContext } from "~/pages/Dashboard/components/ConfirmationModals/ConfirmationModalContext/useConfirmationModalContext";
 
 type Props = {
   id: string;

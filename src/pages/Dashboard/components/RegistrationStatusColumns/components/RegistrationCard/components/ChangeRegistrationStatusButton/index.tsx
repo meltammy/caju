@@ -1,6 +1,6 @@
 import { RegistrationStatus } from "~/types";
 import { ButtonStatus } from "./styles";
-import { useConfirmationModalContext } from "../../../ConfirmationModalContext/useConfirmationModalContext";
+import { useConfirmationModalContext } from "~/pages/Dashboard/components/ConfirmationModals/ConfirmationModalContext/useConfirmationModalContext";
 
 const labelMapper = {
   [RegistrationStatus.Approved]: "Aprovar",

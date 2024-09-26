@@ -1,9 +1,9 @@
 import * as S from "./styles";
 import { Registration, RegistrationStatus } from "~/types";
 import { StatusColumn } from "./components/StatusColumn";
-import { ConfirmationModalProvider } from "./components/ConfirmationModalContext/ConfirmationModalProvider";
-import { ConfirmChangeStatusModal } from "./components/ConfirmChangeStatusModal";
-import { ConfirmDeleteModal } from "./components/ConfirmDeleteModal";
+import { ConfirmationModalProvider } from "../ConfirmationModals/ConfirmationModalContext/ConfirmationModalProvider";
+import { ConfirmChangeStatusModal } from "../ConfirmationModals/ConfirmChangeStatusModal";
+import { ConfirmDeleteModal } from "../ConfirmationModals/ConfirmDeleteModal";
 import { useRegistrationsContext } from "../RegistrationsContext/useRegistrationsContext";
 
 const allColumns = [

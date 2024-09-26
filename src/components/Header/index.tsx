@@ -1,4 +1,4 @@
-import { Logo } from "../Logo";
+import { Logo } from "./components/Logo";
 import * as S from "./styles";
 
 export function Header() {
