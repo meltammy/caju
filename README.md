@@ -94,7 +94,13 @@ yarn cypress open
 ### 🧪 Cobertura dos Testes
 **Jest:** 17 testes implementados, incluindo testes de componentes e funções.
 
+![image](https://github.com/user-attachments/assets/7d23f873-b06c-4fc5-b8fb-3ae1c6cd9d40)
+
 **Cypress:** Testes E2E foram implementados nas duas telas.
+
+![image](https://github.com/user-attachments/assets/f3dea7e7-9559-41e7-8279-ecc7ddd1f717)
+
+![image](https://github.com/user-attachments/assets/e09f4804-02fa-4325-9c89-ab28ba3852ac)
 
 ---
 
