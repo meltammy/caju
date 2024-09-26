@@ -18,8 +18,8 @@ export const CpfSearchField = () => {
   const value = watch("cpf");
 
   useEffect(() => {
-    value && setSearchCpf(value);
+    setSearchCpf(value || "");
   }, [value, setSearchCpf]);
-  console.log(value);
+
   return <CpfField control={control} name="cpf" error={errors.cpf?.message} />;
 };
