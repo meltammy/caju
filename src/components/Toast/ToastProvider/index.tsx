@@ -22,7 +22,7 @@ export function ToastProvider({ children }: Props) {
 
     setTimeout(() => {
       removeToast(id);
-    }, 5000);
+    }, 8000);
   };
 
   return (
