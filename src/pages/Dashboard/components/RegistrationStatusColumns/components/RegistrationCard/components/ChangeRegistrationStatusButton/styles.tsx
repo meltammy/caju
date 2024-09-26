@@ -1,10 +1,9 @@
-import { HTMLAttributes } from "react";
 import styled from "styled-components";
 import { RegistrationStatus } from "~/types";
 
 type Props = {
-  status: RegistrationStatus;
-} & HTMLAttributes<HTMLButtonElement>;
+  $status: RegistrationStatus;
+};
 
 export const ButtonStatus = styled.button<Props>`
   font-size: 12px;
@@ -18,7 +17,8 @@ export const ButtonStatus = styled.button<Props>`
   border-radius: 0;
   height: 3rem;
   text-transform: uppercase;
-  color: ${({ theme, status }) => theme.registrationStatus[status].buttonColor};
+  color: ${({ theme, $status }) =>
+    theme.registrationStatus[$status].buttonColor};
   background: transparent;
   border-top: 1px ${({ theme }) => theme.colors.grey} solid;
 

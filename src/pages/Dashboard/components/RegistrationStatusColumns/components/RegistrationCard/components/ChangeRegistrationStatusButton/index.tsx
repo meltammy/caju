@@ -23,7 +23,7 @@ export function ChangeRegistrationStatusButton({ status, id }: Props) {
   return (
     <ButtonStatus
       onClick={onClick}
-      status={status}
+      $status={status}
       id={`button-change-status-to-${status}`}
     >
       {labelMapper[status]}
