@@ -4,7 +4,7 @@ exports[`IconButton component should match snapshot 1`] = `
 <DocumentFragment>
   .c0 {
   cursor: pointer;
-  border: 2px solid #64a98c;
+  border: 2px solid currentColor;
   width: fit-content;
   padding: 4px;
   border-radius: 24px;
@@ -12,10 +12,11 @@ exports[`IconButton component should match snapshot 1`] = `
   align-items: center;
   justify-content: center;
   background-color: transparent;
+  color: #64a98c;
 }
 
 .c0 svg {
-  color: #64a98c;
+  color: currentColor;
 }
 
 <button

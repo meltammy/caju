@@ -7,15 +7,15 @@ exports[`AsyncButton component should match snapshot when loading 1`] = `
   display: flex;
   align-items: center;
   border: none;
-  border-radius: 36px;
+  border-radius: 1rem;
   padding: 8px 32px;
-  background-color: #64a98c;
   cursor: pointer;
   height: 56px;
-  color: #fff;
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
   font-size: 16px;
   font-weight: 600;
+  background-color: #64a98c;
+  color: #fff;
 }
 
 .c0:disabled {
@@ -33,6 +33,12 @@ exports[`AsyncButton component should match snapshot when loading 1`] = `
   animation: cilQsd 1s linear infinite;
 }
 
+.c2 {
+  width: 5px;
+  height: 5px;
+  border-width: 3px;
+}
+
 <button
     class="c0"
     data-testid="async-button"
@@ -40,7 +46,7 @@ exports[`AsyncButton component should match snapshot when loading 1`] = `
   >
     <div
       aria-live="polite"
-      class="c1"
+      class="c1 c2"
       role="status"
     />
   </button>
@@ -54,15 +60,15 @@ exports[`AsyncButton component should match snapshot when not loading 1`] = `
   display: flex;
   align-items: center;
   border: none;
-  border-radius: 36px;
+  border-radius: 1rem;
   padding: 8px 32px;
-  background-color: #64a98c;
   cursor: pointer;
   height: 56px;
-  color: #fff;
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
   font-size: 16px;
   font-weight: 600;
+  background-color: #64a98c;
+  color: #fff;
 }
 
 .c0:disabled {
