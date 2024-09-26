@@ -2,7 +2,7 @@ import { useToast } from "~/components/Toast/ToastContext";
 import { useMutation } from "~/hooks/useMutation";
 import { useRegistrationsContext } from "~/pages/Dashboard/components/RegistrationsContext/useRegistrationsContext";
 
-export function useDeletRegistration() {
+export function useDeleteRegistration() {
   const { addToast } = useToast();
   const { refetch } = useRegistrationsContext();
 

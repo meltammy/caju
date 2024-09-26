@@ -1,6 +1,6 @@
 import ConfirmationModal from "~/components/ConfirmationModal";
 import { useConfirmationModalContext } from "../ConfirmationModalContext/useConfirmationModalContext";
-import { useDeletRegistration } from "./hooks/useDeletRegistration";
+import { useDeleteRegistration } from "./hooks/useDeleteRegistration";
 import { theme } from "~/../styles/theme";
 
 export function ConfirmDeleteModal() {
@@ -9,7 +9,7 @@ export function ConfirmDeleteModal() {
     setConfirmationModalProps: setChangeRegistrationStatusProps,
   } = useConfirmationModalContext();
 
-  const { mutate, isLoading } = useDeletRegistration();
+  const { mutate, isLoading } = useDeleteRegistration();
 
   function onConfirm() {
     if (!confirmationModalProps?.deleteRegistrationProps) return;
@@ -31,7 +31,7 @@ export function ConfirmDeleteModal() {
       onClose={onClose}
       confirmationButtonLabel="Deletar admissão"
       isLoading={isLoading}
-      confirmattionButtonColor={theme.colors.primary}
+      confirmationButtonColor={theme.colors.primary}
     />
   );
 }
