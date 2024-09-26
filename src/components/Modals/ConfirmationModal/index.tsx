@@ -1,7 +1,8 @@
 import { FC } from "react";
 import * as S from "./styles";
-import Button from "../Buttons/Button";
-import { AsyncButton } from "../Buttons/AsyncButton";
+import Button from "../../Buttons/Button";
+import { AsyncButton } from "../../Buttons/AsyncButton";
+import { ModalOverlay } from "../ModalOverlay";
 
 interface ConfirmationModalProps {
   title: string;
@@ -29,7 +30,7 @@ const ConfirmationModal: FC<ConfirmationModalProps> = ({
   onConfirm,
 }) => {
   return (
-    <S.ModalOverlay
+    <ModalOverlay
       onClick={onClose}
       $isOpen={isOpen}
       data-testid={confirmationModalTestId}
@@ -59,7 +60,7 @@ const ConfirmationModal: FC<ConfirmationModalProps> = ({
           </AsyncButton>
         </S.ButtonContainer>
       </S.ModalContainer>
-    </S.ModalOverlay>
+    </ModalOverlay>
   );
 };
 

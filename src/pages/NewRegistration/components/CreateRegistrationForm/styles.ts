@@ -10,7 +10,7 @@ export const Form = styled.form`
     margin-top: 2rem;
   }
 
-  @media screen and (max-width: 1200px) {
+  @media screen and (max-width: ${({ theme }) => theme.breakpoints.desktop}) {
     margin: 1rem;
   }
 `;

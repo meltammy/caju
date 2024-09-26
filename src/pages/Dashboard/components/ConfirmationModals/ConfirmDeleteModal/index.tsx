@@ -1,4 +1,4 @@
-import ConfirmationModal from "~/components/ConfirmationModal";
+import ConfirmationModal from "~/components/Modals/ConfirmationModal";
 import { useConfirmationModalContext } from "../ConfirmationModalContext/useConfirmationModalContext";
 import { useDeleteRegistration } from "./hooks/useDeleteRegistration";
 import { theme } from "~/../styles/theme";

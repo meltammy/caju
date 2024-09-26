@@ -7,7 +7,7 @@ export const Container = styled.div`
   gap: 5rem;
   padding: 1.5rem;
 
-  @media screen and (max-width: 1200px) {
+  @media screen and (max-width: ${({ theme }) => theme.breakpoints.desktop}) {
     flex-direction: column-reverse;
     gap: 1rem;
 

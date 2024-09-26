@@ -28,12 +28,12 @@ export const Card = styled.div`
     align-self: flex-end;
   }
 
-  @media screen and (max-width: 1200px) {
+  @media screen and (max-width: ${({ theme }) => theme.breakpoints.desktop}) {
     height: 82vh;
     margin: 1rem;
   }
 
-  @media screen and (min-width: 1200px) {
+  @media screen and (min-width: ${({ theme }) => theme.breakpoints.desktop}) {
     box-shadow: 0 0 10px 6px #00000021;
     border: 2px solid ${({ theme }) => theme.colors.lightGrey};
     padding: 3rem;
@@ -50,7 +50,7 @@ export const CardHeader = styled.div`
     text-align: center;
   }
 
-  @media screen and (max-width: 1200px) {
+  @media screen and (max-width: ${({ theme }) => theme.breakpoints.desktop}) {
     margin: 0 1rem;
     grid-template-rows: 1fr 1fr;
     grid-template-columns: 1fr;

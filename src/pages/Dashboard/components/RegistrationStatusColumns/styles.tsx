@@ -9,7 +9,7 @@ export const Container = styled.div`
   min-height: 68vh;
   margin-bottom: 1rem;
 
-  @media screen and (max-width: 1200px) {
+  @media screen and (max-width: ${({ theme }) => theme.breakpoints.desktop}) {
     justify-content: flex-start;
     overflow: auto;
     overflow-y: hidden;

@@ -5,7 +5,7 @@ import { render, fireEvent, screen } from "@testing-library/react";
 import ConfirmationModal, { confirmationModalTestId } from ".";
 import { ThemeProvider } from "styled-components";
 import { theme } from "~/../styles/theme";
-import { asyncButtonTestId } from "../Buttons/AsyncButton";
+import { asyncButtonTestId } from "../../Buttons/AsyncButton";
 
 const title = "Confirm Action";
 const description = "Are you sure you want to proceed?";
