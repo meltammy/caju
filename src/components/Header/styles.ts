@@ -1,9 +1,20 @@
 import styled from "styled-components";
 
+export const Overlay = styled.div<{ $isOpen: boolean }>`
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  background: #0000009e;
+  z-index: 1;
+  display: ${({ $isOpen }) => ($isOpen ? "flex" : "none")};
+`;
+
 export const OffCanvas = styled.nav<{ $isOpen: boolean }>`
   position: fixed;
   top: 0;
   right: ${({ $isOpen }) => ($isOpen ? "0" : "-100vw")};
+  z-index: 1;
 
   height: 100vh;
   width: 50vw;
@@ -25,6 +36,7 @@ export const Container = styled.header<{ $isOpen: boolean }>`
   position: fixed;
   top: 0;
   z-index: 1;
+  z-index: 2;
 
   width: 100%;
   height: 4rem;
