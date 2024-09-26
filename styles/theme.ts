@@ -1,6 +1,5 @@
 import { RegistrationStatus } from "~/types";
 
-// theme.ts
 export const theme = {
   colors: {
     primary: "#e80537",
