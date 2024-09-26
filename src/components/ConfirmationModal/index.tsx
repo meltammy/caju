@@ -11,7 +11,7 @@ interface ConfirmationModalProps {
   isLoading?: boolean;
   onClose: () => void;
   onConfirm: () => void;
-  confirmattionButtonColor?: string;
+  confirmationButtonColor?: string;
 }
 
 type Event = { stopPropagation: () => void };
@@ -22,7 +22,7 @@ const ConfirmationModal: FC<ConfirmationModalProps> = ({
   title,
   description,
   confirmationButtonLabel,
-  confirmattionButtonColor = "primary",
+  confirmationButtonColor: confirmationButtonColor = "primary",
   isOpen,
   isLoading,
   onClose,
@@ -50,7 +50,7 @@ const ConfirmationModal: FC<ConfirmationModalProps> = ({
 
           <AsyncButton
             $variant="outline"
-            color={confirmattionButtonColor}
+            color={confirmationButtonColor}
             onClick={onConfirm}
             isLoading={isLoading}
             id="confirm-button"

@@ -52,7 +52,7 @@ export function ConfirmChangeStatusModal() {
       onClose={onClose}
       confirmationButtonLabel={buttonLabel}
       isLoading={isLoading}
-      confirmattionButtonColor={theme.registrationStatus[status].buttonColor}
+      confirmationButtonColor={theme.registrationStatus[status].buttonColor}
     />
   );
 }
