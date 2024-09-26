@@ -22,7 +22,11 @@ export function FieldWrapper({
         {label}
       </S.Label>
       {children}
-      {error && <S.ErrorMessage id={helpId}>{error}</S.ErrorMessage>}
+      {error && (
+        <S.ErrorMessage role="alert" id={helpId} data-testid={helpId}>
+          {error}
+        </S.ErrorMessage>
+      )}
     </S.Container>
   );
 }

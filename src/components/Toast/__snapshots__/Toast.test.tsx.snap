@@ -6,12 +6,14 @@ exports[`ToastProvider component should match snapshot 1`] = `
     class="sc-blHHSb fWyMgk"
   >
     <div
-      class="sc-gtLWhw cjOQVQ"
+      class="sc-gtLWhw hTLtaT"
       id="0-toast"
       type="success"
     >
       Test message
-      <button>
+      <button
+        class="sc-egkSDF gezmlK"
+      >
         X
       </button>
     </div>

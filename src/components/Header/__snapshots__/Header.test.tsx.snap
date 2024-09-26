@@ -3,7 +3,7 @@
 exports[`Header component should match snapshot 1`] = `
 <DocumentFragment>
   <header
-    class="sc-blHHSb dFjJJx"
+    class="sc-blHHSb caVkNp"
   >
     <svg
       fill="none"
@@ -25,7 +25,9 @@ exports[`Header component should match snapshot 1`] = `
         />
       </g>
     </svg>
-    <h1>
+    <h1
+      class="sc-gtLWhw hTRjsJ"
+    >
       Caju Front Teste
     </h1>
   </header>
