@@ -12,6 +12,7 @@ export const Container = styled.div`
   @media screen and (max-width: 1200px) {
     justify-content: flex-start;
     overflow: auto;
+    overflow-y: hidden;
     margin-left: 24px;
   }
 `;
