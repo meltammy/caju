@@ -8,7 +8,7 @@ const CreateRegistration = () => {
       <S.Card>
         <S.CardHeader>
           <BackButton />
-          <h2>Criar nova admissão</h2>
+          <S.Title>Criar nova admissão</S.Title>
         </S.CardHeader>
 
         <CreateRegistrationForm />

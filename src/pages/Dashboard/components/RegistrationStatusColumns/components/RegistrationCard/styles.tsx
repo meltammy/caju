@@ -2,15 +2,18 @@ import styled from "styled-components";
 
 export const Card = styled.div`
   position: relative;
+
+  background-color: ${({ theme }) => theme.colors.white};
+  margin: 1rem;
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+
   display: flex;
   flex-direction: column;
   gap: 0.25rem;
+
   border: 1px solid ${({ theme }) => theme.colors.lightGrey};
-  margin: 1rem;
   border-radius: 0.5rem;
-  background-color: ${({ theme }) => theme.colors.white};
-  overflow: hidden;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
 
   h3,
   p {
@@ -21,15 +24,16 @@ export const Card = styled.div`
 export const IconAndText = styled.div`
   display: flex;
   align-items: center;
+
   gap: 0.5rem;
-  font-size: 1rem;
   padding: 0 1rem;
+  font-size: 1rem;
 
   &:first-of-type {
     font-size: 2rem;
     border-bottom: 1px black solid;
-    padding: 1rem 3rem 0.5rem 1rem;
     margin-bottom: 0.5rem;
+    padding: 1rem 3rem 0.5rem 1rem;
 
     h2 {
       margin: 0;

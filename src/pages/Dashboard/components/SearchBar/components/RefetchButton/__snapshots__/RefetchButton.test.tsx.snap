@@ -4,7 +4,7 @@ exports[`RefetchButton component should match snapshot 1`] = `
 <DocumentFragment>
   <button
     aria-label="refetch"
-    class="sc-blHHSb bLkvLR"
+    class="sc-blHHSb bwYyRJ"
     id="refresh-button"
   >
     <svg

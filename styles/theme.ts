@@ -3,7 +3,7 @@ import { RegistrationStatus } from "~/types";
 export const theme = {
   breakpoints: {
     desktop: "1200px",
-    headerMobile: "600px",
+    mobile: "600px",
   },
   colors: {
     primary: "#e80537",

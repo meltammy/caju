@@ -1,13 +1,13 @@
 import styled from "styled-components";
 
 export const ModalContainer = styled.div`
-  background: white;
-  border-radius: 0.5rem;
-  padding: 1.5rem;
   min-width: 32rem;
   max-width: 95vw;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   z-index: 999;
+  padding: 1.5rem;
+  background: white;
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 
   @media screen and (max-width: ${({ theme }) => theme.breakpoints.desktop}) {
     min-width: 50vw;
@@ -29,11 +29,5 @@ export const ButtonContainer = styled.div`
 
   @media screen and (max-width: ${({ theme }) => theme.breakpoints.desktop}) {
     flex-direction: column-reverse;
-  }
-
-  button {
-    width: 100%;
-    place-content: center;
-    position: absolute;
   }
 `;

@@ -1,5 +1,5 @@
 import { useState, ChangeEvent, useEffect } from "react";
-import { isString } from "~/utils/isString";
+import { isString } from "~/utils/validations/isString";
 
 export type InputChangeEvent = ChangeEvent<HTMLInputElement>;
 let timeoutId: NodeJS.Timeout;

@@ -12,34 +12,35 @@ const coming = keyframes`
 `;
 
 export const ModalContainer = styled.div`
+  position: relative;
+  z-index: 999;
+
+  width: 52rem;
+  height: 90%;
+  max-height: 30rem;
   background: white;
   border-radius: 0.5rem;
   padding: 1.5rem;
-  min-width: 32rem;
-  max-width: 36rem;
-  width: 60%;
-  height: 90%;
-  max-height: 30rem;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  z-index: 999;
-  position: relative;
 
   b {
     color: ${({ theme }) => theme.colors.primary};
   }
 
   @media screen and (max-width: ${({ theme }) => theme.breakpoints.desktop}) {
-    min-width: 50vw;
+    position: absolute;
     width: 100%;
+    min-width: 50vw;
     max-height: 36rem;
+    margin-top: auto;
+
     display: grid;
     grid-template-rows: 1fr 10fr 1fr;
-    margin-top: auto;
+
     border-bottom-right-radius: 0;
     border-bottom-left-radius: 0;
-    position: absolute;
+
     animation: ${coming} 1s ease-in-out forwards;
-    max-width: 91vw;
   }
 `;
 
