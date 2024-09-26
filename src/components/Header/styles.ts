@@ -11,6 +11,7 @@ export const Container = styled.header`
   align-items: center;
   padding: 0px 1.5rem;
   gap: 2rem;
+  z-index: 1;
 
   h1 {
     color: ${({ theme }) => theme.colors.primary};
