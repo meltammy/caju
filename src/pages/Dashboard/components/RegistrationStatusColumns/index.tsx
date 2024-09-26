@@ -1,10 +1,11 @@
 import * as S from "./styles";
-import { Registration, RegistrationStatus } from "~/types";
+import { RegistrationStatus } from "~/types";
 import { StatusColumn } from "./components/StatusColumn";
 import { ConfirmationModalProvider } from "../ConfirmationModals/ConfirmationModalContext/ConfirmationModalProvider";
 import { ConfirmChangeStatusModal } from "../ConfirmationModals/ConfirmChangeStatusModal";
 import { ConfirmDeleteModal } from "../ConfirmationModals/ConfirmDeleteModal";
 import { useRegistrationsContext } from "../RegistrationsContext/useRegistrationsContext";
+import { useMemoizedRegistrationsByStatus } from "./components/hooks/useMemoizedRegistrationsByStatus";
 
 const allColumns = [
   { status: RegistrationStatus.Review, title: "Pronto para revisar" },
@@ -12,15 +13,10 @@ const allColumns = [
   { status: RegistrationStatus.Reproved, title: "Reprovado" },
 ];
 
-function filterRegistrationsByStatus(
-  status: RegistrationStatus,
-  data: Registration[] | null
-) {
-  return data?.filter((item) => item.status === status) || [];
-}
-
 export const RegistrationStatusColumns = () => {
   const { data, isLoading } = useRegistrationsContext();
+
+  const dataByStatus = useMemoizedRegistrationsByStatus(data);
 
   if (isLoading)
     return (
@@ -37,7 +33,7 @@ export const RegistrationStatusColumns = () => {
             <StatusColumn
               key={column.status}
               {...column}
-              registrations={filterRegistrationsByStatus(column.status, data)}
+              data={dataByStatus[column.status]}
             />
           );
         })}

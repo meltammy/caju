@@ -3,7 +3,7 @@ import { RegistrationStatus } from "~/types";
 import { removeNonNumericCharacters } from "~/utils/formatters/removeNonNumericCharacters";
 
 const validCpf = "466.920.430-00";
-const invalidCpf = "000.000.000-00";
+const invalidCpf = "111.000.000-00";
 
 const responseData = {
   id: 98451,
@@ -15,12 +15,42 @@ const responseData = {
 };
 
 const applicationsData = [
-  { id: 1, name: "John Doe", status: RegistrationStatus.Review },
-  { id: 2, name: "Jane Smith", status: RegistrationStatus.Approved },
-  { id: 3, name: "Janete Smith", status: RegistrationStatus.Approved },
-  { id: 4, name: "Jane Smith", status: RegistrationStatus.Reproved },
-  { id: 5, name: "Jane Smith", status: RegistrationStatus.Reproved },
-  { id: 6, name: "Jane Smith", status: RegistrationStatus.Reproved },
+  {
+    ...responseData,
+    id: 1,
+    name: "John Doe",
+    status: RegistrationStatus.Review,
+  },
+  {
+    ...responseData,
+    id: 2,
+    name: "Jane Smith",
+    status: RegistrationStatus.Approved,
+  },
+  {
+    ...responseData,
+    id: 3,
+    name: "Janete Smith",
+    status: RegistrationStatus.Approved,
+  },
+  {
+    ...responseData,
+    id: 4,
+    name: "Jane Smith",
+    status: RegistrationStatus.Reproved,
+  },
+  {
+    ...responseData,
+    id: 5,
+    name: "Jane Smith",
+    status: RegistrationStatus.Reproved,
+  },
+  {
+    ...responseData,
+    id: 6,
+    name: "Jane Smith",
+    status: RegistrationStatus.Reproved,
+  },
 ];
 
 const fillCpf = (cpf: string) => {
@@ -42,6 +72,9 @@ const interceptApplicationsRequest = () => {
 describe("Dashboard Page Test: Registration List", () => {
   beforeEach(() => {
     cy.visit(routes.dashboard);
+    cy.window().then(() => {
+      sessionStorage.setItem("showWelcomeModal", "false");
+    });
     interceptApplicationsRequest();
     cy.wait(1000);
     cy.wait("@getApplications");
@@ -110,6 +143,9 @@ describe("Dashboard Page Test: Registration List", () => {
 
 describe("Dashboard Page Test: Search for CPF", () => {
   beforeEach(() => {
+    cy.window().then(() => {
+      sessionStorage.setItem("showWelcomeModal", "false");
+    });
     cy.visit(routes.dashboard);
     interceptApplicationsRequest();
     cy.wait("@getApplications");
@@ -140,7 +176,7 @@ describe("Dashboard Page Test: Search for CPF", () => {
   });
 
   it("should not execute a search request with an invalid CPF", () => {
-    interceptSearchRequest(validCpf);
+    interceptSearchRequest(invalidCpf);
     fillCpf(invalidCpf);
     cy.get("#cpf")
       .should("have.value", invalidCpf)

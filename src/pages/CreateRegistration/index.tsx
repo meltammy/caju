@@ -10,7 +10,6 @@ const CreateRegistration = () => {
           <BackButton />
           <S.Title>Criar nova admissão</S.Title>
         </S.CardHeader>
-
         <CreateRegistrationForm />
       </S.Card>
     </S.Container>

@@ -9,6 +9,9 @@ describe("Registration Page Test", () => {
   };
 
   beforeEach(() => {
+    cy.window().then(() => {
+      sessionStorage.setItem("showWelcomeModal", "false");
+    });
     cy.visit(routes.dashboard);
     cy.contains("button", "Nova Admissão").click();
   });
