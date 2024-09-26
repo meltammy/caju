@@ -1,4 +1,4 @@
-import ConfirmationModal from "~/components/ConfirmationModal";
+import ConfirmationModal from "~/components/Modals/ConfirmationModal";
 import { useUpdateRegistrationStatus } from "./hooks/useUpdateRegistrationStatus";
 import { useConfirmationModalContext } from "../ConfirmationModalContext/useConfirmationModalContext";
 import { RegistrationStatus } from "~/types";
