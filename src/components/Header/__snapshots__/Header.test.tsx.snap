@@ -3,7 +3,7 @@
 exports[`Header component should match snapshot 1`] = `
 <DocumentFragment>
   <header
-    class="sc-gtLWhw jutpeA"
+    class="sc-gtLWhw ciZWMF"
   >
     <svg
       fill="none"
@@ -54,7 +54,7 @@ exports[`Header component should match snapshot 1`] = `
       aria-expanded="false"
       aria-haspopup="true"
       aria-label="Abrir menu"
-      class="sc-dntaoT kWfYfP"
+      class="sc-dntaoT kBuUtR"
     >
       <svg
         aria-hidden="true"
@@ -75,7 +75,7 @@ exports[`Header component should match snapshot 1`] = `
     </button>
   </header>
   <nav
-    class="sc-blHHSb gXMheF"
+    class="sc-blHHSb kzEjca"
   >
     <a
       class="sc-ivxoEo kWrURs"

@@ -6,7 +6,7 @@ exports[`ToastProvider component should match snapshot 1`] = `
     class="sc-blHHSb fWyMgk"
   >
     <div
-      class="sc-gtLWhw hTLtaT"
+      class="sc-gtLWhw gYzLEe"
       id="0-toast"
       type="success"
     >

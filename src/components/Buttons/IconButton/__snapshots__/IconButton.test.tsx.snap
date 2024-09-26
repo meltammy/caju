@@ -3,15 +3,15 @@
 exports[`IconButton component should match snapshot 1`] = `
 <DocumentFragment>
   .c0 {
-  cursor: pointer;
-  border: 2px solid currentColor;
   width: fit-content;
   padding: 0.25rem;
+  border: 2px solid currentColor;
   border-radius: 1.5rem;
+  background-color: transparent;
+  cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: transparent;
   color: #64a98c;
 }
 
