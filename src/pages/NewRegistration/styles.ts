@@ -45,19 +45,19 @@ export const CardHeader = styled.div`
   grid-template-rows: 1fr;
   grid-template-columns: 1fr 8fr 1fr;
 
-  h2 {
-    margin: 0;
-    text-align: center;
-  }
-
   @media screen and (max-width: ${({ theme }) => theme.breakpoints.desktop}) {
     margin: 0 1rem;
     grid-template-rows: 1fr 1fr;
     grid-template-columns: 1fr;
     gap: 2rem;
+  }
+`;
 
-    h2 {
-      grid-row: 2;
-    }
+export const Title = styled.h2`
+  margin: 0;
+  text-align: center;
+
+  @media screen and (max-width: ${({ theme }) => theme.breakpoints.desktop}) {
+    grid-row: 2;
   }
 `;
