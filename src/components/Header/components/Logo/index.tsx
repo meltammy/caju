@@ -1,9 +1,9 @@
-export function Logo({ width = "48", height = "40" }) {
+export function Logo() {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width={width}
-      height={height}
+      width="48"
+      height="40"
       viewBox="0 0 48.37 79"
       fill="none"
     >
