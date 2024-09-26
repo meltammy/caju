@@ -12,7 +12,11 @@ html, body{
   margin-top: 4rem;
 }
 
-button {
+a {
+  text-decoration: none;
+}
+
+button, a {
   cursor: pointer;
   font-family: "Poppins", sans-serif;
 }
