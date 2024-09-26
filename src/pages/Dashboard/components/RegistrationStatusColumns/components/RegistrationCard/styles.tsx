@@ -4,10 +4,10 @@ export const Card = styled.div`
   position: relative;
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: 0.25rem;
   border: 1px solid ${({ theme }) => theme.colors.lightGrey};
-  margin: 16px;
-  border-radius: 8px;
+  margin: 1rem;
+  border-radius: 0.5rem;
   background-color: ${({ theme }) => theme.colors.white};
   overflow: hidden;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
@@ -21,7 +21,7 @@ export const Card = styled.div`
 export const IconAndText = styled.div`
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 0.5rem;
   font-size: 1rem;
   padding: 0 1rem;
 
@@ -41,6 +41,6 @@ export const IconAndText = styled.div`
 `;
 
 export const Actions = styled.div`
-  margin-top: 8px;
+  margin-top: 0.5rem;
   display: flex;
 `;

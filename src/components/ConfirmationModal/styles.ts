@@ -15,9 +15,9 @@ export const ModalOverlay = styled.div<{ $isOpen: boolean }>`
 
 export const ModalContainer = styled.div`
   background: white;
-  border-radius: 8px;
-  padding: 20px;
-  min-width: 500px;
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+  min-width: 32rem;
   max-width: 95vw;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   z-index: 999;
@@ -33,7 +33,7 @@ export const Title = styled.h2`
 `;
 
 export const Description = styled.p`
-  margin: 10px 0 20px;
+  margin: 10px 0 1.5rem;
 `;
 
 export const ButtonContainer = styled.div`

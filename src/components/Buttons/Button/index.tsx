@@ -6,12 +6,12 @@ const Button = styled.button<{ $variant: "outline" | "filled"; color: string }>`
   align-items: center;
   border: none;
   border-radius: 1rem;
-  padding: 8px 32px;
+  padding: 0.5rem 2rem;
   place-content: center;
   cursor: pointer;
-  height: 56px;
-  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
-  font-size: 16px;
+  height: 3.5rem;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 0.5rem 1.5rem;
+  font-size: 1rem;
   font-weight: 600;
   text-wrap: nowrap;
 

@@ -5,11 +5,11 @@ export const Column = styled.div<{ $status: RegistrationStatus }>`
   height: auto;
   background-color: ${({ $status: status, theme }) =>
     theme.registrationStatus[status].background};
-  border-radius: 32px;
+  border-radius: 2rem;
   height: 100%;
 
   @media screen and (max-width: 1200px) {
-    min-width: 287px;
+    min-width: 18rem;
 
     &:nth-child(3) {
       margin-right: 1.5rem;
@@ -20,7 +20,7 @@ export const Column = styled.div<{ $status: RegistrationStatus }>`
 export const TitleColumn = styled.h2<{ $status: any }>`
   color: ${({ $status: status, theme }) =>
     theme.registrationStatus[status].color};
-  margin: 24px;
+  margin: 1.5rem;
 `;
 
 export const CollumContent = styled.div`

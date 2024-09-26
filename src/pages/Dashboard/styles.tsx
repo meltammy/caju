@@ -6,6 +6,6 @@ export const Container = styled.div`
   overflow: hidden;
 
   @media screen and (min-width: 1200px) {
-    padding: 24px;
+    padding: 1.5rem;
   }
 `;

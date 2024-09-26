@@ -6,11 +6,11 @@ type Props = {
 };
 
 export const ButtonStatus = styled.button<Props>`
-  font-size: 12px;
+  font-size: 0.75rem;
   outline: none;
-  border-radius: 4px;
+  border-radius: 0.25rem;
   border: none;
-  padding: 4px 16px;
+  padding: 0.25rem 1rem;
   font-size: 1rem;
   font-weight: 600;
   width: 100%;

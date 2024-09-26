@@ -5,7 +5,7 @@ export const Container = styled.div`
   justify-content: space-between;
   align-items: center;
   gap: 5rem;
-  padding: 24px;
+  padding: 1.5rem;
 
   @media screen and (max-width: 1200px) {
     flex-direction: column-reverse;
@@ -21,5 +21,5 @@ export const Actions = styled.div`
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  gap: 16px;
+  gap: 1rem;
 `;

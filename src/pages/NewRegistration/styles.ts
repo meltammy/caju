@@ -7,14 +7,14 @@ export const Container = styled.div`
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  gap: 16px;
+  gap: 1rem;
   min-height: 90vh;
   overflow: hidden;
 `;
 
 export const Card = styled.div`
   width: 100%;
-  max-width: 500px;
+  max-width: 31rem;
   display: flex;
   flex-direction: column;
   gap: 2rem;
@@ -36,7 +36,7 @@ export const Card = styled.div`
   @media screen and (min-width: 1200px) {
     box-shadow: 0 0 10px 6px #00000021;
     border: 2px solid ${({ theme }) => theme.colors.lightGrey};
-    padding: 48px;
+    padding: 3rem;
   }
 `;
 

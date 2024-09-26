@@ -13,7 +13,7 @@ export const Container = styled.div`
     justify-content: flex-start;
     overflow: auto;
     overflow-y: hidden;
-    margin-left: 24px;
+    margin-left: 1.5rem;
   }
 `;
 
