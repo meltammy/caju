@@ -32,12 +32,12 @@ export const RegistrationStatusColumns = () => {
   return (
     <ConfirmationModalProvider>
       <S.Container>
-        {allColumns.map((collumn) => {
+        {allColumns.map((column) => {
           return (
             <StatusColumn
-              key={collumn.status}
-              {...collumn}
-              registrations={filterRegistrationsByStatus(collumn.status, data)}
+              key={column.status}
+              {...column}
+              registrations={filterRegistrationsByStatus(column.status, data)}
             />
           );
         })}

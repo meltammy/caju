@@ -12,14 +12,14 @@ export const StatusColumn = ({ registrations, status, title }: Props) => {
   return (
     <S.Column $status={status} key={title}>
       <S.TitleColumn $status={status}>{title}</S.TitleColumn>
-      <S.CollumContent id={`column-content-${status}`}>
+      <S.ColumContent id={`column-content-${status}`}>
         {registrations.map((registration) => {
           return <RegistrationCard key={registration.id} {...registration} />;
         })}
         <S.NoResultsMessage hidden={!!registrations.length}>
           Nenhum resultado encontrado
         </S.NoResultsMessage>
-      </S.CollumContent>
+      </S.ColumContent>
     </S.Column>
   );
 };

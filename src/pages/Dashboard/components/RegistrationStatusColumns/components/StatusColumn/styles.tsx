@@ -23,7 +23,7 @@ export const TitleColumn = styled.h2<{ $status: any }>`
   margin: 1.5rem;
 `;
 
-export const CollumContent = styled.div`
+export const ColumContent = styled.div`
   height: 100%;
 `;
 
