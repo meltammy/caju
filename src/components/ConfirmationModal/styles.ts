@@ -10,6 +10,7 @@ export const ModalOverlay = styled.div<{ $isOpen: boolean }>`
   background: rgba(0, 0, 0, 0.5);
   justify-content: center;
   align-items: center;
+  z-index: 999;
 `;
 
 export const ModalContainer = styled.div`
