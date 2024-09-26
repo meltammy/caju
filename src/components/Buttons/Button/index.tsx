@@ -7,7 +7,7 @@ const Button = styled.button<{ $variant: "outline" | "filled"; color: string }>`
   border: none;
   border-radius: 1rem;
   padding: 8px 32px;
-
+  place-content: center;
   cursor: pointer;
   height: 56px;
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
