@@ -9,6 +9,7 @@ import {
 import { ChangeRegistrationStatusButton } from "./components/ChangeRegistrationStatusButton";
 import { DeleteRegistrationButton } from "./components/DeleteRegistrationButton";
 import { formatCpf } from "~/utils/formatters/formatCpf";
+import { IconAndText } from "./components/IconAndText";
 
 const availableStatusesByCurrentStatus = {
   [RegistrationStatus.Approved]: [RegistrationStatus.Review],
@@ -29,22 +30,11 @@ const RegistrationCard = ({
 }: Registration) => {
   return (
     <S.Card id={id} data-card-type-id={`card-${currentStatus}`}>
-      <S.IconAndText>
-        <HiOutlineUserCircle />
-        <h2>{employeeName}</h2>
-      </S.IconAndText>
-      <S.IconAndText>
-        <HiOutlineMail />
-        <p>{email}</p>
-      </S.IconAndText>
-      <S.IconAndText>
-        <HiOutlineCalendar />
-        <span>{admissionDate}</span>
-      </S.IconAndText>
-      <S.IconAndText>
-        <HiIdentification />
-        <span>{formatCpf(cpf)}</span>
-      </S.IconAndText>
+      <IconAndText icon={<HiOutlineUserCircle />} text={employeeName} />
+      <IconAndText icon={<HiOutlineMail />} text={email} />
+      <IconAndText icon={<HiOutlineCalendar />} text={admissionDate} />
+      <IconAndText icon={<HiIdentification />} text={formatCpf(cpf)} />
+
       <S.Actions>
         {availableStatusesByCurrentStatus[currentStatus].map((status) => {
           const buttonId = `${id}-${status}`;
