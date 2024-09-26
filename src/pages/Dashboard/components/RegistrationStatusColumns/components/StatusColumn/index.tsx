@@ -5,18 +5,18 @@ import { Registration, RegistrationStatus } from "~/types";
 type Props = {
   status: RegistrationStatus;
   title: string;
-  registrations: Registration[];
+  data: Registration[];
 };
 
-export const StatusColumn = ({ registrations, status, title }: Props) => {
+export const StatusColumn = ({ data, status, title }: Props) => {
   return (
     <S.Column $status={status} key={title}>
       <S.TitleColumn $status={status}>{title}</S.TitleColumn>
       <S.ColumContent id={`column-content-${status}`}>
-        {registrations.map((registration) => {
+        {data.map((registration) => {
           return <RegistrationCard key={registration.id} {...registration} />;
         })}
-        <S.NoResultsMessage hidden={!!registrations.length}>
+        <S.NoResultsMessage hidden={!!data.length}>
           Nenhum resultado encontrado
         </S.NoResultsMessage>
       </S.ColumContent>
