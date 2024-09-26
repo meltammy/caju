@@ -9,6 +9,7 @@ import {
 import { ChangeRegistrationStatusButton } from "./components/ChangeRegistrationStatusButton";
 import { DeleteRegistrationButton } from "./components/DeleteRegistrationButton";
 import { formatCpf } from "~/utils/formatters/formatCpf";
+import { formatDate } from "~/utils/formatters/formatDate";
 import { IconAndText } from "./components/IconAndText";
 
 const availableStatusesByCurrentStatus = {
@@ -32,7 +33,10 @@ const RegistrationCard = ({
     <S.Card id={id} data-card-type-id={`card-${currentStatus}`}>
       <IconAndText icon={<HiOutlineUserCircle />} text={employeeName} />
       <IconAndText icon={<HiOutlineMail />} text={email} />
-      <IconAndText icon={<HiOutlineCalendar />} text={admissionDate} />
+      <IconAndText
+        icon={<HiOutlineCalendar />}
+        text={formatDate(admissionDate).toString()}
+      />
       <IconAndText icon={<HiIdentification />} text={formatCpf(cpf)} />
 
       <S.Actions>
