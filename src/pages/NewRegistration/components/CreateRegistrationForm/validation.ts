@@ -29,4 +29,4 @@ const schema = yup.object({
 
 export const newRegistrationFormResolver = yupResolver(schema);
 
-export type NewRegistrationFormData = yup.InferType<typeof schema>;
+export type CreateRegistrationFormData = yup.InferType<typeof schema>;

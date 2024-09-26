@@ -1,8 +1,8 @@
 import * as S from "./styles";
-import { NewRegistrationForm } from "./components/NewRegistrationForm";
+import { CreateRegistrationForm } from "./components/CreateRegistrationForm";
 import { BackButton } from "./components/BackButton";
 
-const NewRegistration = () => {
+const CreateRegistration = () => {
   return (
     <S.Container>
       <S.Card>
@@ -11,10 +11,10 @@ const NewRegistration = () => {
           <h2>Criar nova admissão</h2>
         </S.CardHeader>
 
-        <NewRegistrationForm />
+        <CreateRegistrationForm />
       </S.Card>
     </S.Container>
   );
 };
 
-export default NewRegistration;
+export default CreateRegistration;

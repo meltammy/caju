@@ -1,11 +1,11 @@
 import { removeNonNumericCharacters } from "~/utils/formatters/removeNonNumericCharacters";
-import { NewRegistrationFormData } from "../../validation";
+import { CreateRegistrationFormData } from "../../validation";
 
 export function formatCreateRegistrationPayload({
   admissionDate,
   cpf,
   ...data
-}: NewRegistrationFormData) {
+}: CreateRegistrationFormData) {
   return {
     ...data,
     cpf: removeNonNumericCharacters(cpf),

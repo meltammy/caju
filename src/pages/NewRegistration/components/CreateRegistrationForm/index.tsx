@@ -1,6 +1,6 @@
 import TextField from "~/components/Forms/TextField";
 import {
-  NewRegistrationFormData,
+  CreateRegistrationFormData,
   newRegistrationFormResolver,
 } from "./validation";
 import { SubmitHandler, useForm } from "react-hook-form";
@@ -10,18 +10,20 @@ import { formatCreateRegistrationPayload } from "./utils/formatCreateRegistratio
 import { AsyncButton } from "~/components/Buttons/AsyncButton";
 import { Form } from "./styles";
 
-export function NewRegistrationForm() {
+export function CreateRegistrationForm() {
   const { mutate: createRegistration, isLoading } = useCreateRegistration();
   const {
     register,
     handleSubmit,
     formState: { errors, isValid },
-  } = useForm<NewRegistrationFormData>({
+  } = useForm<CreateRegistrationFormData>({
     resolver: newRegistrationFormResolver,
     mode: "all",
   });
 
-  const submitForm: SubmitHandler<NewRegistrationFormData> = async (data) => {
+  const submitForm: SubmitHandler<CreateRegistrationFormData> = async (
+    data
+  ) => {
     const formattedData = formatCreateRegistrationPayload(data);
     createRegistration(formattedData);
   };
