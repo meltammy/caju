@@ -21,12 +21,12 @@ export const TitleColumn = styled.h2<{ status: any }>`
 `;
 
 export const CollumContent = styled.div`
-  &::-webkit-scrollbar {
-    width: 0.25em;
-  }
+  height: 100%;
+`;
 
-  &::-webkit-scrollbar-thumb {
-    background: ${({ theme }) => theme.colors.grey};
-    border-radius: 2rem;
-  }
+export const NoResultsMessage = styled.h3`
+  margin: auto;
+  margin: 15rem 1rem;
+  text-align: center;
+  color: ${({ theme }) => theme.colors.lightGrey};
 `;

@@ -16,6 +16,9 @@ export const StatusColumn = ({ registrations, status, title }: Props) => {
         {registrations.map((registration) => {
           return <RegistrationCard key={registration.id} {...registration} />;
         })}
+        <S.NoResultsMessage hidden={!!registrations.length}>
+          Nenhum resultado encontrado
+        </S.NoResultsMessage>
       </S.CollumContent>
     </S.Column>
   );
