@@ -7,7 +7,7 @@ export interface RegistrationsContextType {
   data: Registration[] | null;
   isLoading: boolean;
   error: string | null;
-  refetch: () => Promise<void>;
+  refetch: () => void;
 }
 
 export const RegistrationsContext = createContext<
