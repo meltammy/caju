@@ -8,6 +8,7 @@ import {
 } from "react-icons/hi";
 import { ChangeRegistrationStatusButton } from "./components/ChangeRegistrationStatusButton";
 import { DeleteRegistrationButton } from "./components/DeleteRegistrationButton";
+import { formatCpf } from "~/utils/formatters/formatCpf";
 
 const availableStatusesByCurrentStatus = {
   [RegistrationStatus.Approved]: [RegistrationStatus.Review],
@@ -42,7 +43,7 @@ const RegistrationCard = ({
       </S.IconAndText>
       <S.IconAndText>
         <HiIdentification />
-        <span>{cpf}</span>
+        <span>{formatCpf(cpf)}</span>
       </S.IconAndText>
       <S.Actions>
         {availableStatusesByCurrentStatus[currentStatus].map((status) => {
