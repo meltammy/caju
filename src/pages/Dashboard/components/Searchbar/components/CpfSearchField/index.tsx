@@ -8,7 +8,7 @@ export const CpfSearchField = () => {
   const { setSearchCpf } = useRegistrationsContext();
   const {
     formState: { errors },
-    register,
+    control,
     watch,
   } = useForm<SearchCpfFormData>({
     resolver: searchCpfFormResolver,
@@ -20,8 +20,6 @@ export const CpfSearchField = () => {
   useEffect(() => {
     value && setSearchCpf(value);
   }, [value, setSearchCpf]);
-
-  return (
-    <CpfField register={register} name="cpf" error={errors.cpf?.message} />
-  );
+  console.log(value);
+  return <CpfField control={control} name="cpf" error={errors.cpf?.message} />;
 };

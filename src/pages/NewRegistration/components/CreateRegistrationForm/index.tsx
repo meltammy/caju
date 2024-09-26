@@ -15,6 +15,7 @@ export function CreateRegistrationForm() {
   const {
     register,
     handleSubmit,
+    control,
     formState: { errors, isValid },
   } = useForm<CreateRegistrationFormData>({
     resolver: newRegistrationFormResolver,
@@ -57,7 +58,7 @@ export function CreateRegistrationForm() {
         name="cpf"
         id="cpf"
         required
-        register={register}
+        control={control}
         error={errors.cpf?.message}
       />
 

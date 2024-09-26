@@ -1,4 +1,4 @@
-import ReactInputMask from "react-input-mask";
+import ReactInputMask from "react-text-mask";
 import styled from "styled-components";
 
 export const Input = styled(ReactInputMask)`
