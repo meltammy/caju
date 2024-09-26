@@ -8,6 +8,7 @@ import { CpfField } from "~/components/Forms/CpfField";
 import { useCreateRegistration } from "./hooks/useCreateRegistration";
 import { formatCreateRegistrationPayload } from "./utils/formatCreateRegistrationPayload";
 import { AsyncButton } from "~/components/Buttons/AsyncButton";
+import { Form } from "./styles";
 
 export function NewRegistrationForm() {
   const { mutate: createRegistration, isLoading } = useCreateRegistration();
@@ -26,7 +27,7 @@ export function NewRegistrationForm() {
   };
 
   return (
-    <form onSubmit={handleSubmit(submitForm)}>
+    <Form onSubmit={handleSubmit(submitForm)}>
       <TextField
         placeholder="Nome"
         label="Nome"
@@ -71,6 +72,6 @@ export function NewRegistrationForm() {
       <AsyncButton type="submit" disabled={!isValid} isLoading={isLoading}>
         Cadastrar
       </AsyncButton>
-    </form>
+    </Form>
   );
 }
