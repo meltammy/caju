@@ -1,136 +1,146 @@
-# Caju Front End Teste
+# Teste Técnico Caju: Frontend Sênior
 
-Esse é um desafio técnico para você demonstrar suas habilidades como frontend, sua missão será dar continuidade ao desenvolvimento da plataforma de admissão que consiste em duas telas, a tela de `Dashboard` e uma tela de `Cadastro`.
+## Apresentação
+Olá, eu sou a Mel! 👋 Sou uma desenvolvedora apaixonada por tecnologia, com experiência em desenvolvimento web, tanto no frontend quanto no backend. Formada em Análise e Desenvolvimento de Sistemas pela Universidade Paulista, atualmente atuo como **Tech Lead Frontend**, onde utilizo minhas habilidades técnicas e de liderança para otimizar soluções e promover um ambiente colaborativo.
 
-O `Dashboard` mostra todas as admissões criadas, com as opções de aprovar, reprovar e excluir.
+Estou animada para discutir como posso contribuir para o sucesso da equipe e da Caju! 🌟
 
-![Screenshot 2024-06-11 at 11 48 24 AM](https://github.com/caju-beneficios/caju-front-teste-1/assets/31169925/fedeff5c-a0d3-4df1-aebd-1f2d25c56a48)
+[Meu Linkedin](https://www.linkedin.com/in/meltammy/)
 
-Dashboard com a listagem das admissões.
+---
 
-![Screenshot 2024-06-11 at 1 52 35 PM](https://github.com/caju-beneficios/caju-front-teste-1/assets/31169925/3b002341-454b-4b24-82cb-6390656b56cc)
+## 🚀 Realizei o deploy do frontend e do servidor do Json Web Server. Você pode conferir a aplicação em funcionamento aqui: [Aplicação Caju.](https://meltammy.github.io/caju/#/caju/dashboard)
 
-A tela de `Cadastro` exibe um formulário simples que será utilizado para criar as admissões.
+--- 
 
-![Screenshot 2024-06-11 at 11 48 47 AM](https://github.com/caju-beneficios/caju-front-teste-1/assets/31169925/bbbb211c-165f-40e5-b2af-61adafd61398)
+# Checklist dos requisitos da vaga
+- ✅ React;
+- ✅ Hooks e Custom hooks;
+- ✅ Javascript (programação assíncrona e Consumo de APIs);
+- ✅ CSS;
+- ✅ HTML;
+- ✅ Testes de unidade e Integração;
+- ✅ Typescript;
+- ✅ Material UI;
+- ✅ Gestão de estado global.
 
-## Apresentanção do problema
+# Checklist de Implementação
 
-O desafio é aprimorar o código existente e implementar as funcionalidades que estão incompletas, use a sua experiência para identificar e propor soluções para os problemas encontrados.
-Sinta-se a vontade para refatorar, criar novas pastas, componentes, hooks, utils e o que mais achar necessário para garantir que o projeto esteja organizado e segue as boas práticas de desenvolvimento.
-
-## Especificações
-
-### Tela Dashboard
-
-- Implementar `GET` ao carregar a pagina e ao fazer pequisa por `CPF`
-- Filtrar os cards por coluna, usando o status.
-- Implementar `PUT` ao clicar em Reprovar e alterar o status para `REPROVED`
-- Implementar `PUT` ao clicar em Aprovar e alterar o status para `APPROVED`
-- Implementar `PUT` ao clicar em Revisar novamente e alterar o status para `REVIEW`
-- Implementar `DELETE` ao clicar no lixeira no card.
-- O botão de `Reprovar` e `Aprovar` só deve aparecer em admissões com o status `REVIEW`
-- O botão `Revisar novamente` só deve aparecer em admissões com o status `REPROVED` ou `APPROVED`
-- Implementar um loading na tela ao realizar requisições.
-- Todas as ações devem ter modal de confirmação e uma notificação de sucesso ou erro
-- Na pesquisa por CPF realizar a requisição automaticamente ao preencher um CPF válido
-- Adicionar máscara de CPF no campo de pesquisa.
-- Atualizar os dados (refetch) ao clicar no ícone de atualizar
+### Testes e CI/CD
+- ✅ Testes Unitários e de Integração
+- ✅ End-to-End (E2E)
+- ✅ Configuração de CI/CD com deploy automatizado
 
 ### Tela Cadastro
+- ✅ Validação no campo de email para aceitar apenas emails válidos
+- ✅ Validação no campo nome completo para aceitar pelo menos um espaço, no mínimo duas letras, e que a primeira letra não seja um número
+- ✅ Validação no campo CPF para aceitar apenas CPFs válidos e adicionar uma máscara de CPF ao campo
+- ✅ Implementação de POST ao preencher todos os campos corretamente
+- ✅ Redirecionamento ao /dashboard ao criar uma nova admissão
 
-- Implementar validação no campo de `email` para que aceite apenas emails válidos
-- Implementar validação no campo `nome completo` para que aceite pelo menos um espaço, no mínimo duas letras, e que a primeira letra não seja um número.
-- Implementar validação no campo CPF para aceitar apenas CPFs válidos e adicionar uma máscara de CPF ao campo.
-- Implementar `POST` ao preencher todos os campos corretamentes.
-- Redirecionar ao `/dashboard` ao criar uma nova admissão.
+### Tela Dashboard
+- ✅ Implementação de GET ao carregar a página e ao fazer pesquisa por CPF
+- ✅ Filtragem dos cards por coluna, usando o status
+- ✅ Implementação de PUT ao clicar em Reprovar e alterar o status para REPROVED
+- ✅ Implementação de PUT ao clicar em Aprovar e alterar o status para APPROVED
+- ✅ Implementação de PUT ao clicar em Revisar novamente e alterar o status para REVIEW
+- ✅ Implementação de DELETE ao clicar na lixeira no card
+- ✅ O botão de Reprovar e Aprovar só aparece em admissões com o status REVIEW
+- ✅ O botão Revisar novamente só aparece em admissões com o status REPROVED ou APPROVED
+- ✅ Implementação de um loading na tela ao realizar requisições
+- ✅ Todas as ações têm modal de confirmação e uma notificação de sucesso ou erro
+- ✅ Na pesquisa por CPF, realização da requisição automaticamente ao preencher um CPF válido
+- ✅ Adição de máscara de CPF no campo de pesquisa
+- ✅ Atualização dos dados (refetch) ao clicar no ícone de atualizar
 
-## API
+--- 
 
-Você consumirá uma API mockada localmente, que será executada utilizando o json-server. Para mais informações consulte a [documentação](https://github.com/typicode/json-server/).
+## 🛠️ Iniciando a Aplicação
 
-Exemplo de Requisição:
+Para começar, siga os passos abaixo:
 
-```
-POST http://localhost:3000/registrations
-Content-Type: application/json
-{
-  "admissionDate": "23/10/2023",
-  "email": "maria@caju.com.br",
-  "employeeName": "Maria Silva",
-  "status": "REVIEW",
-  "cpf": "12345678901"
-}
-```
+1. Instale as dependências:
+    ```shell
+    yarn install
+    ```
 
-Para realizar a pesquisa por CPF, utilize essa funcionalidade do json-web-server:
-<br/>
-https://github.com/typicode/json-server/tree/v0?tab=readme-ov-file#filter
+2. Adicione um arquivo .env na raiz do projeto com a seguinte variável:
+    ```
+    VITE_API_URL=http://localhost:3000
+    ```
 
-## Extras (opcional)
+3. Inicie o servidor do Json Web Server
+    ```shell
+    yarn init:db
+    ```
 
-- Testes Unitários e de Integração `(Obrigátorio para Senior e Tech Lead)`
-- End-to-End (E2E)
-- Configuração de CI/CD com deploy automatizado
+4. Execute a aplicação
+    ```shell
+    yarn dev
+    ```
 
-## Dicas e sugestões
+## 🔍 Rodando os testes
 
-- Faça bom uso da componentização
-- Garanta que a aplicação é performática
-- Faça bom uso do HTML e WAI-ARIA
-- Garanta uma experiência fluida e acessível
-- Utilize conceitos (SOLID, DRY, KISS, Clean code) e design patterns
-- Crie testes coesos e que garantam o bom funcionamento da aplicação
-
-### Sua performance será avaliada com base nos seguintes pontos:
-
-- A aplicação funciona conforme o esperado seguindo todas as especificações
-- O código é claro e de fácil entendimento
-- Conhecimento em HTML, CSS, JavaScript / TypeScript e React
-- Experiência do usuário
-- Arquitetura (conceitos, patterns, algoritmos, forma como os problemas foram solucionados)
-- Boas práticas de desenvolvimento
-- Proeficiência com automação de testes. Não exigimos 100% de cobertura
-- Senso crítico e analítico
-
-`Nos surpreenda demonstrando toda a sua habilidade e conhecimento.`
-
-## Iniciando o desenvolvimento
-
-Realize o clone do repositório e instale as dependências
-
-```shell
-git clone https://github.com/caju-beneficios/caju-front-teste-1.git
-cd caju-front-test-1
-```
-
-```shell
-yarn install
-```
-
-Inicie o servidor do Json Web Server para consumir a API
-
-```shell
-yarn init:db
-```
-
-Execute a aplicação
-
+#### Testes com Jest
 ```shell
 yarn dev
 ```
 
-Se tudo ocorreu bem os seguintes serviços estarão disponiveis em:
-<br/>
-
-Aplicação http://localhost:3001/
-<br/>
-Json Web Server http://localhost:3000/
-
-Caso necessite executar a suíte de testes use o comando abaixo:
-
+#### Testes E2E com Cypress
 ```shell
-yarn test:dev
+yarn cypress open
 ```
 
-Para concluir o desenvolvimento faça as edições necessárias e depois envie a URL do novo repositório com suas alterações para o RH.
+### 🧪 Cobertura dos Testes
+**Jest:** 17 testes implementados, incluindo testes de componentes e funções.
+
+**Cypress:** Testes E2E foram implementados nas duas telas.
+
+---
+
+# 💡 Experiência do Desenvolvimento
+
+## Organização Pessoal
+
+Acredito que a organização é essencial para um desenvolvimento eficaz. Para isso, criei um dashboard no Trello para acompanhar o progresso das tarefas e funcionalidades do projeto.
+
+👉 [Confira meu dashboard no Trello!](https://trello.com/b/pr14yiCe/caju)
+
+Essa prática garante que nada fique de fora e que o trabalho flua de maneira produtiva.
+
+## Compromisso com a Qualidade
+Estou comprometida em manter a qualidade do código, implementei pipelines de health check que asseguram a integridade do projeto antes de cada merge, realizando:
+
+- **Validação de Tipagem**: Garante que o código está devidamente tipado.
+- **Testes**: Executa testes unitários e de integração.
+- **Lint**: Avalia a conformidade do código com as regras de estilo.
+
+Essas medidas não apenas melhoram a qualidade, mas também facilitam a colaboração em equipe.
+
+## Práticas de Commit
+Uso o padrão **Conventional Commits** para estruturar minhas mensagens de commit de forma clara e consistente, mantendo um histórico organizado e refletindo a qualidade do projeto.
+
+--- 
+
+## 🛠️ Ferramentas Utilizadas
+
+### Commitlint
+O Commitlint mantém as mensagens de commit em um padrão definido, facilitando a leitura do histórico do projeto.
+
+### Husky
+O Husky gerencia hooks do Git de maneira prática, implementando validações automáticas antes de cada commit. Antes de cada push, um health check é executado, garantindo que apenas código de qualidade suba para o GitHub.
+
+### Commitizen
+O Commitizen simplifica a escrita de mensagens de commit, oferecendo uma interface interativa que orienta os desenvolvedores a seguirem as convenções.
+
+## 📦 Dependências adicionais
+Evitei ao máximo utilizar bibliotecas externas para mostrar minhas habilidades com TypeScript e React. Essa decisão foi intencional, pois busquei demonstrar minha proficiência e controle sobre as funcionalidades dessas tecnologias. No entanto, utilizei algumas bibliotecas para otimizar o trabalho com formulários, garantindo uma experiência de usuário eficiente.
+
+### react-hook-form
+Facilita a manipulação de formulários em React, permitindo um gerenciamento mais simples de estado e validações.
+
+### react-text-mask
+Fornece máscaras de entrada para campos de texto, ajudando na formatação de dados enquanto o usuário digita. Porém no código também há uma função para formatar o CPF.
+
+### yup
+Uma biblioteca de validação que funciona bem com `react-hook-form`, permitindo criar esquemas de validação de maneira intuitiva e eficaz.
