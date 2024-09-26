@@ -8,7 +8,7 @@ export const Column = styled.div<{ $status: RegistrationStatus }>`
   border-radius: 2rem;
   height: 100%;
 
-  @media screen and (max-width: 1200px) {
+  @media screen and (max-width: ${({ theme }) => theme.breakpoints.desktop}) {
     min-width: 18rem;
 
     &:nth-child(3) {

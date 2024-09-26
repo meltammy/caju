@@ -1,6 +1,10 @@
 import { RegistrationStatus } from "~/types";
 
 export const theme = {
+  breakpoints: {
+    desktop: "1200px",
+    headerMobile: "600px",
+  },
   colors: {
     primary: "#e80537",
     secondary: "#ff7500",

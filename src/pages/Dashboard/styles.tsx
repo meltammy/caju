@@ -5,7 +5,7 @@ export const Container = styled.div`
   flex-direction: column;
   overflow: hidden;
 
-  @media screen and (min-width: 1200px) {
+  @media screen and (min-width: ${({ theme }) => theme.breakpoints.desktop}) {
     padding: 1.5rem;
   }
 `;
