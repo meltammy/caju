@@ -29,9 +29,10 @@ exports[`IconAndText should match snapshot when loading 1`] = `
 
 .c0:first-of-type span {
   margin: 0;
+  white-space: break-spaces;
   font-size: 1.5rem;
   font-weight: 600;
-  line-height: 1.5rem;
+  line-height: 2rem;
 }
 
 <div
