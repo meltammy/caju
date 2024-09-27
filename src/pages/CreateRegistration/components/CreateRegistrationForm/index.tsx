@@ -28,7 +28,7 @@ export function CreateRegistrationForm() {
 
   useEffect(() => {
     setSearchCpf("");
-  }, []);
+  }, [setSearchCpf]);
 
   const submitForm: SubmitHandler<CreateRegistrationFormData> = async (
     data
