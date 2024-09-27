@@ -3,7 +3,7 @@
 exports[`Header component should match snapshot 1`] = `
 <DocumentFragment>
   <header
-    class="sc-gtLWhw ciZWMF"
+    class="sc-egkSDF dncyyi"
   >
     <svg
       fill="none"
@@ -26,15 +26,15 @@ exports[`Header component should match snapshot 1`] = `
       </g>
     </svg>
     <h1
-      class="sc-egkSDF bVTOpa"
+      class="sc-fAUdSK djPRII"
     >
       Caju Front Teste
     </h1>
     <nav
-      class="sc-fAUdSK dPCkCk"
+      class="sc-dntaoT eNNFte"
     >
       <a
-        class="sc-ivxoEo kWrURs"
+        class="sc-ghWlax dhSfcP"
         href="https://github.com/meltammy/caju"
         rel="noopener noreferrer"
         target="_blank"
@@ -42,7 +42,7 @@ exports[`Header component should match snapshot 1`] = `
         GitHub
       </a>
       <a
-        class="sc-ivxoEo kWrURs"
+        class="sc-ghWlax dhSfcP"
         href="https://www.linkedin.com/in/meltammy/"
         rel="noopener noreferrer"
         target="_blank"
@@ -54,7 +54,7 @@ exports[`Header component should match snapshot 1`] = `
       aria-expanded="false"
       aria-haspopup="true"
       aria-label="Abrir menu"
-      class="sc-dntaoT kBuUtR"
+      class="sc-ivxoEo bzUKdL"
     >
       <svg
         aria-hidden="true"
@@ -74,11 +74,14 @@ exports[`Header component should match snapshot 1`] = `
       </svg>
     </button>
   </header>
+  <div
+    class="sc-blHHSb dKpYlD"
+  />
   <nav
-    class="sc-blHHSb kzEjca"
+    class="sc-gtLWhw dSdkjp"
   >
     <a
-      class="sc-ivxoEo kWrURs"
+      class="sc-ghWlax dhSfcP"
       href="https://github.com/meltammy/caju"
       rel="noopener noreferrer"
       target="_blank"
@@ -86,7 +89,7 @@ exports[`Header component should match snapshot 1`] = `
       GitHub
     </a>
     <a
-      class="sc-ivxoEo kWrURs"
+      class="sc-ghWlax dhSfcP"
       href="https://www.linkedin.com/in/meltammy/"
       rel="noopener noreferrer"
       target="_blank"

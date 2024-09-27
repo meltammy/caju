@@ -10,6 +10,16 @@ exports[`IconAndText should match snapshot when loading 1`] = `
   font-size: 1rem;
 }
 
+.c0 svg {
+  min-width: 1rem;
+}
+
+.c0 span {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
 .c0:first-of-type {
   margin-bottom: 0.5rem;
   padding: 1rem 3rem 0.5rem 1rem;
