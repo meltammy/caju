@@ -25,9 +25,10 @@ export const Container = styled.div`
 
     span {
       margin: 0;
+      white-space: break-spaces;
       font-size: 1.5rem;
       font-weight: 600;
-      line-height: 1.5rem;
+      line-height: 2rem;
     }
   }
 `;
