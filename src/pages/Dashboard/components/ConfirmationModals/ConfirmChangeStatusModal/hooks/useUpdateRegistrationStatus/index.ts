@@ -1,6 +1,6 @@
+import { useRegistrationsContext } from "~/components/RegistrationsContext/useRegistrationsContext";
 import { useToast } from "~/components/Toast/ToastContext";
 import { useMutation } from "~/hooks/useMutation";
-import { useRegistrationsContext } from "~/pages/Dashboard/components/RegistrationsContext/useRegistrationsContext";
 import { RegistrationStatus } from "~/types";
 
 type Props = {

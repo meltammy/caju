@@ -7,6 +7,16 @@ export const Container = styled.div`
   padding: 0 1rem;
   font-size: 1rem;
 
+  svg {
+    min-width: 1rem;
+  }
+
+  span {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
   &:first-of-type {
     margin-bottom: 0.5rem;
     padding: 1rem 3rem 0.5rem 1rem;
@@ -15,9 +25,10 @@ export const Container = styled.div`
 
     span {
       margin: 0;
+      white-space: break-spaces;
       font-size: 1.5rem;
       font-weight: 600;
-      line-height: 1.5rem;
+      line-height: 2rem;
     }
   }
 `;

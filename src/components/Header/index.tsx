@@ -28,6 +28,7 @@ export function Header() {
           {menuIsOpen ? <HiX /> : <HiMenu />}
         </S.MenuButton>
       </S.Container>
+      <S.Overlay $isOpen={menuIsOpen} onClick={toggleMenu} />
       <S.OffCanvas $isOpen={menuIsOpen}>
         <NavLinks />
       </S.OffCanvas>

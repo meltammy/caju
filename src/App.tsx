@@ -4,16 +4,19 @@ import { ThemeProvider } from "styled-components";
 import { theme } from "../styles/theme";
 import { GlobalStyle } from "../styles/globals";
 import { ToastProvider } from "./components/Toast/ToastProvider";
+import { RegistrationsProvider } from "./components/RegistrationsContext/RegistrationsProvider";
 
 function App() {
   return (
-    <ThemeProvider theme={theme}>
-      <GlobalStyle />
-      <Header />
-      <ToastProvider>
-        <Router />
-      </ToastProvider>
-    </ThemeProvider>
+    <RegistrationsProvider>
+      <ThemeProvider theme={theme}>
+        <GlobalStyle />
+        <Header />
+        <ToastProvider>
+          <Router />
+        </ToastProvider>
+      </ThemeProvider>
+    </RegistrationsProvider>
   );
 }
 

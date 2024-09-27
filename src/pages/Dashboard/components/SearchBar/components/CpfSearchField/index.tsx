@@ -1,8 +1,8 @@
 import { CpfField } from "~/components/Forms/CpfField";
 import { useEffect } from "react";
-import { useRegistrationsContext } from "~/pages/Dashboard/components/RegistrationsContext/useRegistrationsContext";
 import { useForm } from "react-hook-form";
 import { SearchCpfFormData, searchCpfFormResolver } from "./validation";
+import { useRegistrationsContext } from "~/components/RegistrationsContext/useRegistrationsContext";
 
 export const CpfSearchField = () => {
   const { setSearchCpf } = useRegistrationsContext();
