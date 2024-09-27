@@ -1,6 +1,6 @@
 import { useState, ReactNode, FC } from "react";
 import { RegistrationsContext } from "..";
-import { useGetRegistrations } from "~/pages/Dashboard/components/RegistrationsContext/hooks/useGetRegistrations";
+import { useGetRegistrations } from "../hooks/useGetRegistrations";
 
 export const RegistrationsProvider: FC<{ children: ReactNode }> = ({
   children,

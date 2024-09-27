@@ -4,8 +4,8 @@ import { StatusColumn } from "./components/StatusColumn";
 import { ConfirmationModalProvider } from "../ConfirmationModals/ConfirmationModalContext/ConfirmationModalProvider";
 import { ConfirmChangeStatusModal } from "../ConfirmationModals/ConfirmChangeStatusModal";
 import { ConfirmDeleteModal } from "../ConfirmationModals/ConfirmDeleteModal";
-import { useRegistrationsContext } from "../RegistrationsContext/useRegistrationsContext";
 import { useMemoizedRegistrationsByStatus } from "./components/hooks/useMemoizedRegistrationsByStatus";
+import { useRegistrationsContext } from "~/components/RegistrationsContext/useRegistrationsContext";
 
 const allColumns = [
   { status: RegistrationStatus.Review, title: "Pronto para revisar" },

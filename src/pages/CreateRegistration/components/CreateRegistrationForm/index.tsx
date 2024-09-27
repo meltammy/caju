@@ -9,8 +9,12 @@ import { useCreateRegistration } from "./hooks/useCreateRegistration";
 import { formatCreateRegistrationPayload } from "./utils/formatCreateRegistrationPayload";
 import { AsyncButton } from "~/components/Buttons/AsyncButton";
 import { Form } from "./styles";
+import { useRegistrationsContext } from "~/components/RegistrationsContext/useRegistrationsContext";
+import { useEffect } from "react";
 
 export function CreateRegistrationForm() {
+  const { setSearchCpf } = useRegistrationsContext();
+
   const { mutate: createRegistration, isLoading } = useCreateRegistration();
   const {
     register,
@@ -21,6 +25,10 @@ export function CreateRegistrationForm() {
     resolver: newRegistrationFormResolver,
     mode: "all",
   });
+
+  useEffect(() => {
+    setSearchCpf("");
+  }, []);
 
   const submitForm: SubmitHandler<CreateRegistrationFormData> = async (
     data
