@@ -40,8 +40,8 @@ export function CreateRegistrationForm() {
   return (
     <Form onSubmit={handleSubmit(submitForm)}>
       <TextField
-        placeholder="Nome"
-        label="Nome"
+        placeholder="Insira o Nome Completo"
+        label="Nome Completo"
         name="employeeName"
         id="employeeName"
         required
@@ -50,8 +50,8 @@ export function CreateRegistrationForm() {
       />
 
       <TextField
-        placeholder="Email"
-        label="Email"
+        placeholder="Insira o E-mail"
+        label="E-mail"
         type="email"
         name="email"
         id="email"
@@ -61,7 +61,7 @@ export function CreateRegistrationForm() {
       />
 
       <CpfField
-        placeholder="CPF"
+        placeholder="Insira o CPF"
         label="CPF"
         name="cpf"
         id="cpf"
@@ -71,6 +71,7 @@ export function CreateRegistrationForm() {
       />
 
       <TextField
+        placeholder="Insira a Data de admissão"
         label="Data de admissão"
         type="date"
         name="admissionDate"
